@@ -1,6 +1,6 @@
 import React from "react";
 import { Advertisements } from "./advertiSements";
-import { InfoBeauty} from "./infoBeauty";
+import { SwiperEvents} from "./SwiperEvents";
 import { LoadProducts } from "./loadProducts";
 import { Statistics } from "./statistics";
 import { TopCosmetic } from "./topCosmetic";
@@ -13,7 +13,7 @@ export function HomePage() {
       <Statistics />
       <TopCosmetic/>
       <Advertisements />
-      <InfoBeauty/>
+      <SwiperEvents/>
       <TopRating />
       <LoadProducts />
     </div>

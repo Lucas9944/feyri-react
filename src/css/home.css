@@ -3,7 +3,6 @@
     background-color: #FFF;
 
 
-
 }
 
 
@@ -171,6 +170,7 @@
     /* border: 2px solid rgb(135, 250, 187); */
     height: 1200px;
 }
+
 .card_joy_rating {
     /* border: 2px solid rgb(0, 200, 255); */
     width: 1300px;
@@ -213,4 +213,167 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between; */
+}
+
+
+
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+    /* border: 2px solid green; */
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    /* border: none; */
+    /* border: 2px solid red; */
+}
+
+.homepage .events_main .events_info {
+    margin-top: 75px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+.homepage .events_info .events_info_frame {
+    position: relative;
+    width: 579px;
+    height: 447px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homepage .events_img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* border-radius: 10px; */
+    background-size: cover;
+    /* border: 2px solid green; */
+}
+
+.homepage .events_desc {
+    position: absolute;
+    padding: 10px;
+    display: flex;
+    width: 480px;
+    height: auto;
+    bottom: 0px;
+    background: #ffffff;
+    box-shadow: 0px 40px 30px rgba(25, 25, 46, 0.04);
+    /* border-radius: 8px; */
+    /* border: 2px solid yellow; */
+}
+
+.homepage .events_desc .events_bott {
+    width: 97%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.homepage .events_desc .events_bott .bott_left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage .bott_left .event_title_speaker {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.homepage .event_title_speaker .event_organizator {
+    display: flex;
+    align-items: center;
+}
+
+.homepage .event_organizator .spec_text_author {
+    font-family: "GT Walsheim Pro";
+    font-style: normal;
+    line-height: 34px;
+
+    color: #140342;
+}
+
+.homepage .bott_left .text_desc {
+    font-family: "GT Walsheim Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+
+    color: #4f547b;
+}
+
+.homepage .bott_left .bott_info {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: 100%;
+    height: 16px;
+}
+
+.homepage .bott_info .bott_info_main {
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: auto;
+    height: 100%;
+
+    font-family: "GT Walsheim Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #4f547b;
+}
+
+.homepage .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    /* transition-property: 'transform';
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial); */
+    box-sizing: content-box;
+
+}
+
+.homepage .swiper-pagination-bullet {
+    margin-right: 5px;
+    width: 8px;
+    height: 8px;
+    text-align: center;
+    opacity: 1;
+    background: #ffffff;
+    border-radius: 50%;
+
+}
+
+.homepage .swiper-pagination-bullet-active {
+    background: #007aff;
+    border-radius: 50%;
 }
