@@ -1,5 +1,7 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../css/App.css";
 import "../css/navbar.css";
 import "../css/footer.css";
@@ -11,13 +13,14 @@ import { MemberPage } from "./screens/MemberPage";
 import { HelpPage } from "./screens/HelpPage";
 import { LoginPage } from "./screens/LoginPage";
 import { HomePage } from "./screens/HomePage";
+
 import { NavbarHome } from "./components/header";
 import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
-import { Footer } from "../app/components/footer";
+import { Footer } from "./components/footer";
 
 function App() {
-  const [path, setPath] = useState<string>();
+  const [path, setPath] = useState<string | undefined>();
   const main_path = window.location.pathname;
 
   return (

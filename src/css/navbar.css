@@ -13,20 +13,20 @@
 
 .format_brand.home_navbar {
     width: 100%;
-    height: 600px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     /* background: #F2F2F2; */
-    /* border: 2px solid yellow; */
+    /* border: 2px solid rgb(0, 255, 72); */
     background-color: #FFF;
 }
 
-.MuiContainer-root {
+/* .MuiContainer-root {
     max-width: 100% !important;
     padding: 0 !important;
-}
+} */
 
 
 .format .wrap_cont {
@@ -61,7 +61,7 @@
     height: 46px;
     /* border: 2px solid rgb(144, 0, 255); */
     margin-top: 4px;
-  
+
 }
 
 .format_brand .icon_config {
@@ -147,7 +147,7 @@
     justify-content: center;
     width: 1250px;
     height: 566px;
-    border-radius: 24px;
+    border-radius: 14px;
     background: rgba(219, 208, 204, 0.80);
 }
 
@@ -371,11 +371,11 @@
 }
 
 .advertising_stack {
-    height: 265px;
+    height: 365px;
     width: 100%;
     background: #DCE1DA;
     /* border: 2px solid yellow; */
-    margin-top: 89px;
+    /* margin-top: 89px; */
 
 }
 
