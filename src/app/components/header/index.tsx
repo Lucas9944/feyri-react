@@ -1,5 +1,5 @@
 
-import { Stack, Container, Box, Button, InputAdornment } from "@mui/material";
+import { Stack, Container, Box, Button, InputAdornment, Badge } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import PersonIcon from "@mui/icons-material/Person";
@@ -35,7 +35,10 @@ export function NavbarHome(props: any) {
             </Box>
             <Box className={"icons-line"} onClick={props.setPath}>
               <NavLink to={"/orders"}>
-                <ShoppingCartIcon />
+              <Badge badgeContent={3} color="primary">
+                  {" "}
+                  <ShoppingCartIcon />
+                </Badge>
               </NavLink>
             </Box>
             <Box className={"icons-line"} onClick={props.setPath}>
