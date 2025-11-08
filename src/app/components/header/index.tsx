@@ -1,8 +1,10 @@
-import React from "react";
-import { Input } from "@mui/joy";
+
 import { Stack, Container, Box, Button, InputAdornment } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
+import PersonIcon from "@mui/icons-material/Person";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export function NavbarHome(props: any) {
   return (
@@ -10,49 +12,92 @@ export function NavbarHome(props: any) {
       <Container className="wrap_cont">
         <Stack
           flexDirection={"row"}
-          className="navbar_config"
+          className="icon_config"
           justifyContent={"space-between"}
         >
-          <Box className="logo_brand">Feyri_Beauty</Box>
+          <Box className="logo_brand">INSPIRINGSPACES</Box>
           <Stack
             flexDirection={"row"}
             justifyContent="space-evenly"
             alignItems={"center"}
-            className={"navbar_links"}
+            className={"icon_links"}
           >
-            <Box className={"hover-line"} onClick={props.setPath}>
-              <NavLink to={"/"} className="underline">
-                Home
+            <Box className={"icons-line"} onClick={props.setPath}>
+              <NavLink to={"/"} >
+                <SearchIcon />
               </NavLink>
             </Box>
 
-            <Box className={"hover-line"} onClick={props.setPath}>
+            <Box className={"icons-line"} onClick={props.setPath}>
               <NavLink to={"/brand"} className="underline">
-                Brand
+                <PersonIcon />
               </NavLink>
             </Box>
-            <Box className={"hover-line"} onClick={props.setPath}>
-              <NavLink to={"/orders"} className="underline">
-                Buyurtma
+            <Box className={"icons-line"} onClick={props.setPath}>
+              <NavLink to={"/orders"}>
+                <ShoppingCartIcon />
               </NavLink>
             </Box>
-            <Box className={"hover-line"} onClick={props.setPath}>
+            <Box className={"icons-line"} onClick={props.setPath}>
               <NavLink to={"/community"} className="underline">
-                Community
-              </NavLink>
-            </Box>
-            <Box className={"hover-line"} onClick={props.setPath}>
-              <NavLink to={"/help"} className="underline">
-                Help
+                <FavoriteIcon />
+
+
+
+
+
               </NavLink>
             </Box>
           </Stack>
+        </Stack>
+        <Stack className="wrap_config">
+          <Stack className="navbar_border_first"> </Stack>
+          <Stack
+            flexDirection={"row"}
+            className="navbar_config"
+            justifyContent={"space-between"}
+          >
+            <Stack
+              flexDirection={"row"}
+              justifyContent="space-evenly"
+              alignItems={"center"}
+              className={"navbar_links"}
+            >
+              <Box className={"hover-line"} onClick={props.setPath}>
+                <NavLink to={"/"} className="underline">
+                  Home
+                </NavLink>
+              </Box>
+
+              <Box className={"hover-line"} onClick={props.setPath}>
+                <NavLink to={"/brand"} className="underline">
+                  Brand
+                </NavLink>
+              </Box>
+              <Box className={"hover-line"} onClick={props.setPath}>
+                <NavLink to={"/orders"} className="underline">
+                  Buyurtma
+                </NavLink>
+              </Box>
+              <Box className={"hover-line"} onClick={props.setPath}>
+                <NavLink to={"/community"} className="underline">
+                  Community
+                </NavLink>
+              </Box>
+              <Box className={"hover-line"} onClick={props.setPath}>
+                <NavLink to={"/help"} className="underline">
+                  Help
+                </NavLink>
+              </Box>
+            </Stack>
+          </Stack>
+          <Stack className="navbar_border_first"></Stack>
         </Stack>
 
         <Stack className="head_information">
           <Stack className="wrap_stack_first">
             <Box className="text_bolder">
-              Buy your <br /> dream cosmetics
+              Buy your <br /> dream interior
             </Box>
             <Box
               className="split_screen"
@@ -64,7 +109,7 @@ export function NavbarHome(props: any) {
             >
               <div>
                 <p>50+</p>
-                <small>Cosmetics</small>
+                <small>Furniture</small>
               </div>
               <div className="vertical_border"></div>
               <div>
