@@ -66,4 +66,151 @@
 .homepage .interior_frame {
     width: 100%;
     background-color: #FFF;
+    padding-bottom: 50px;
+
+
+}
+
+
+.interior_frame .card_joy {
+    /* border: 2px solid yellow; */
+    width: 1300px;
+    height: 566px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.interior_frame .card_joy_2 {
+    /* border: 2px solid rgb(0, 30, 255); */
+    width: 1300px;
+    height: 566px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 25px;
+
+}
+
+.wrapp_product {
+    /* border: 2px solid darkorchid; */
+    height: 550px;
+    margin-top: -15px;
+}
+
+.product_price {
+    /* border: 2px solid rgb(12, 134, 119); */
+    height: 95px;
+    width: 306px;
+    margin-top: 25px;
+
+}
+
+.bedsheet_sets {
+    width: 100%;
+    background-image: url("../../public/home/sa.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-color: #FFF;
+
+
+}
+
+
+
+.sheets_sail {
+    display: flex;
+    /* border: 2px solid darkorchid; */
+    justify-content: center;
+}
+
+.rectangle_sail {
+    background-color: #FFF;
+    width: 550px;
+    height: 340px;
+    opacity: 70%;
+    border: none;
+    margin-left: -600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapp_sail_content {
+
+    /* border: 2px solid yellow; */
+    width: 315px;
+    height: 220px;
+
+}
+
+.ads_interior_frame {
+    width: 100%;
+    height: 693px;
+    display: flex;
+    overflow: hidden;
+
+    /* border: 2px solid red; */
+    margin-bottom: 70px;
+}
+
+.ads_video {
+    width: 100%;
+    background: #FFF;
+    display: flex;
+    overflow: hidden;
+    /* border: 2px solid rgb(0, 170, 255); */
+    transform: scale(1.7);
+}
+
+.wrapp_card_joy_rating {
+    /* border: 2px solid rgb(135, 250, 187); */
+    height: 1200px;
+}
+.card_joy_rating {
+    /* border: 2px solid rgb(0, 200, 255); */
+    width: 1300px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+
+
+
+.wrapp_product_rating {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+    /* border: 2px solid rgb(65, 50, 204); */
+    height: 310px;
+    width: 415px;
+    /* margin-top: -15px; */
+
+}
+
+.product_price_rating {
+    /* border: 2px solid rgb(40, 204, 185); */
+    height: 105px;
+    width: 200px;
+    /* margin-top: 25px; */
+
+}
+
+.wrapp_input_email {
+    /* border: 2px solid red; */
+    height: 150px;
+    /* display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between; */
 }

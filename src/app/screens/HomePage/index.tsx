@@ -3,7 +3,7 @@ import { Advertisements } from "./advertiSements";
 import { InfoBeauty} from "./infoBeauty";
 import { LoadProducts } from "./loadProducts";
 import { Statistics } from "./statistics";
-import { TopInterior } from "./topCosmetic";
+import { TopCosmetic } from "./topCosmetic";
 import { TopRating } from "./topRating";
 import "../../../css/home.css";
 
@@ -11,7 +11,7 @@ export function HomePage() {
   return (
     <div className="homepage">
       <Statistics />
-      <TopInterior />
+      <TopCosmetic/>
       <Advertisements />
       <InfoBeauty/>
       <TopRating />
