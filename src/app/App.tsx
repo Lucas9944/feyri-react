@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import { Box, Stack, Container, Typography } from "@mui/material";
 import "../css/App.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+=======
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import { NavbarHome } from "./components/header";
+import { NavbarBrand } from "./components/header/brand";
+import { NavbarOthers } from "./components/header/others";
+import { Footer } from "./components/footer";
+>>>>>>> 40cc647 (feat: Alternative error fix?)
 
 
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -13,6 +22,7 @@ import { MemberPage } from "./screens/MemberPage";
 import { HelpPage } from "./screens/HelpPage";
 import { LoginPage } from "./screens/LoginPage";
 import { HomePage } from "./screens/HomePage";
+<<<<<<< HEAD
 import { NavbarHome } from "./components/header";
 import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
@@ -20,6 +30,15 @@ import { Footer } from "./components/footer";
 
 function App() {
   const [path, setPath] = useState();
+=======
+
+import "../css/App.css";
+import "../css/navbar.css";
+import "../css/footer.css";
+
+function App() {
+  const [path, setPath] = useState("");
+>>>>>>> 40cc647 (feat: Alternative error fix?)
   const main_path = window.location.pathname;
 
 
@@ -33,6 +52,7 @@ function App() {
         <NavbarOthers setPath={setPath} />
       )}
 
+      {/* ✅ React Router v6 sintaksisi */}
       <Routes>
         <Route path="/brand">
           <BrandPage />

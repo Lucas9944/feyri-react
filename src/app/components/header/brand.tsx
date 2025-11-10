@@ -105,6 +105,7 @@ export function NavbarBrand(props: any) {
             HOMEPAGE/ BRAND/ H&M HOME/ BEDROOM
           </Stack>
         </Stack>
+<<<<<<< HEAD
 
 
 
@@ -127,6 +128,27 @@ export function NavbarBrand(props: any) {
 
 
 
+=======
+        <Stack
+        className="advertising_stack"
+        sx={{
+          flexDirection: "column",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <Box className="advertising_text" sx={{ fontFamily: "monospace" }}>
+          Member Exlusive
+        </Box>
+        <Box className="advertising_text_2">
+          15% off everything + extra $10 off for plus status
+        </Box>
+        <Box className="advertising_text_3">
+          Not a Member? Join now to shop.
+        </Box>
+      </Stack>
+>>>>>>> 40cc647 (feat: Alternative error fix?)
       </Container>
       <Stack
         className="advertising_stack"

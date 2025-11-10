@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 export function Advertisements() {
     return (
       <div className="ads_interior_frame">
@@ -19,3 +20,15 @@ export function Advertisements() {
       </div>
     );
   }
+=======
+import { Container } from "@mui/material";
+import React from "react";
+
+export function Advertisements() {
+    return (
+        <div className="video_frame">
+            <Container>Advertisements video interior</Container>
+        </div>
+    );
+}
+>>>>>>> 40cc647 (feat: Alternative error fix?)

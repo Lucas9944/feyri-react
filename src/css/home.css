@@ -3,6 +3,10 @@
     background-color: #FFF;
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40cc647 (feat: Alternative error fix?)
 }
 
 
@@ -65,6 +69,7 @@
 .homepage .interior_frame {
     width: 100%;
     background-color: #FFF;
+<<<<<<< HEAD
     padding-bottom: 50px;
 
 
@@ -377,3 +382,6 @@
     background: #007aff;
     border-radius: 50%;
 }
+=======
+}
+>>>>>>> 40cc647 (feat: Alternative error fix?)
