@@ -1,6 +1,6 @@
 
 import { BedSheetsSail } from "./bedsheetsSail";
-import { SwiperEvents } from "./swiperEvents";
+import { SwiperEvents } from "./SwiperEvents";
 import { Statistics } from "./statistics";
 import { TopInterior } from "./topInterior";
 import { TopRating } from "./topRating";
