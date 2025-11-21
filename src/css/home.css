@@ -1,17 +1,13 @@
-.homepage .static_frame {
+/* .homepage .static_frame {
     width: 100%;
     background-color: #FFF;
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 40cc647 (feat: Alternative error fix?)
-}
+} */
 
 
-.static_frame .wrap_static_first {
-    /* border: 2px solid green; */
+/* .static_frame .wrap_static_first {
+
     width: 600px;
     height: 368px;
     flex-shrink: 0;
@@ -23,7 +19,7 @@
 }
 
 .wrap_static_first .photo_box {
-    /* border: 2px solid yellow; */
+  
     width: 353px;
     height: 353px;
     flex-shrink: 0;
@@ -32,7 +28,7 @@
 }
 
 .wrap_static_second .photo_box {
-    /* border: 2px solid yellow; */
+
     flex-shrink: 0;
     margin-top: 5px;
 
@@ -41,21 +37,30 @@
 
 
 .wrap_static_first .text_box {
-    /* border: 2px solid blue; */
+
     height: 100px;
     width: 250px;
     margin-left: -75px;
 }
 
+.text_box h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #2F2528;
+    margin: 0;
+  }
+  
 .wrap_static_second .text_box {
-    /* border: 2px solid rgb(0, 255, 89); */
+  
     height: 100px;
     width: 250px;
     margin-right: 105px;
 }
 
 .static_frame .wrap_static_second {
-    /* border: 2px solid darkorange; */
+
     width: 600px;
     height: 368px;
     flex-shrink: 0;
@@ -64,12 +69,145 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
-}
+} */
+
+/* SECTION FONI */
+.static_frame {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 80px 0;
+  }
+  
+  /* IKKI KARTA QATORI */
+  .static_row {
+    width: 100%;
+  }
+  
+  /* HAR BIR KARTA – CHAP & O‘NG */
+  .static_card {
+    flex: 1 1 0;
+    min-height: 320px;
+  
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    padding: 40px 36px;
+    box-sizing: border-box;
+  
+    box-shadow: 0 18px 35px rgba(244, 143, 177, 0.08);
+  }
+  
+  /* CHAP – biroz oqroq fon */
+  .static_card--light {
+    background: #FAFAFA;
+  }
+  
+  /* O‘NG – biroz pushti/bej fon */
+  .static_card--tinted {
+    background: #F6F1F3;
+  }
+  
+  /* RASM JOYI */
+  .photo_box {
+    width: 220px;
+    height: 220px;
+    margin-right: 32px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .photo_box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  /* MATN BLOKI */
+  .text_box {
+    flex: 1;
+  }
+  
+  /* KICHIK TAGLINE – HEADER / FOOTER STYLEGA MOS */
+  .static_tagline {
+    margin: 0 0 8px;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(47, 37, 40, 0.55);
+  }
+  
+  /* PRODUCT NOMI */
+  .text_box h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #2F2528;
+    margin: 0 0 8px;
+  }
+  
+  /* QISQA TASNIF */
+  .static_desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(47, 37, 40, 0.72);
+    margin: 0 0 20px;
+  }
+  
+  /* TUGMA – FEYRI PINK */
+  .static_btn {
+    border-radius: 999px;
+    border-color: #F48FB1 !important;
+    color: #F48FB1 !important;
+    text-transform: none;
+    letter-spacing: 0.06em;
+    font-family: "Poppins", sans-serif;
+    padding: 8px 22px;
+  }
+  
+  .static_btn:hover {
+    background: #F48FB1 !important;
+    color: #FFFFFF !important;
+    border-color: #F48FB1 !important;
+  }
+  
+  /* RESPONSIVE – TABLET/MOBILE UCHUN KARTALARNI USTMA-UST QILish */
+  @media (max-width: 1024px) {
+    .static_row {
+      flex-direction: column;
+      gap: 24px;
+    }
+  
+    .static_card {
+      padding: 28px 22px;
+    }
+  
+    .photo_box {
+      width: 180px;
+      height: 180px;
+      margin-right: 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .static_card {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .photo_box {
+      margin: 0 0 18px;
+    }
+  }
+  
 
 .homepage .interior_frame {
     width: 100%;
     background-color: #FFF;
-<<<<<<< HEAD
     padding-bottom: 50px;
 
 
@@ -348,7 +486,7 @@
 
     font-family: "GT Walsheim Pro";
     font-style: normal;
-    font-weight: 400;
+    font-weight: 400;  
     font-size: 14px;
     line-height: 16px;
 
@@ -357,7 +495,7 @@
 
 .homepage .swiper-wrapper {
     position: relative;
-    width: 100%;
+    width: 100%;     
     height: 100%;
     z-index: 1;
     display: flex;
@@ -382,6 +520,210 @@
     background: #007aff;
     border-radius: 50%;
 }
-=======
+
+
+/* ==== TOP RATED SECTION – FEYRI BEAUTY ==== */
+
+.toprated_frame {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 80px 0 100px;
+  }
+  
+  /* Header */
+  
+  .toprated_header {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 40px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .toprated_kicker {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 11px !important;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(47, 37, 40, 0.6);
+    margin-bottom: 8px !important;
+  }
+  
+  .toprated_title {
+    font-family: "Playfair Display", "Times New Roman", serif !important;
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em;
+    color: #2f2528;
+    margin-bottom: 10px !important;
+  }
+  
+  .toprated_subtitle {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    color: rgba(47, 37, 40, 0.7);
+  }
+  
+  /* Grid */
+  
+  .toprated_grid {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+  
+  /* Card */
+  
+  .toprated_card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 22px 20px 20px;
+    box-shadow: 0 18px 35px rgba(244, 143, 177, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  
+  .toprated_card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 45px rgba(244, 143, 177, 0.18);
+
+  }
+  
+  /* Image box – pastel spotlight */
+  
+  .toprated_img_box {
+    width: 100%;
+    height: 220px;          /* rasm zonasining balandligi – xohlasang 200–240px oralig‘ida o‘ynatishing mumkin */
+    border-radius: 18px;
+    background: none;       /* pushti gradientni olib tashlaymiz */
+    padding: 0;
+    margin-bottom: 16px;
+    overflow: hidden;       /* rasm border-radius tashqarisiga chiqmasin */
+  }
+  
+
+  .toprated_img_box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    /* cover o‘rniga contain */
+    object-position: center;
+    display: block;
+  }
+
+
+
+  
+  /* Text */
+  
+  .toprated_tag {
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(47, 37, 40, 0.55);
+    margin-bottom: 6px;
+  }
+  
+  .toprated_name {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2f2528;
+    margin-bottom: 6px;
+  }
+  
+  .toprated_desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(47, 37, 40, 0.72);
+    margin-bottom: 12px;
+  }
+  
+  /* Rating + price line */
+  
+  .toprated_meta {
+    margin-bottom: 14px;
+  }
+  
+  .toprated_rating_value {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    color: rgba(47, 37, 40, 0.7);
+  }
+  
+  .toprated_price {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2f2528;
+  }
+  
+  /* Button */
+  
+  .toprated_btn {
+    align-self: flex-start;
+    border-radius: 999px !important;
+    border-color: #f48fb1 !important;
+    color: #f48fb1 !important;
+    text-transform: none !important;
+    letter-spacing: 0.06em !important;
+    font-family: "Poppins", sans-serif !important;
+    padding: 6px 18px !important;
+    font-size: 12px !important;
+  }
+  
+  .toprated_btn:hover {
+    background: #f48fb1 !important;
+    color: #ffffff !important;
+    border-color: #f48fb1 !important;
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 1200px) {
+    .toprated_grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .toprated_grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .toprated_grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .toprated_card {
+      padding: 18px 16px 18px;
+    }
+  
+    .toprated_img_box {
+      height: 170px;
+    }
+  }
+
+  
+  .static_card .product_img {
+    width: 100%;
+    height: 200px;  /* shu rasm balandligi */
+    object-fit: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
->>>>>>> 40cc647 (feat: Alternative error fix?)
+.static_card .product_img img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}

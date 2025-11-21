@@ -1,7 +1,6 @@
 import { Box, Button, Container, Stack } from "@mui/material";
-import React from "react";
 
-export function beautyGleam() {
+export function BedSheetsSail() {
   return (
     <div className="bedsheet_sets">
       <Container>

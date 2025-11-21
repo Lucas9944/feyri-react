@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { Box, Container, Stack } from "@mui/material";
-import React from "react";
 
 export function Footer() {
   return (
@@ -9,7 +8,7 @@ export function Footer() {
         <Stack className="main_footer_container">
           <Stack flexDirection={"row"} style={{ height: "242px" }}>
             <Stack className="info" flexDirection={"column"}>
-              <Box className="logo_brand_footer">INSPIRINGSPACES</Box>
+              <Box className="logo_brand_footer">FEYRI BEAUTY</Box>
               <Box className="main_text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor Sed ut perspiciatis unde omnis iste
@@ -28,7 +27,7 @@ export function Footer() {
                   <img src={"/icons/twitter.svg"} />
                 </Box>
                 <Box>
-                  <img src={"/icons/instagram.svg"} />
+                  <img src={"/icons/instagram.svg"}  alt="https://www.instagram.com/feyri_beauty?igsh=MXBzaHRvbHhqNDh6ag%3D%3D&utm_source=qr"/>
                 </Box>
                 <Box>
                   <img src={"/icons/youtube.svg"} />
@@ -73,7 +72,7 @@ export function Footer() {
         </Stack>
       </Container>
       <Stack className="copyrights">
-        Copyright INSPIRINGSPACES 2022, All right reserved
+        Copyright FEYRIBEAUTY 2025, All right reserved
       </Stack>
     </div>
   );

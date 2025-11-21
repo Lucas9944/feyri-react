@@ -1,62 +1,74 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+  import { Stack, Container, Box, Badge } from "@mui/material";
+  import { NavLink } from "react-router-dom";
 
-import React from "react";
-import {
-  Stack,
-  Container,
-  Box,
-  Button,
-  InputAdornment,
-  Badge,
-} from "@mui/material";
-import { NavLink } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
-import PersonIcon from "@mui/icons-material/Person";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-
-export function NavbarBrand(props: any) {
-  return (
-    <div className="format_brand home_navbar">
-      <Container className="wrap_cont_brand">
-        <Stack
-          flexDirection={"row"}
-          className="icon_config"
-          justifyContent={"space-between"}
-        >
-          <Box className="logo_brand">INSPIRINGSPACES</Box>
+  export function NavbarBrand(props: any) {
+    return (
+      <div className="format_brand home_navbar">
+        <Container className="wrap_cont_brand">
           <Stack
             flexDirection={"row"}
-            justifyContent="space-evenly"
-            alignItems={"center"}
-            className={"icon_links"}
+            className="icon_config"
+            justifyContent={"space-between"}
           >
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/"}>
-                <SearchIcon />
-              </NavLink>
+            {/* LOGO */}
+            <Box className="logo_brand logo_brand--gold">
+              FEYRI BEAUTY
             </Box>
 
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/brand"}>
-                <PersonIcon />
-              </NavLink>
-            </Box>
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/orders"}>
-                <Badge badgeContent={3} color="primary">
-                  {" "}
-                  <ShoppingCartIcon />
-                </Badge>
-              </NavLink>
-            </Box>
+            <Stack
+              flexDirection={"row"}
+              justifyContent="space-evenly"
+              alignItems={"center"}
+              className={"icon_links"}
+            >
+              {/* SEARCH */}
+              <Box className={"icons-line"} onClick={props.setPath}>
+                <NavLink to={"/"}>
+                  <img
+                    src="/icons/feyri_icon_search.png"
+                    alt="Search"
+                    className="nav_icon_img"
+                  />
+                </NavLink>
+              </Box>
+
+              {/* USER / PROFILE */}
+              <Box className={"icons-line"} onClick={props.setPath}>
+                <NavLink to={"/brand"}>
+                  <img
+                    src="/icons/feyri_icon_user.png"
+                    alt="Account"
+                    className="nav_icon_img"
+                  />
+                </NavLink>
+              </Box>
+
+              {/* CART */}
+              <Box className={"icons-line"} onClick={props.setPath}>
+                <NavLink to={"/orders"}>
+                  <Badge badgeContent={3} color="primary" overlap="circular">
+                    <img
+                      src="/icons/feyri_icon_cart.png"
+                      alt="Cart"
+                      className="nav_icon_img"
+                    />
+                  </Badge>
+                </NavLink>
+              </Box>
+
+            {/* HEART / WISHLIST */}
             <Box className={"icons-line"} onClick={props.setPath}>
               <NavLink to={"/community"} className="underline">
-                <FavoriteIcon />
+                <img
+                  src="/icons/feyri_icon_heart.png"
+                  alt="Wishlist"
+                  className="nav_icon_img"
+                />
               </NavLink>
             </Box>
           </Stack>
         </Stack>
+
         <Stack className="wrap_config">
           <Stack className="navbar_border_first"> </Stack>
           <Stack
@@ -101,57 +113,14 @@ export function NavbarBrand(props: any) {
           <Stack className="navbar_border_first"></Stack>
 
           <Stack className="address_routing">
-            {" "}
-            HOMEPAGE/ BRAND/ H&M HOME/ BEDROOM
+            HOMEPAGE / BRAND / SPECIAL COLLECTION
           </Stack>
         </Stack>
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-        <Stack
-        className="advertising_stack"
-        sx={{
-          flexDirection: "column",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <Box className="advertising_text" sx={{ fontFamily: "monospace" }}>
-          Member Exlusive
-        </Box>
-        <Box className="advertising_text_2">
-          15% off everything + extra $10 off for plus status
-        </Box>
-        <Box className="advertising_text_3">
-          Not a Member? Join now to shop.
-        </Box>
-      </Stack>
->>>>>>> 40cc647 (feat: Alternative error fix?)
       </Container>
+
+      {/* Night look uchun gold/black promo banner */}
       <Stack
-        className="advertising_stack"
+        className="advertising_stack advertising_stack--night"
         sx={{
           flexDirection: "column",
           display: "flex",
@@ -160,13 +129,13 @@ export function NavbarBrand(props: any) {
         }}
       >
         <Box className="advertising_text" sx={{ fontFamily: "monospace" }}>
-          Member Exlusive
+          Night-Out Collection
         </Box>
         <Box className="advertising_text_2">
-          15% off everything + extra $10 off for plus status
+          Golden perfume, bold mascara & black-gold lipstick
         </Box>
         <Box className="advertising_text_3">
-          Not a Member? Join now to shop.
+          Members get exclusive early access.
         </Box>
       </Stack>
     </div>

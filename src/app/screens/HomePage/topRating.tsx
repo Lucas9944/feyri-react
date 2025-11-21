@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
 import { Container, Stack, Box, Button, TextField } from "@mui/material";
 import Card from "@mui/joy/Card";
 import CardCover from "@mui/joy/CardCover";
@@ -344,15 +342,4 @@ export function TopRating() {
       </Container>
     </div>
   );
-=======
-import { Container } from "@mui/material";
-import React from "react";
-
-export function TopRating() {
-    return (
-        <div className="rating_frame">
-            <Container>Top Rating frame</Container>
-        </div>
-    );
->>>>>>> 40cc647 (feat: Alternative error fix?)
 }

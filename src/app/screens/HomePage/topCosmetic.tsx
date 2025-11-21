@@ -1,4 +1,3 @@
-import React from "react";
 
 
 import { Box, Container, Stack } from "@mui/material";
@@ -9,7 +8,7 @@ import Typography from "@mui/joy/Typography";
 import { CssVarsProvider } from "@mui/joy/styles";
 import { Rating } from "react-simple-star-rating";
 
-export function TopCosmetic() {
+export function TopInterior() {
   return (
     <div className="interior_frame">
       <Container>

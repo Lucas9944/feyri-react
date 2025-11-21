@@ -1,250 +1,236 @@
+/* === FEYRI BEAUTY FOOTER – SOFT PINK / CLEAN WHITE THEME === */
 
 .footer_config {
-
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 509px;
-    background: #323334;
-    /* border: 2px solid red; */
-}
-
-.footer_config .main_footer_container {
+  
+    /* Dark fondan chiqib, header bilan bir xil pastel kayfiyat */
+    background: linear-gradient(180deg, #ffffff 0%, #fff7fa 100%);
+    border-top: 1px solid #f1e3ec;
+    padding-top: 48px;
+  }
+  
+  /* Ichki container */
+  .footer_config .main_footer_container {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 1250px;
-    height: 377px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    /* border: 2px solid rgb(39, 39, 213); */
-}
-
-.main_footer_container .main_text {
+    min-height: 260px;
+    margin-bottom: 32px;
+  }
+  
+  /* === LEFT COLUMN – BRAND INFO === */
+  
+  .footer_config .info {
     position: relative;
     width: 340px;
-    height: 97.22px;
-    margin-top: 50px;
-    /* border: 2px solid rgb(85, 100, 0); */
-    color: rgba(255, 255, 255, 0.50);
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-    /* 137.5% */
-
-}
-
-.main_footer_container .main_text_bold {
-    position: relative;
-    width: 340px;
-    height: 97.22px;
-    margin-top: 30px;
-    /* border: 2px solid rgb(85, 100, 0); */
-    color: #FFF;
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22px;
-    /* 137.5% */
-
-}
-
-.main_footer_container .contact_links {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 340px;
-    height: 20px;
-    margin-top: 20px;
-    /* border: 2px solid yellow; */
-}
-
-.main_footer_container .parts {
-    position: relative;
+    /* height: 300px;  <-- BUNi ISTASA OLIB TAShLASA HAM BO'LADI */
     display: flex;
     flex-direction: column;
-    width: 118px;
-    height: 188px;
-    margin-left: 100px;
-    /* border: 2px solid yellow; */
+    justify-content: flex-start;   /* text + ikonalar bir blok sifatida yuqoridan turadi */
 }
-
-.parts .part_subject {
-    position: relative;
-    width: 109px;
-    height: 32.41px;
-    /* border: 2px solid lightcoral; */
-
-    color: #FFF;
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.parts .divider {
-    position: relative;
-    width: 45.4px;
-    height: 1.91px;
-    margin-top: 11.44px;
-    border: 1px solid #FFF;
-}
-
-
-.parts .targets {
-    position: relative;
-    width: 118.05px;
-    height: 129.63px;
-    margin-top: 19.6px;
-
-
-
-
-    color: #FFF;
-    font-family: 'Roboto';
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 28px;
-    /* border: 2px solid lightskyblue; */
-}
-
-
-
-.footer_config .copyrights {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 52px;
-    /* margin-top: 15px; */
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 34px;
-    background: #222;
-    /* or 212% */
-    color: #FFF;
-    /* border: 2px solid darkorange; */
-}
-
-.footer_config .info {
-    position: relative;
-    width: 340px;
-    height: 300px;
-    /* border: 2px solid darkorchid; */
-}
-
-.main_footer_container .find_us {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 297px;
-    height: 150px;
-    /* border: 2px solid rgb(32, 41, 203); */
-    margin-bottom: 30px;
-    margin-top: -2px;
-}
-
-.find_us .find {
-    position: relative;
-    width: 150px;
-    height: 32.91px;
-    color: #FFF;
-    /* border: 2px solid red; */
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-right: 145px;
-}
-
-.find_us .divider {
-    position: relative;
-    width: 45.4px;
-    height: 1.91px;
-    margin-top: 6.81px;
-    background: #FFF;
-}
-
-.find_us .details {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 295px;
-    height: 90px;
-    /* border: 2px solid darkorange; */
-}
-
-.details .detail_first {
-    position: relative;
-    width: 100px;
-    height: 28px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.50);
-    /* border: 2px solid green; */
-}
-
-.details .detail_second {
-    position: relative;
-    width: 269.12px;
-    height: 50px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(255, 255, 255, 0.50);
-    /* border: 2px solid yellow; */
-}
-
-.logo_brand_footer {
-    color: #FFF;
+  
+  /* Logo – header dagi gradient bilan bir xil */
+  .logo_brand_footer {
     font-family: 'Quella';
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    /* border: 2px solid yellow; */
+    letter-spacing: 0.18em;
+  
+    background: linear-gradient(90deg, #fce4ec, #f48fb1, #c39bd3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
     cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .logo_brand_footer:hover {
+    transform: scale(1.03);
+    opacity: 0.95;
+  }
+  
+  .main_footer_container .main_text {
+    width: 340px;
+    margin-top: 24px;
+  
+    color: rgba(47, 37, 40, 0.7);
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  
+  .main_footer_container .main_text_bold {
+    width: 340px;
+    margin-top: 20px;
+  
+    color: #2f2528;
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+  }
+  
+  /* Social icons – yumshoq pink pills */
+  .main_footer_container .contact_links {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;   /* chapdan tartib bilan */
+    gap: 24px;                     /* oralarini teng qilamiz */
+    width: 340px;
+    height: auto;
+    margin-top: 6px;              /* tekstdan juda uzoq bo‘lmasin */
+    margin-bottom: 24px;           /* pastdan ozgina “nafas” qoldiramiz */
 }
-
-.logo_brand_footer:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
-    cursor: pointer;
-}
-
-.line_border {
-    border: 1px solid rgba(255, 255, 255, 0.50);
-    width: 296px;
-    height: 0px;
-    flex-shrink: 0;
-}
-
-.wrap_find_us {
-    /* border: 2px solid darkcyan; */
-    height: 350px;
-    width: 400px;
+  
+  .main_footer_container .contact_links > div {
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    background: #ffe5ef;
     display: flex;
     align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(244, 143, 177, 0.2);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+  
+  .main_footer_container .contact_links img {
+    width: 18px;
+    height: 18px;
+    /* Hamma ikonlar bir xil rangda ko‘rinsin */
+    filter: brightness(0) saturate(0) opacity(0.8);
+  }
+  
+  .main_footer_container .contact_links > div:hover {
+    transform: translateY(-2px);
+    background: #f48fb1;
+    box-shadow: 0 6px 16px rgba(244, 143, 177, 0.35);
+  }
+  
+  .main_footer_container .contact_links > div:hover img {
+    filter: brightness(100);
+  }
+  
+  /* === MIDDLE COLUMNS – LINKS === */
+  
+  .main_footer_container .parts {
+    display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-}
+    width: 160px;
+    min-height: 188px;
+    margin-left: 64px;
+  }
+  
+  .parts .part_subject {
+    color: #2f2528;
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  .parts .divider {
+    width: 40px;
+    height: 1px;
+    margin-top: 10px;
+    border: none;
+    background: #f48fb1;
+  }
+  
+  .parts .targets {
+    margin-top: 16px;
+    color: #6b5b5b;
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  
+  /* === RIGHT COLUMN – BLOG / NEWS === */
+  
+  .wrap_find_us {
+    width: 320px;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 64px;
+  }
+  
+  .main_footer_container .find_us {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .find_us .find {
+    color: #2f2528;
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont,
+      'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  
+  .line_border {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background: rgba(244, 143, 177, 0.35);
+    margin: 12px 0;
+  }
+  
+  .find_us .details {
+    width: 100%;
+  }
+  
+  .details .detail_first {
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(47, 37, 40, 0.6);
+    margin-bottom: 4px;
+  }
+  
+  .details .detail_second {
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    color: rgba(47, 37, 40, 0.6);
+  }
+  
+  /* === COPYRIGHT STRIP === */
+  
+  .footer_config .copyrights {
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-family: 'Poppins', system-ui, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+  
+    background: #ffffff;
+    color: #9e7e8a;
+    border-top: 1px solid #f1e3ec;
+  }
+  

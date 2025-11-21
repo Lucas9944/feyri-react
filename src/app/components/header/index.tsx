@@ -1,10 +1,7 @@
-
-import { Stack, Container, Box, Button, InputAdornment, Badge } from "@mui/material";
+import { Stack, Container, Box, Badge } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search";
-import PersonIcon from "@mui/icons-material/Person";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import SearchIcon from "@mui/icons-material/Search"; // faqat hero search uchun kerak
+
 
 export function NavbarHome(props: any) {
   return (
@@ -15,44 +12,68 @@ export function NavbarHome(props: any) {
           className="icon_config"
           justifyContent={"space-between"}
         >
-          <Box className="logo_brand">INSPIRINGSPACES</Box>
+          {/* PUSHTI GRADIENT LOGO */}
+          <Box className="logo_brand logo_brand--home">FEYRI BEAUTY</Box>
+          <Box className="logo_tagline">GO'ZALLIK – BU SENING SEHRING</Box>
+
           <Stack
-            flexDirection={"row"}
-            justifyContent="space-evenly"
-            alignItems={"center"}
-            className={"icon_links"}
-          >
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/"} >
-                <SearchIcon />
-              </NavLink>
-            </Box>
+  flexDirection={"row"}
+  justifyContent="space-evenly"
+  alignItems={"center"}
+  className="icon_links"
+>
+  <Box className="icon_btn" onClick={props.setPath}>
+    <NavLink to={"/"}>
+      <img
+        src="/icons/rasm4.jpeg"
+        alt="Search"
+        className="nav_icon_img"
+      />
+    </NavLink>
+  </Box>
 
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/brand"} className="underline">
-                <PersonIcon />
-              </NavLink>
-            </Box>
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/orders"}>
-              <Badge badgeContent={3} color="primary">
-                  {" "}
-                  <ShoppingCartIcon />
-                </Badge>
-              </NavLink>
-            </Box>
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/community"} className="underline">
-                <FavoriteIcon />
+  <Box className="icon_btn" onClick={props.setPath}>
+    <NavLink to={"/brand"}>
+      <img
+        src="/icons/rasm2.jpeg"
+        alt="User"
+        className="nav_icon_img"
+      />
+    </NavLink>
+  </Box>
+
+  <Box className="icon_btn" onClick={props.setPath}>
+  <NavLink to={"/orders"}>
+    <Badge
+      badgeContent={23}
+      color="primary"
+      overlap="circular"
+      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      className="nav_badge"
+    >
+      <img
+        src="/icons/feyri_icon_cart.png"
+        alt="Cart"
+        className="nav_icon_img"
+      />
+    </Badge>
+  </NavLink>
+</Box>
 
 
+  <Box className="icon_btn" onClick={props.setPath}>
+    <NavLink to={"/community"}>
+      <img
+        src="/icons/rasm3.jpeg"
+        alt="Heart"
+        className="nav_icon_img"
+      />
+    </NavLink>
+  </Box>
+</Stack>
 
-
-
-              </NavLink>
-            </Box>
-          </Stack>
         </Stack>
+
         <Stack className="wrap_config">
           <Stack className="navbar_border_first"> </Stack>
           <Stack
@@ -79,7 +100,7 @@ export function NavbarHome(props: any) {
               </Box>
               <Box className={"hover-line"} onClick={props.setPath}>
                 <NavLink to={"/orders"} className="underline">
-                  Buyurtma
+                  ORDER
                 </NavLink>
               </Box>
               <Box className={"hover-line"} onClick={props.setPath}>
@@ -99,34 +120,40 @@ export function NavbarHome(props: any) {
 
         <Stack className="head_information">
           <Stack className="wrap_stack_first">
+            {/* BEAUTY COPY */}
             <Box className="text_bolder">
-              Buy your <br /> dream interior
-            </Box>
-            <Box
-              className="split_screen"
-              sx={{
-                fontWeight: "bold",
-                textTransform: "capitalize",
-                fontFamily: "sans-serif",
-              }}
-            >
-              <div>
-                <p>50+</p>
-                <small>Furniture</small>
-              </div>
-              <div className="vertical_border"></div>
-              <div>
-                <p>100+</p>
-                <small>Customers</small>
-              </div>
-            </Box>
+  O‘zingga mos    <br /> go‘zallikni top
+</Box>
+
+            <Box className="hero_subcopy">
+  50+ ehtiyotkorlik bilan tanlangan beauty mahsulotlar.
+  Har kuni yangi kayfiyat, bitta joyda.
+</Box>
+
+
+
+<Box className="split_screen">
+  <div>
+    <p>50+</p>
+    <small>Beauty products</small>
+  </div>
+
+  <div className="vertical_border" />
+
+  <div>
+    <p>100+</p>
+    <small>Happy customers</small>
+  </div>
+</Box>
+
+
             <Stack className="wrap_input">
               <div className="input_box">
                 <input
                   type="search"
                   className="search_input"
-                  placeholder="What are you looking for?"
-                  style={{ paddingRight: "40px" }} // Add padding for icon to fit in
+                  placeholder="Search lipstick, skincare, perfume..."
+                  style={{ paddingRight: "40px" }}
                 />
                 <button className="search_button">
                   <SearchIcon />
@@ -134,19 +161,11 @@ export function NavbarHome(props: any) {
               </div>
             </Stack>
           </Stack>
+
+          {/* KOSMETIKA RASMI */}
           <Stack className="wrap_stack_second">
             <Box className="black_variant">
-              <img src="/home/image2.png" alt="" />
-              <img
-                className="absolute_img_1"
-                src="/home/Vector_left.svg"
-                alt=""
-              />
-              <img
-                className="absolute_img_2"
-                src="/home/Vector_right.svg"
-                alt=""
-              />
+              <img src="/home/feyri_rasm1.png" alt="Feyri Beauty set" />
             </Box>
           </Stack>
         </Stack>

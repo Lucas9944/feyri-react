@@ -1,16 +1,16 @@
 .format.home_navbar {
     width: 100%;
-    height: 820px;
+    height: 780px; /* 820 dan biroz tushirdik */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    /* background: #F2F2F2; */
-    border: 2px solid yellow;
-
-    background-color: #FFF;
+    justify-content: flex-start;
+    background-color: #FFFFFF;
+    padding-top: 24px;
 }
 
+
+/* BRAND HEADER – ham white/pink aesthetic */
 .format_brand.home_navbar {
     width: 100%;
     height: 500px;
@@ -18,9 +18,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background: #F2F2F2; */
-    /* border: 2px solid rgb(0, 255, 72); */
-    background-color: #FFF;
+
+    /* juda qora bo'lmasin, juda yumshoq pastel fon */
+    background: linear-gradient(180deg, #FFFFFF 0%, #FCE4EC 45%, #FFFFFF 100%);
+    color: #2F2528;
 }
 
 /* .MuiContainer-root {
@@ -28,27 +29,22 @@
     padding: 0 !important;
 } */
 
-
 .format .wrap_cont {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
-    /* border: 2px solid red; */
 }
 
 .format_brand .wrap_cont_brand {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* border: 2px solid rgb(0, 85, 255); */
 }
-
 
 .home_navbar .navbar_config {
     width: 1244px;
     height: 46px;
-    /* border: 2px solid rgb(255, 0, 179); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,88 +54,198 @@
 
 .icon_config {
     width: 1250px;
-    height: 46px;
-    /* border: 2px solid rgb(144, 0, 255); */
-    margin-top: 4px;
-
+    height: 56px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
 }
 
+
+/* .icon_btn {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    background-color: #ffffff;       
+    border: 1px solid #f7cfe0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition:
+      border-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 150ms ease;
+  }
+   */
+  
+
+  /* Hover / active effekt – faqat soyalar va border */
+.icon_btn:hover {
+    /* border-color: #ffffff;
+    box-shadow: 0 10px 28px rgba(255, 255, 255, 0.35); */
+    transform: translateY(-2px);
+  }
+
+  /* Pastda yumshoq “yorug‘lik” – ixtiyoriy */
+.icon_btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -14px;
+    transform: translateX(-50%);
+    width: 70%;
+    height: 18px;
+    border-radius: 999px;
+    /* background: radial-gradient(
+      circle at 50% 0,
+      rgba(244, 143, 177, 0.35),
+      transparent 70%
+    ); */
+    opacity: 0;
+    transition: opacity 180ms ease;
+    pointer-events: none;
+  }
+
+  .icon_btn:hover::after {
+    opacity: 1;
+  }
+  
+  
+  
+  .icon_btn .MuiBadge-root {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon_btn .MuiBadge-badge {
+    top: 7px;
+    right: 8px;
+  }
+  
 .format_brand .icon_config {
     width: 1250px;
     height: 46px;
-    /* border: 2px solid rgb(111, 78, 6); */
     margin-top: 35px;
     margin-bottom: 20px;
 }
 
 .home_navbar .navbar_links {
-    width: 1052px;
+    width: 1244px;
     height: 46px;
-    /* border: 2px solid darkorange; */
     display: flex;
     align-items: center;
-
+    justify-content: center;
+    gap: 48px; 
 }
 
+
+
+/* iconlar joylashgan qator */
 .home_navbar .icon_links {
-    width: 752px;
-    height: 46px;
-    /* border: 2px solid rgb(0, 255, 76); */
     display: flex;
     align-items: center;
-    justify-content: end;
-}
+    justify-content: center;
+    gap: 16px;
+    height: 80px;
+  }
+  
+
 
 .home_navbar a {
     text-decoration: none;
 }
 
-.home_navbar .icons-line a {
-    color: #323334;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 28px;
-    width: 40px;
+.home_navbar .icons-line {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    /* border: 2px solid rgb(0, 90, 128); */
-    margin-left: 15px;
-    cursor: pointer;
+    height: auto;
+    width: auto;
+
 }
 
+.home_navbar .icons-line a {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;           /* gap ishlatyapmiz, bu kerak emas */
+    cursor: pointer;
+
+    background-color: #FFFFFF;
+    border: 1px solid #F7CFE0;
+    transition:
+      background-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 160ms ease;
+}
+
+
+
+/* Hoverda yumshoq pushti chip */
+.home_navbar .icons-line a:hover {
+    background: radial-gradient(
+        circle at 30% 20%,
+        #FFE6F0 0%,
+        #F8BBD0 55%,
+        #F48FB1 100%
+    );
+    box-shadow: 0 8px 18px rgba(244, 143, 177, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Ikonkani biroz kichikroq qilamiz, hammasi bir xil ko‘rinsin */
+.nav_icon_img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+
+
+
+
 .home_navbar .hover-line a {
-    color: #323334;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    color: #2F2528;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-size: 14px;
     font-style: normal;
     font-weight: 500;
-    line-height: normal;
-    /* border: 2px solid rgb(96, 128, 0); */
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
 
+
+/* Brand nav link ranglari */
+.format_brand.home_navbar .hover-line a {
+    color: #2F2528;
 }
 
 .home_navbar .underline {
-    display: block;
-    content: "";
-    border-bottom: solid 2px #323334;
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: none; /* 👈 doimiy chiziqni olib tashladik */
 }
 
 .home_navbar .hover-line:after {
     display: block;
     content: "";
-    border-bottom: solid 2px #323334;
+    border-bottom: solid 2px #F48FB1;  
     transform: scaleX(0);
-    transition: transform 250ms ease-in-out;
+    transition: transform 220ms ease-in-out;
 }
-
 
 .home_navbar .hover-line:hover:after {
     transform: scaleX(1);
 }
 
+/* HOME BANNER – SOFT PINK, yanada yengil */
 .home_navbar .head_information {
     display: flex;
     flex-direction: row;
@@ -147,22 +253,26 @@
     justify-content: center;
     width: 1250px;
     height: 566px;
-    border-radius: 14px;
-    background: rgba(219, 208, 204, 0.80);
+    border-radius: 18px;
+    background: linear-gradient(135deg, #FCE4EC 0%, #F7DDE2 60%, #FDF4F7 100%);
 }
 
+/* Bitta umumiy logo stili – hamma pageda shu ishlaydi */
 .logo_brand {
-    color: #323334;
     font-family: 'Quella';
-    font-size: 24px;
-    font-style: normal;
+    font-size: 22px;
+    letter-spacing: 0.28em;
+    background: linear-gradient(90deg, #FCE4EC, #F48FB1, #C39BD3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    margin-top: 0;
     font-weight: 400;
-    line-height: normal;
-    margin-top: 8px;
-    /* border: 2px solid yellow; */
     cursor: pointer;
 }
 
+
+/* Hover animatsiya (avvalgi bilan bir xil qolishi mumkin) */
 .logo_brand:hover {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
@@ -172,217 +282,250 @@
 
 
 .wrap_cont .head_information .wrap_stack_first .input_box .search_input {
-    width: 449px;
-    height: 64px;
-    border-radius: 12px;
-    background: #FFF;
-    border: none;
+    width: 520px;
+    height: 52px;
+    border-radius: 999px;
+    background: #FFFFFF;
+    border: none;            /* 👈 chiziqni olib tashladik */
+    outline: none;           /* fokusda ham chiziq chiqmasin */
+    padding-left: 20px;
+    padding-right: 60px;
+    box-shadow: 0 10px 30px rgba(244, 143, 177, 0.15);
 }
+
+/* Search container – borderni butunlay o‘chirib tashlaymiz */
+.input_box {
+    position: relative;
+    width: 520px;
+    border: none;
+    background: transparent;
+}
+
 
 
 .head_information .wrap_stack_first {
-    /* border: 2px solid red; */
-    height: 425px;
+    height: 550px;
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 600px;
+    flex-direction: column;
+    /* align-items: flex-start;   */
+    justify-content: space-between;
+    max-width: 520px;
+    
+  }
+  
 
+  .head_information .wrap_stack_first .text_bolder {
+    color: #2F2528;
+    font-family: "Poppins", sans-serif;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
 }
 
-.head_information .wrap_stack_first .text_bolder {
-    /* border: 2px solid lightpink; */
-    color: #323334;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 54px;
-    /* 100% */
-    width: 512px;
-    /* margin-left: 0px; */
-}
+  
+
+
 
 .head_information .wrap_stack_first .split_screen {
-    /* border: 2px solid darkmagenta; */
-    width: 418px;
-    height: 75px;
-    display: flex;
+    width: 360px;
+    height: 150px;
+    display: row;
     align-items: center;
-    justify-content: space-evenly;
-    margin-left: -214px;
+    justify-content: space-between;
 
 }
 
-.head_information .wrap_stack_first .split_screen p {
-    color: var(--Color-2, #323334);
-    font-family: Verdana,
-        Geneva,
-        Tahoma,
-        sans-serif;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    /* border: 2px solid yellow; */
-    margin-bottom: 0px;
-    margin-top: 0px;
+.hero_subcopy {
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(47, 37, 40, 0.75);
+    max-width: 420px;
+    margin-bottom: 24px;
+  }
+  
+
+
+  .head_information .wrap_stack_first .split_screen p {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+
+    line-height: 1.2;
+    color: #2F2528;
+
+    /* debug borderlarni olib tashlaymiz */
+    border: none;
 }
 
 .head_information .wrap_stack_first .split_screen small {
-    font-family: Verdana,
-        Geneva,
-        Tahoma,
-        sans-serif;
-    color: var(--Color-2, #323334);
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    /* border: 2px solid rgb(255, 170, 0); */
-    margin-bottom: -10px;
+    display: block;
+    margin-top: 2px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+
+    color: rgba(47, 37, 40, 0.65);
+
+    border: none;
 }
+
 
 
 .search_input::placeholder {
-    color: var(--Color-4, rgba(30, 30, 30, 0.50));
+    color: rgba(70, 58, 64, 0.55);
     font-family: 'Poppins';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    padding-left: 15px;
-
+    font-size: 14px;
+    font-weight: 400;
+   
 }
 
+.logo_tagline {
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(47, 37, 40, 0.45);
+  }
+
+  
+
 .head_information .wrap_stack_second {
-    /* border: 2px solid darkblue; */
     width: 650px;
     height: 570px;
     flex-shrink: 0;
+    margin-left: 50px;
 }
 
 .vertical_border {
-    border: 1px solid #323334;
-    height: 64px;
+    border: none;
+    border-left: 1px solid rgba(47, 37, 40, 0.25); /* faqat vertikal chiziq */
+    height: 40px;
+    align-self: center;
 }
 
-/* .search_input_icon {
-    border: 2px solid red;
-    width: 48px;
-    height: 48px;
-    flex-shrink: 0;
-    border-radius: 12px;
-    background-color: rgb(0, 64, 255);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
 
-} */
-
+/* HOME – search button: soft coral/rose accent */
 .search_button {
     border: none;
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: rgba(219, 208, 204, 0.80);
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #F48FB1, #F06292);
     flex-shrink: 0;
-    margin-top: -55px;
-    margin-left: 390px;
-    display: block;
+    margin-top: -46px;
+    margin-left: 450px;
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    box-shadow: 0 8px 20px rgba(240, 98, 146, 0.35);
+}
+
+.search_button svg {
+    font-size: 18px;
+    color: #FFFFFF;
 }
 
 .wrap_input {
-    /* border: 2px solid black; */
     display: block;
     width: 600px;
     margin-right: -90px;
 }
 
+/* OLD qora variant o‘rniga – neytral, oq kartochka + soyalar */
 .black_variant {
-    /* border: 2px solid darkorange; */
-    background: url(/public/home/qora_variant_rectangle.png);
-    background-repeat: no-repeat;
+    background: #FFFFFF;
+    border-radius: 260px;
     height: 395px;
-    padding-top: 70px;
+    padding-top: 40px;
     width: 460px;
-    margin-top: 179px;
+    margin-top: 120px;
     margin-left: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    box-shadow: 0 24px 55px rgba(0, 0, 0, 0.10);
 }
 
 .black_variant img {
-
-    margin-top: -45px;
-
+    max-width: 320px;
+    margin-top: 0;
+    border-radius: 32px;
 }
 
+
 .absolute_img_1 {
-
     position: absolute;
-    margin-right: 700px;
-    /* border: 2px solid red; */
-    margin-bottom: -90px;
-
+    margin-right: 620px;
+    margin-bottom: 250px;
+    height: 200px;
+    width: 250px;
 }
 
 .absolute_img_2 {
-
     position: absolute;
     margin-bottom: 450px;
     margin-left: 450px;
-
-
 }
 
 .navbar_border_first {
     width: 1250px;
-    border: 1px solid #323334;
+    border: 1px solid #E0E0E0;
 }
 
-/* .wrap_config {
-    border: 2px solid rgb(97, 113, 22);
+/* BRAND – border color biroz gold/pink */
+.format_brand .navbar_border_first {
+    border-color: rgba(65, 200, 50, 0.7);
+}
+
+.wrap_config {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 50px;
     width: 1000px;
-} */
+}
+
 .address_routing {
-    color: #323334;
+    color: #8A7C82;
     font-family: 'Roboto';
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: lowercase;
-    /* border: 2px solid yellow; */
-    margin-top: 45px;
+    margin-top: 30px;
     text-align: center;
 }
 
+/* BRAND address – biroz ko‘proq pastel */
+.format_brand .address_routing {
+    color: #B090A8;
+}
+
+/* HOME – advertising strip: soft pastel */
 .advertising_stack {
     height: 365px;
     width: 100%;
-    background: #DCE1DA;
-    /* border: 2px solid yellow; */
-    /* margin-top: 89px; */
-
+    background: #FCEFF4;
 }
 
 .advertising_text {
-    color: #323334;
+    color: #2F2528;
     font-family: 'Roboto';
-    font-size: 38px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -390,9 +533,9 @@
 }
 
 .advertising_text_2 {
-    color: #323334;
+    color: #2F2528;
     font-family: 'Roboto';
-    font-size: 35px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -400,10 +543,22 @@
 }
 
 .advertising_text_3 {
-    color: #323334;
+    color: #6E5B64;
     font-family: Roboto;
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
+
+/* BRAND – advertising (special collection) – pink → lavender gradient */
+.format_brand .advertising_stack--night {
+    background: linear-gradient(90deg, #F7DDE2 0%, #F2D7F5 40%, #C39BD3 100%);
+}
+
+.format_brand .advertising_text,
+.format_brand .advertising_text_2,
+.format_brand .advertising_text_3 {
+    color: #2F2528;
+}
+

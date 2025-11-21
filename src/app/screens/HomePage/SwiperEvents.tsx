@@ -1,15 +1,17 @@
-import React, { useRef, useState } from "react";
 // Import Swiper React components
+// Import Swiper React components
+// React Swiper components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
+// Only this CSS in Swiper v12
 import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
 
-// import required modules
-import { EffectCoverflow, Pagination } from "swiper";
+// Modules come from here
+import { EffectCoverflow, Pagination } from "swiper/modules";
+
+
 import { Box, Typography } from "@mui/material";
+
 
 export function SwiperEvents() {
   const events_list = [

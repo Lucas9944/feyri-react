@@ -1,12 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import React from "react";
 import {
   Stack,
   Container,
   Box,
-  Button,
-  InputAdornment,
-  Badge,
+  Badge
 } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
@@ -23,7 +19,7 @@ export function NavbarOthers(props: any) {
           className="icon_config"
           justifyContent={"space-between"}
         >
-          <Box className="logo_brand">INSPIRINGSPACES</Box>
+          <Box className="logo_brand">FEYRI BEAUTY</Box>
           <Stack
             flexDirection={"row"}
             justifyContent="space-evenly"

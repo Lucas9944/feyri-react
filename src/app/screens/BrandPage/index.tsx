@@ -1,27 +1,18 @@
-import React from "react";
-import { Route, useRouteMatch } from "react-router-dom";
+import { Routes, Route, useMatch } from "react-router-dom";
 import { AllBrands } from "./allBrands";
-import { ChosenFurniture } from "./chosenFurniture";
 import { OneBrand } from "./oneBrand";
 import { ChosenCosmetic } from "./chosenCosmetic";
 
 export function BrandPage() {
-  let brand = useRouteMatch();
-  console.log(brand);
+  const match = useMatch("/brand/*");
 
   return (
     <div className="brand_page">
-      <Switch>
-        <Route path={`${brand.path}/furniture/:furniture_id`}>
-          <ChosenCosmetic/> 
-        </Route>
-        <Route path={`${brand.path}/:brand_id`}>
-          <OneBrand />
-        </Route>
-        <Route path={`${brand.path}`}>
-          <AllBrands />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="furniture/:furniture_id" element={<ChosenCosmetic />} />
+        <Route path=":brand_id" element={<OneBrand />} />
+        <Route path="" element={<AllBrands />} />
+      </Routes>
     </div>
   );
 }

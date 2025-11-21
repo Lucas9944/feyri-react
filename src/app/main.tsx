@@ -1,21 +1,29 @@
-import { StrictMode } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "../app/App";
 import { Provider } from "react-redux";
 import { store } from "../store";
-import { ThemeProvider, CssBaseline } from "@mui/material";
-import theme from "../app/MaterialTheme";
+import App from "../app/App";
 import "../css/index.css";
 
-const root = createRoot(document.getElementById("root")!);
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../app/MaterialTheme";
+
+const container = document.getElementById("root")!;
+const root = createRoot(container);
+
 
 root.render(
-  <StrictMode>
+  <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <App />
       </ThemeProvider>
     </Provider>
-  </StrictMode>
+  </React.StrictMode>
 );
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
