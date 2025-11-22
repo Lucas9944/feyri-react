@@ -251,16 +251,127 @@
 
 }
 
+/* SECTION background */
 .bedsheet_sets {
     width: 100%;
-    background-image: url("../../public/home/sa.png");
+    min-height: 520px;
+    background-image: url("../../public/home/banner1.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
-
-    background-color: #FFF;
-
-
-}
+    background-size: cover;      /* rasm butunlay qoplaydi */
+    background-position: center; /* markazda turadi */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 72px 0;
+    background-color: #fff;
+  }
+  
+  /* ichki layout */
+  .sheets_sail {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start; /* card chap tomonda */
+  }
+  
+  /* OQ CARD – spacing tartibli */
+  .ritual_card {
+    max-width: 420px;
+    padding: 32px 40px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 28px 60px rgba(20, 3, 66, 0.06);
+    backdrop-filter: blur(14px);
+  
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;          /* elementlar orasidagi umumiy masofa */
+  }
+  
+  /* TAG */
+  .ritual_tag {
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(47, 37, 40, 0.55);
+  }
+  
+  /* TITLE */
+  .ritual_title {
+    font-family: "Playfair Display", "Times New Roman", serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #2f2528;
+  }
+  
+  /* PRICE */
+  .ritual_price {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(47, 37, 40, 0.8);
+    margin-top: 4px;
+  }
+  
+  /* DESCRIPTION – nafas oladigan qilib */
+  .ritual_desc {
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(47, 37, 40, 0.75);
+    margin-top: 6px;
+    margin-bottom: 12px;
+  }
+  
+  /* BUTTON */
+  .ritual_btn {
+    border-radius: 999px !important;
+    border-color: #f48fb1 !important;
+    color: #f48fb1 !important;
+    text-transform: none !important;
+    letter-spacing: 0.06em !important;
+    font-family: "Poppins", sans-serif !important;
+    padding: 7px 22px !important;
+    font-size: 12px !important;
+  }
+  
+  .ritual_btn:hover {
+    background: #f48fb1 !important;
+    color: #ffffff !important;
+    border-color: #f48fb1 !important;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    .bedsheet_sets {
+      padding: 60px 0;
+      background-position: center right;
+    }
+  
+    .ritual_card {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .bedsheet_sets {
+      min-height: 460px;
+      padding: 48px 0;
+    }
+  
+    .ritual_card {
+      padding: 24px 22px;
+      border-radius: 24px;
+    }
+  
+    .ritual_title {
+      font-size: 24px;
+    }
+  }
+  
 
 
 
