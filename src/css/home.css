@@ -836,3 +836,209 @@
     height: 90%;
     object-fit: contain;
 }
+/* ===== LATEST COLLECTION – LAYOUT ===== */
+
+.latest_section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 90px 0 130px;
+}
+
+.latest_header {
+  max-width: 520px;
+  margin: 0 auto 40px;
+  text-align: center;
+  align-items: center;
+}
+
+.latest_title {
+  font-family: "Playfair Display", "Times New Roman", serif !important;
+  font-size: 32px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+  color: #1f1820;
+}
+
+.latest_subtitle {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 12px !important;
+  color: rgba(47, 37, 40, 0.7);
+}
+
+/* GRID – 4x2 */
+
+.latest_grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 48px;
+  row-gap: 72px;
+}
+
+.latest_card {
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* KREM PANEL – 281.297 × 342, ichida: rasm (flex) + button (48px) */
+
+.latest_media {
+  width: 281.297px;
+  height: 342px;   /* muhim! 298px + 44px */
+  background: #f7f4ef;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* FOTO PANEL */
+
+.latest_image_box {
+  flex: 1 1 auto;
+  width: 100%;
+  background: #f7f4ef !important; 
+}
+
+.latest_image_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+
+}
+
+/* === BUTTONNING ASOSIY STILI === */
+.latest_media .MuiButton-root.latest_button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 44px;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent !important; 
+  color: transparent !important;
+
+  border-radius: 0 !important;
+  border: none !important;
+  cursor: pointer;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease-in-out;
+}
+
+/* === KARTAGA HOVER → BUTTON OQ HOLATDA KO‘RINADI === */
+/* === BUTTONNING ASOSIY HOLATI (yashirin) === */
+.latest_media .MuiButton-root.latest_button {
+  position: absolute;
+  /* margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px; */
+  margin-left: 10px;   /* chapga surish */
+  margin-right: 10px;  /* o‘ngga surish */
+  margin-bottom: 10px;
+  width: 260px;
+  height: 47px !important;     /* ASOSIY: Alpha-H height */
+  padding: 16px 24px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent !important;
+  color: transparent !important;
+
+  border-radius: 0 !important;
+  border: none !important;
+  
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+
+  transition: all 0.25s ease-in-out;
+}
+
+/* === 1) KARTAGA HOVER → BUTTON KO‘RINADI (OQ PANEL!) === */
+.latest_media:hover .latest_button {
+  opacity: 1;
+  visibility: visible;
+  background-color: #ffffff !important;  /* haqiqiy oq */
+  color: #111 !important;
+}
+
+/* === 2) BUTTONGA HOVER → PUSHTI RANG === */
+.latest_button:hover,
+.latest_button.MuiButton-root:hover {
+  background-color: #f48fb1 !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* === 3) MUI TOUCHRIPPLE O‘CHIRILADI === */
+.latest_button .MuiTouchRipple-root {
+  display: none !important;
+}
+
+
+/* === MUI RIPPLE EFFEKTINI O‘CHIR (bo‘lmasa pink hover ko‘rinmaydi) === */
+.latest_button .MuiTouchRipple-root {
+  display: none !important;
+}
+
+
+
+
+/* Text pastida */
+
+.latest_name {
+  margin-top: 18px;
+  margin-bottom: 4px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2f2528;
+}
+
+.latest_price {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  color: #2f2528;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1200px) {
+  .latest_grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 32px;
+    row-gap: 56px;
+  }
+}
+
+@media (max-width: 900px) {
+  .latest_grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 28px;
+    row-gap: 42px;
+  }
+}
+
+@media (max-width: 600px) {
+  .latest_grid {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+  }
+}
