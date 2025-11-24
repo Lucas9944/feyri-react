@@ -1042,3 +1042,135 @@
     row-gap: 36px;
   }
 }
+
+/* ==== LOAD PRODUCTS + NEWSLETTER – FEYRI STYLE ==== */
+
+.products_frame {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 80px 0 100px;
+}
+
+/* LOAD MORE BUTTON – konturli pushti, hoverda toʻliq pushti */
+
+.products_frame .load_more_btn {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  height: 51px;
+  width: 371px;
+  cursor: pointer;
+
+  background-color: #f48fb1;
+  color: #FFF;
+  border-radius: 0;
+  border: 1px solid #f48fb1;
+
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+.products_frame .load_more_btn:hover {
+  background-color: #f48fb1;
+  color: #ffffff;
+  border-color: #f48fb1;
+}
+
+/* NEWSLETTER ROW */
+
+.products_frame .wrapp_input_email {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 20px;
+}
+
+/* LEFT TEXT */
+
+.products_frame .newsletter_text {
+  width: 40%;
+ 
+}
+
+.products_frame .newsletter_title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: #2f2528;
+  margin-bottom: 6px;
+}
+
+.products_frame .newsletter_subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: rgba(47, 37, 40, 0.75);
+}
+
+/* RIGHT FORM */
+
+.products_frame .newsletter_form {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.products_frame .newsletter_form .MuiTextField-root {
+  flex: 1;
+}
+
+/* SEND BUTTON – toʻliq pushti pill */
+
+.products_frame .newsletter_send_btn {
+  min-width: 85px;
+  height: 50px;
+  background-color: #f48fb1 !important;
+  color: #ffffff !important;
+  border-radius: 999px !important;
+  cursor: pointer;
+  box-shadow: none !important;
+  /* border: 1px solid #f48fb1 !important; */
+  border: 2px solid black;
+}
+
+.products_frame .newsletter_send_btn:hover {
+  background-color: #f26fa0 !important;
+  border-color: #f26fa0 !important;
+}
+
+.email_btn {
+  width: 80px;
+  height: 50px;
+  border-radius: 40px;
+  background: #f48fb1 !important;
+  border: 2px solid #000;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  min-width: 0 !important;  /* MUI kengaytirib yubormasin */
+}
+
+.email_icon {
+  font-size: 22px;
+  color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .products_frame .wrapp_input_email {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .products_frame .newsletter_text,
+  .products_frame .newsletter_form {
+    width: 100%;
+  }
+}
+

@@ -6,6 +6,7 @@ import { TopInterior } from "./topInterior";
 import { TopRating } from "./topRating";
 import { Advertisements } from "./advertiSements";
 import "../../../css/home.css";
+import { LoadProducts } from "./loadProducts";
 
 export function HomePage() {
   return (
@@ -15,6 +16,7 @@ export function HomePage() {
       <Advertisements />
       <BedSheetsSail />
       <TopRating />
+      <LoadProducts />
       <SwiperEvents />
     </div>
   );
