@@ -1,143 +1,254 @@
-  import { Stack, Container, Box, Badge } from "@mui/material";
-  import { NavLink } from "react-router-dom";
+import { Badge, Box, Stack } from "@mui/material";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-  export function NavbarBrand(props: any) {
-    return (
-      <div className="format_brand home_navbar">
-        <Container className="wrap_cont_brand">
-          <Stack
-            flexDirection={"row"}
-            className="icon_config"
-            justifyContent={"space-between"}
+type NavbarBrandProps = {
+  setPath?: () => void;
+};
+
+export function NavbarBrand({ setPath }: NavbarBrandProps) {
+  const [isCatalogOpen, setCatalogOpen] = useState(false);
+
+  const handleNavClick = () => {
+    if (setPath) setPath();
+    setCatalogOpen(false);
+  };
+
+  const openCatalog = () => setCatalogOpen(true);
+  const closeCatalog = () => setCatalogOpen(false);
+
+  return (
+    <>
+      {/* TOP STRIP */}
+      <div className="glowess-topbar">
+        Free worldwide shipping for orders over $50
+      </div>
+
+      {/* HEADER + CATALOG PANEL WRAPPER */}
+      <div className="glowess-nav-shell" onMouseLeave={closeCatalog}>
+        {/* MAIN NAVBAR */}
+        <header className="glowess-header">
+          <div className="glowess-header-inner">
+            {/* LEFT */}
+            <div className="glowess-left">
+              {/* Burger – hover qilganda ham catalog ochiladi */}
+              <button
+                type="button"
+                className="glowess-burger"
+                onClick={openCatalog}
+                onMouseEnter={openCatalog}
+              >
+                <span />
+                <span />
+                <span />
+              </button>
+
+              <nav className="glowess-main-menu">
+                {/* CATALOG – hover + click */}
+                <NavLink
+                  to="/catalog"
+                  onClick={handleNavClick}
+                  className="glowess-menu-item glowess-menu-item--strong"
+                  onMouseEnter={openCatalog}
+                >
+                  CATALOG
+                </NavLink>
+
+                <span className="glowess-menu-divider" />
+
+                <NavLink
+                  to="/"
+                  onClick={handleNavClick}
+                  className="glowess-menu-item"
+                >
+                  HOME
+                </NavLink>
+
+                <NavLink
+                  to="/shop"
+                  onClick={handleNavClick}
+                  className="glowess-menu-item"
+                >
+                  SHOP ▾
+                </NavLink>
+
+                <NavLink
+                  to="/blog"
+                  onClick={handleNavClick}
+                  className="glowess-menu-item"
+                >
+                  BLOG ▾
+                </NavLink>
+
+                {/* PAGES olib tashlangan */}
+                <NavLink
+                  to="/contact"
+                  onClick={handleNavClick}
+                  className="glowess-menu-item"
+                >
+                  CONTACT
+                </NavLink>
+              </nav>
+            </div>
+
+            {/* CENTER LOGO */}
+            <div className="glowess-logo">FEYRI BEAUTY</div>
+
+            {/* RIGHT – ikonlar */}
+            <div className="glowess-right">
+              <div className="glowess-icons">
+                <Stack
+                  flexDirection={"row"}
+                  justifyContent="space-evenly"
+                  alignItems={"center"}
+                  className="icon_links"
+                >
+                  <Box className="icon_btn" onClick={handleNavClick}>
+                    <NavLink to={"/"}>
+                      <img
+                        src="/icons/rasm4.jpeg"
+                        alt="Search"
+                        className="nav_icon_img"
+                      />
+                    </NavLink>
+                  </Box>
+
+                  <Box className="icon_btn" onClick={handleNavClick}>
+                    <NavLink to={"/brand"}>
+                      <img
+                        src="/icons/rasm2.jpeg"
+                        alt="User"
+                        className="nav_icon_img"
+                      />
+                    </NavLink>
+                  </Box>
+
+                  <Box className="icon_btn" onClick={handleNavClick}>
+                    <NavLink to={"/orders"}>
+                      <Badge
+                        badgeContent={23}
+                        color="primary"
+                        overlap="circular"
+                        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                        className="nav_badge"
+                      >
+                        <img
+                          src="/icons/feyri_icon_cart.png"
+                          alt="Cart"
+                          className="nav_icon_img"
+                        />
+                      </Badge>
+                    </NavLink>
+                  </Box>
+
+                  <Box className="icon_btn" onClick={handleNavClick}>
+                    <NavLink to={"/community"}>
+                      <img
+                        src="/icons/rasm3.jpeg"
+                        alt="Heart"
+                        className="nav_icon_img"
+                      />
+                    </NavLink>
+                  </Box>
+                </Stack>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        {/* CATALOG MEGA MENU */}
+        {isCatalogOpen && (
+          <div
+            className="glowess-catalog-panel"
+            onMouseEnter={openCatalog}
+            onMouseLeave={closeCatalog}
           >
-            {/* LOGO */}
-            <Box className="logo_brand logo_brand--gold">
-              FEYRI BEAUTY
-            </Box>
+            <div className="glowess-catalog-inner">
+              {/* Chap taraf – ro‘yxatlar */}
+              <div className="glowess-catalog-list">
+                <p className="glowess-catalog-title">Shop All</p>
 
-            <Stack
-              flexDirection={"row"}
-              justifyContent="space-evenly"
-              alignItems={"center"}
-              className={"icon_links"}
-            >
-              {/* SEARCH */}
-              <Box className={"icons-line"} onClick={props.setPath}>
-                <NavLink to={"/"}>
-                  <img
-                    src="/icons/feyri_icon_search.png"
-                    alt="Search"
-                    className="nav_icon_img"
-                  />
-                </NavLink>
-              </Box>
+                <div className="glowess-catalog-columns">
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Skincare</p>
+                    <button className="glowess-catalog-link">Cleansers</button>
+                    <button className="glowess-catalog-link">Toners</button>
+                    <button className="glowess-catalog-link">
+                      Moisturisers
+                    </button>
+                    <button className="glowess-catalog-link">Masks</button>
+                  </div>
 
-              {/* USER / PROFILE */}
-              <Box className={"icons-line"} onClick={props.setPath}>
-                <NavLink to={"/brand"}>
-                  <img
-                    src="/icons/feyri_icon_user.png"
-                    alt="Account"
-                    className="nav_icon_img"
-                  />
-                </NavLink>
-              </Box>
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Makeup</p>
+                    <button className="glowess-catalog-link">Face</button>
+                    <button className="glowess-catalog-link">Eyes</button>
+                    <button className="glowess-catalog-link">Lips</button>
+                    <button className="glowess-catalog-link">Tools</button>
+                  </div>
 
-              {/* CART */}
-              <Box className={"icons-line"} onClick={props.setPath}>
-                <NavLink to={"/orders"}>
-                  <Badge badgeContent={3} color="primary" overlap="circular">
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Body &amp; Hair</p>
+                    <button className="glowess-catalog-link">Body Care</button>
+                    <button className="glowess-catalog-link">Haircare</button>
+                    <button className="glowess-catalog-link">
+                      Bath &amp; Wellbeing
+                    </button>
+                  </div>
+
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Featured</p>
+                    <button className="glowess-catalog-link">Bestsellers</button>
+                    <button className="glowess-catalog-link">New Arrivals</button>
+                    <button className="glowess-catalog-link">Sale</button>
+                  </div>
+                </div>
+              </div>
+
+              {/* O‘ng taraf – kartalar */}
+              <div className="glowess-catalog-featured">
+                <article className="glowess-catalog-card">
+                  <div className="glowess-catalog-card-img-wrap">
                     <img
-                      src="/icons/feyri_icon_cart.png"
-                      alt="Cart"
-                      className="nav_icon_img"
+                        src="/images/image.png"
+                      alt="All products"
+                      className="glowess-catalog-card-img"
                     />
-                  </Badge>
-                </NavLink>
-              </Box>
+                  </div>
+                  <div className="glowess-catalog-card-caption">
+                    All Products
+                  </div>
+                </article>
 
-            {/* HEART / WISHLIST */}
-            <Box className={"icons-line"} onClick={props.setPath}>
-              <NavLink to={"/community"} className="underline">
-                <img
-                  src="/icons/feyri_icon_heart.png"
-                  alt="Wishlist"
-                  className="nav_icon_img"
-                />
-              </NavLink>
-            </Box>
-          </Stack>
-        </Stack>
+                <article className="glowess-catalog-card">
+                  <div className="glowess-catalog-card-img-wrap">
+                    <img
+                      src="/images/image copy 2.png"
+                      alt="Sale"
+                      className="glowess-catalog-card-img"
+                    />
+                  </div>
+                  <div className="glowess-catalog-card-caption">Sale</div>
+                </article>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
 
-        <Stack className="wrap_config">
-          <Stack className="navbar_border_first"> </Stack>
-          <Stack
-            flexDirection={"row"}
-            className="navbar_config"
-            justifyContent={"space-between"}
-          >
-            <Stack
-              flexDirection={"row"}
-              justifyContent="space-evenly"
-              alignItems={"center"}
-              className={"navbar_links"}
-            >
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/"} className="underline">
-                  Home
-                </NavLink>
-              </Box>
+      {/* SHOP HERO */}
+      <section className="glowess-shop-hero">
+        <div className="glowess-shop-hero-inner">
+          <h1 className="glowess-shop-title">Shop</h1>
+          <p className="glowess-shop-subtitle">
+            Beneficial on their own, but always best when paired together.
+            Skincare and makeup products should work in unison.
+          </p>
+        </div>
 
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/brand"} className="underline">
-                  Brand
-                </NavLink>
-              </Box>
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/orders"} className="underline">
-                  Buyurtma
-                </NavLink>
-              </Box>
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/community"} className="underline">
-                  Community
-                </NavLink>
-              </Box>
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/help"} className="underline">
-                  Help
-                </NavLink>
-              </Box>
-            </Stack>
-          </Stack>
-          <Stack className="navbar_border_first"></Stack>
-
-          <Stack className="address_routing">
-            HOMEPAGE / BRAND / SPECIAL COLLECTION
-          </Stack>
-        </Stack>
-      </Container>
-
-      {/* Night look uchun gold/black promo banner */}
-      <Stack
-        className="advertising_stack advertising_stack--night"
-        sx={{
-          flexDirection: "column",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-evenly",
-        }}
-      >
-        <Box className="advertising_text" sx={{ fontFamily: "monospace" }}>
-          Night-Out Collection
-        </Box>
-        <Box className="advertising_text_2">
-          Golden perfume, bold mascara & black-gold lipstick
-        </Box>
-        <Box className="advertising_text_3">
-          Members get exclusive early access.
-        </Box>
-      </Stack>
-    </div>
+        <div className="glowess-shop-blob glowess-shop-blob--left" />
+        <div className="glowess-shop-blob glowess-shop-blob--right" />
+      </section>
+    </>
   );
 }
