@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 type NavbarBrandProps = {
-  setPath?: () => void;
+  setPath: React.Dispatch<React.SetStateAction<string>>;  // To'g'ri tip
 };
 
 export function NavbarBrand({ setPath }: NavbarBrandProps) {
   const [isCatalogOpen, setCatalogOpen] = useState(false);
 
   const handleNavClick = () => {
-    if (setPath) setPath();
+    setPath("/brand");  // Bu yerda setPath ni to'g'ri chaqirish
     setCatalogOpen(false);
   };
 
@@ -31,7 +31,7 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
           <div className="glowess-header-inner">
             {/* LEFT */}
             <div className="glowess-left">
-              {/* Burger – hover qilganda ham catalog ochiladi */}
+              {/* Burger */}
               <button
                 type="button"
                 className="glowess-burger"
@@ -44,7 +44,7 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
               </button>
 
               <nav className="glowess-main-menu">
-                {/* CATALOG – hover + click */}
+                {/* CATALOG */}
                 <NavLink
                   to="/catalog"
                   onClick={handleNavClick}
@@ -80,7 +80,7 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                   BLOG ▾
                 </NavLink>
 
-                {/* PAGES olib tashlangan */}
+                {/* PAGES olib tashlandi */}
                 <NavLink
                   to="/contact"
                   onClick={handleNavClick}
@@ -173,9 +173,7 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                     <p className="glowess-catalog-col-title">Skincare</p>
                     <button className="glowess-catalog-link">Cleansers</button>
                     <button className="glowess-catalog-link">Toners</button>
-                    <button className="glowess-catalog-link">
-                      Moisturisers
-                    </button>
+                    <button className="glowess-catalog-link">Moisturisers</button>
                     <button className="glowess-catalog-link">Masks</button>
                   </div>
 
@@ -191,9 +189,7 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                     <p className="glowess-catalog-col-title">Body &amp; Hair</p>
                     <button className="glowess-catalog-link">Body Care</button>
                     <button className="glowess-catalog-link">Haircare</button>
-                    <button className="glowess-catalog-link">
-                      Bath &amp; Wellbeing
-                    </button>
+                    <button className="glowess-catalog-link">Bath &amp; Wellbeing</button>
                   </div>
 
                   <div className="glowess-catalog-column">
@@ -210,14 +206,12 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                 <article className="glowess-catalog-card">
                   <div className="glowess-catalog-card-img-wrap">
                     <img
-                        src="/images/image.png"
+                      src="/images/image.png"
                       alt="All products"
                       className="glowess-catalog-card-img"
                     />
                   </div>
-                  <div className="glowess-catalog-card-caption">
-                    All Products
-                  </div>
+                  <div className="glowess-catalog-card-caption">All Products</div>
                 </article>
 
                 <article className="glowess-catalog-card">

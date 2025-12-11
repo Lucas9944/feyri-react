@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import pathReducer from "./pathSlice"; // pathSlice'ni import qilish
 
-// agar hali slice yo‘q bo‘lsa, shunchaki bo‘sh qilib qo‘y:
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    path: pathReducer, // pathReducer'ni qo'shish
+  },
 });
 
-// RootState va AppDispatch turlari:
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

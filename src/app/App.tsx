@@ -1,11 +1,6 @@
-/* eslint-disable eqeqeq */
-import { useState } from "react";
-import "../css/App.css";
-import "../css/navbar.css";
-import "../css/footer.css";
-
+// App.tsx
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import { BrandPage } from "./screens/BrandPage";
 import { CommunityPage } from "./screens/CommunityPage";
 import { OrdersPage } from "./screens/OrdersPage";
@@ -18,6 +13,7 @@ import { NavbarHome } from "./components/header";
 import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
 import { Footer } from "./components/footer";
+import  '../css/navbar.css';
 
 function App() {
   const [path, setPath] = useState("");
@@ -48,4 +44,5 @@ function App() {
   );
 }
 
+// Default export qo'shish
 export default App;
