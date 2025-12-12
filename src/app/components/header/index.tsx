@@ -1,175 +1,200 @@
-import { Stack, Container, Box, Badge } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Stack, Badge } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import SearchIcon from "@mui/icons-material/Search"; // faqat hero search uchun kerak
 
+type NavbarHomeProps = {
+  setPath: React.Dispatch<React.SetStateAction<string>>;
+};
 
-export function NavbarHome(props: any) {
+export function NavbarHome({ setPath }: NavbarHomeProps) {
+  const [isCatalogOpen, setCatalogOpen] = useState(false);
+
+  const openCatalog = () => setCatalogOpen(true);
+  const closeCatalog = () => setCatalogOpen(false);
+
+  const go = (path: string) => () => {
+    setPath(path);
+    setCatalogOpen(false);
+  };
+
   return (
-    <div className="format home_navbar">
-      <Container className="wrap_cont">
-        <Stack
-          flexDirection={"row"}
-          className="icon_config"
-          justifyContent={"space-between"}
-        >
-          {/* PUSHTI GRADIENT LOGO */}
-          <Box className="logo_brand logo_brand--home">FEYRI BEAUTY</Box>
-          <Box className="logo_tagline">GO'ZALLIK – BU SENING SEHRING</Box>
+    <section className="home-hero">
+      {/* Top strip */}
+      <div className="home-topbar">
+        Free worldwide shipping for orders over $50
+      </div>
 
-          <Stack
-  flexDirection={"row"}
-  justifyContent="space-evenly"
-  alignItems={"center"}
-  className="icon_links"
->
-  <Box className="icon_btn" onClick={props.setPath}>
-    <NavLink to={"/"}>
-      <img
-        src="/icons/rasm4.jpeg"
-        alt="Search"
-        className="nav_icon_img"
-      />
-    </NavLink>
-  </Box>
+      {/* Header + Catalog wrapper */}
+      <div className="home-nav-shell" onMouseLeave={closeCatalog}>
+        <header className="home-header">
+          <div className="home-header-inner">
+            {/* LEFT */}
+            <div className="home-left">
+              <button
+                type="button"
+                className="home-burger"
+                onClick={openCatalog}
+                onMouseEnter={openCatalog}
+                aria-label="Open catalog"
+              >
+                <span />
+                <span />
+                <span />
+              </button>
 
-  <Box className="icon_btn" onClick={props.setPath}>
-    <NavLink to={"/brand"}>
-      <img
-        src="/icons/rasm2.jpeg"
-        alt="User"
-        className="nav_icon_img"
-      />
-    </NavLink>
-  </Box>
-
-  <Box className="icon_btn" onClick={props.setPath}>
-  <NavLink to={"/orders"}>
-    <Badge
-      badgeContent={23}
-      color="primary"
-      overlap="circular"
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
-      className="nav_badge"
-    >
-      <img
-        src="/icons/feyri_icon_cart.png"
-        alt="Cart"
-        className="nav_icon_img"
-      />
-    </Badge>
-  </NavLink>
-</Box>
-
-
-  <Box className="icon_btn" onClick={props.setPath}>
-    <NavLink to={"/community"}>
-      <img
-        src="/icons/rasm3.jpeg"
-        alt="Heart"
-        className="nav_icon_img"
-      />
-    </NavLink>
-  </Box>
-</Stack>
-
-        </Stack>
-
-        <Stack className="wrap_config">
-          <Stack className="navbar_border_first"> </Stack>
-          <Stack
-            flexDirection={"row"}
-            className="navbar_config"
-            justifyContent={"space-between"}
-          >
-            <Stack
-              flexDirection={"row"}
-              justifyContent="space-evenly"
-              alignItems={"center"}
-              className={"navbar_links"}
-            >
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/"} className="underline">
-                  Home
+              <nav className="home-menu">
+                <NavLink
+                  to="/catalog"
+                  onClick={go("/catalog")}
+                  className="home-link home-link--strong"
+                  onMouseEnter={openCatalog}
+                >
+                  CATALOG
                 </NavLink>
-              </Box>
 
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/brand"} className="underline">
+                <div className="home-divider" />
+
+                <NavLink to="/" onClick={go("/")} className="home-link">
+                  HOME
+                </NavLink>
+
+                <NavLink to="/brand" onClick={go("/brand")} className="home-link">
                   SHOP
                 </NavLink>
-              </Box>
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/orders"} className="underline">
-                  ORDER
+
+                <NavLink to="/community" onClick={go("/community")} className="home-link">
+                  BLOG
                 </NavLink>
-              </Box>
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/community"} className="underline">
-                  Community
+
+                <NavLink to="/help" onClick={go("/help")} className="home-link">
+                  PAGES
                 </NavLink>
-              </Box>
-              <Box className={"hover-line"} onClick={props.setPath}>
-                <NavLink to={"/help"} className="underline">
-                  Help
+
+                <NavLink to="/contact" onClick={go("/contact")} className="home-link">
+                  CONTACT
                 </NavLink>
-              </Box>
-            </Stack>
-          </Stack>
-          <Stack className="navbar_border_first"></Stack>
-        </Stack>
+              </nav>
+            </div>
 
-        <Stack className="head_information">
-          <Stack className="wrap_stack_first">
-            {/* BEAUTY COPY */}
-            <Box className="text_bolder">
-  O‘zingga mos    <br /> go‘zallikni top
-</Box>
+            {/* CENTER LOGO */}
+            <div className="home-brand">GLOWESS</div>
 
-            <Box className="hero_subcopy">
-  50+ ehtiyotkorlik bilan tanlangan beauty mahsulotlar.
-  Har kuni yangi kayfiyat, bitta joyda.
-</Box>
+            {/* RIGHT */}
+            <div className="home-right">
+              <button className="home-country" type="button">
+                UNITED STATES (USD $) <span className="home-caret">▾</span>
+              </button>
 
+              <div className="home-icons">
+                <Box className="home-icon-btn" onClick={go("/")}>
+                  <NavLink to="/">
+                    <img src="/icons/rasm4.jpeg" alt="Search" className="home-icon-img" />
+                  </NavLink>
+                </Box>
 
+                <Box className="home-icon-btn" onClick={go("/brand")}>
+                  <NavLink to="/brand">
+                    <img src="/icons/rasm2.jpeg" alt="User" className="home-icon-img" />
+                  </NavLink>
+                </Box>
 
-<Box className="split_screen">
-  <div>
-    <p>50+</p>
-    <small>Beauty products</small>
-  </div>
-
-  <div className="vertical_border" />
-
-  <div>
-    <p>100+</p>
-    <small>Happy customers</small>
-  </div>
-</Box>
-
-
-            <Stack className="wrap_input">
-              <div className="input_box">
-                <input
-                  type="search"
-                  className="search_input"
-                  placeholder="Search lipstick, skincare, perfume..."
-                  style={{ paddingRight: "40px" }}
-                />
-                <button className="search_button">
-                  <SearchIcon />
-                </button>
+                <Box className="home-icon-btn" onClick={go("/orders")}>
+                  <NavLink to="/orders">
+                    <Badge
+                      badgeContent={23}
+                      color="primary"
+                      overlap="circular"
+                      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                      className="home-badge"
+                    >
+                      <img
+                        src="/icons/feyri_icon_cart.png"
+                        alt="Cart"
+                        className="home-icon-img"
+                      />
+                    </Badge>
+                  </NavLink>
+                </Box>
               </div>
-            </Stack>
-          </Stack>
+            </div>
+          </div>
 
-          {/* KOSMETIKA RASMI */}
-          <Stack className="wrap_stack_second">
-            <Box className="black_variant">
-              <img src="/home/feyri_rasm1.png" alt="Feyri Beauty set" />
-            </Box>
-          </Stack>
-        </Stack>
-      </Container>
-    </div>
+          <div className="home-header-line" />
+        </header>
+
+        {/* Catalog mega menu (sizdagi eski glowess-catalog-panel ni ishlatadi) */}
+        {isCatalogOpen && (
+          <div
+            className="glowess-catalog-panel home-catalog-panel"
+            onMouseEnter={openCatalog}
+            onMouseLeave={closeCatalog}
+          >
+            <div className="glowess-catalog-inner">
+              <div className="glowess-catalog-list">
+                <p className="glowess-catalog-title">Shop All</p>
+
+                <div className="glowess-catalog-columns">
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Skincare</p>
+                    <button className="glowess-catalog-link">Cleansers</button>
+                    <button className="glowess-catalog-link">Toners</button>
+                    <button className="glowess-catalog-link">Moisturisers</button>
+                    <button className="glowess-catalog-link">Masks</button>
+                  </div>
+
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Makeup</p>
+                    <button className="glowess-catalog-link">Face</button>
+                    <button className="glowess-catalog-link">Eyes</button>
+                    <button className="glowess-catalog-link">Lips</button>
+                    <button className="glowess-catalog-link">Tools</button>
+                  </div>
+
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Body &amp; Hair</p>
+                    <button className="glowess-catalog-link">Body Care</button>
+                    <button className="glowess-catalog-link">Haircare</button>
+                    <button className="glowess-catalog-link">Bath &amp; Wellbeing</button>
+                  </div>
+
+                  <div className="glowess-catalog-column">
+                    <p className="glowess-catalog-col-title">Featured</p>
+                    <button className="glowess-catalog-link">Bestsellers</button>
+                    <button className="glowess-catalog-link">New Arrivals</button>
+                    <button className="glowess-catalog-link">Sale</button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glowess-catalog-featured">
+                <article className="glowess-catalog-card">
+                  <div className="glowess-catalog-card-img-wrap">
+                    <img src="/images/image.png" alt="All products" className="glowess-catalog-card-img" />
+                  </div>
+                  <div className="glowess-catalog-card-caption">All Products</div>
+                </article>
+
+                <article className="glowess-catalog-card">
+                  <div className="glowess-catalog-card-img-wrap">
+                    <img src="/images/image copy 2.png" alt="Sale" className="glowess-catalog-card-img" />
+                  </div>
+                  <div className="glowess-catalog-card-caption">Sale</div>
+                </article>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* HERO TEXT */}
+      <div className="home-hero-content">
+        <div className="home-hero-kicker">99.5% NATURAL. 100% YOU.</div>
+        <h1 className="home-hero-title">Beauty You Collection</h1>
+
+        <button className="home-hero-btn" type="button" onClick={go("/brand")}>
+          SHOP NOW <span className="home-hero-arrow">↗</span>
+        </button>
+      </div>
+    </section>
   );
 }

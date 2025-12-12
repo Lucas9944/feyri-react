@@ -1067,3 +1067,283 @@
 .hover-line:focus-within .underline::after{
   transform: scaleX(1);
 }
+
+/* ===== HOME HERO (1:1) ===== */
+
+.home-hero{
+  --topbar-h: 38px;
+  --header-h: 74px;
+
+  width: 100%;
+  height: 780px;                 /* sizdagi zoomga mos */
+  position: relative;
+  overflow: hidden;
+
+  /* bu yerga hero rasmingizni qo‘ying */
+  background-image: url("/public/products/velvet_kiss_tint.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* yengil qoramtir overlay — text oq ko‘rinishi uchun */
+.home-hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.10);
+  pointer-events: none;
+}
+
+/* TOPBAR */
+.home-topbar{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: var(--topbar-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #0e1512;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  z-index: 50;
+}
+
+/* NAV SHELL */
+.home-nav-shell{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--topbar-h);
+  z-index: 60;
+}
+
+/* HEADER */
+.home-header{
+  height: var(--header-h);
+}
+
+.home-header-inner{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: var(--header-h);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #fff;
+}
+
+.home-left{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* BURGER */
+.home-burger{
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 0;
+}
+.home-burger span{
+  width: 18px;
+  height: 2px;
+  background: rgba(255,255,255,0.90);
+}
+
+/* MENU */
+.home-menu{
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.home-link{
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  position: relative;
+  padding: 6px 0;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.home-link--strong{ font-weight: 600; }
+
+/* underline animatsiya */
+.home-link::after{
+  content:"";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background: rgba(255,255,255,0.85);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+.home-link:hover{
+  opacity: 1;
+  transform: translateY(-1px);
+}
+.home-link:hover::after{
+  transform: scaleX(1);
+}
+
+.home-divider{
+  width: 1px;
+  height: 16px;
+  background: rgba(255,255,255,0.35);
+}
+
+/* CENTER BRAND */
+.home-brand{
+  font-family: "Playfair Display", "Times New Roman", serif;
+  font-size: 28px;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.92);
+  text-transform: uppercase;
+}
+
+/* RIGHT SIDE */
+.home-right{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.home-country{
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.78);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+.home-caret{
+  margin-left: 6px;
+  opacity: 0.8;
+}
+
+/* ICONS */
+.home-icons{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-icon-btn{
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  transition: transform 160ms ease, background 160ms ease;
+}
+.home-icon-btn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.10);
+}
+
+.home-icon-img{
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1); /* ikonlar oq bo‘lib ko‘rinsin */
+}
+
+/* header line */
+.home-header-line{
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 1px;
+  background: rgba(255,255,255,0.35);
+  opacity: 0.7;
+}
+
+/* CATALOG panel — hero ustida chiqishi */
+.home-catalog-panel{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--header-h));
+  z-index: 80;
+}
+
+/* HERO CONTENT */
+.home-hero-content{
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 40;
+  color: #fff;
+}
+
+.home-hero-kicker{
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 10px;
+}
+
+.home-hero-title{
+  margin: 0;
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.home-hero-btn{
+  margin-top: 22px;
+  height: 42px;
+  padding: 0 22px;
+  background: rgba(255,255,255,0.92);
+  border: 1px solid rgba(255,255,255,0.55);
+  color: #111;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 160ms ease, background 160ms ease;
+}
+.home-hero-btn:hover{
+  transform: translateY(-1px);
+  background: #fff;
+}
+.home-hero-arrow{
+  font-size: 14px;
+}
+
+/* Responsive (minimal) */
+@media (max-width: 992px){
+  .home-menu{ display: none; }
+  .home-brand{ font-size: 22px; }
+  .home-hero-title{ font-size: 38px; }
+}
