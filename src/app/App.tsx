@@ -1,7 +1,7 @@
 // App.tsx
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { BrandPage } from "./screens/BrandPage";
+import  BrandPage  from "../app/screens/BrandPage";
 import { CommunityPage } from "./screens/CommunityPage";
 import { OrdersPage } from "./screens/OrdersPage";
 import { MemberPage } from "./screens/MemberPage";
@@ -14,6 +14,8 @@ import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
 import { Footer } from "./components/footer";
 import  '../css/navbar.css';
+import '../css/footer.css';
+import '../css/shop.css';
 
 function App() {
   const [path, setPath] = useState("");

@@ -34,6 +34,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-evenly;
+
 }
 
 .format_brand .wrap_cont_brand {
@@ -586,8 +587,8 @@
   
   /* 2-rasmdagi kabi biroz pushti fon va nozik pastki chiziq */
   .glowess-header {
-    background: #fff9f7;
-    border-bottom: 1px solid #f4d9e2;
+    background: #ffffff;
+    /* border-bottom: 1px solid #f4d9e2; */
   }
   
   .glowess-header-inner {
@@ -762,10 +763,11 @@
     position: absolute;
     left: 0;
     right: 0;
-    bottom: -4px;
-    height: 4px;
-    background: #f8dfe6;
+    /* bottom: -4px; */
+    height: 1px;
+    background:  #E0E0E0;
     pointer-events: none;
+    /* border: 2px solid violet; */
   }
   
   /* katalog ichki kontent eni 1-rasmga yaqinroq */
@@ -868,8 +870,8 @@
   /* 2-rasmdagi kabi biroz pastroq hero */
   
   .glowess-shop-hero {
-    background: #fdf9f6;
-    padding: 60px 40px 80px; /* oldingi 80/110 dan kichikroq */
+    background: linear-gradient(135deg, #FCE4EC 0%, #F7DDE2 60%, #FDF4F7 100%);
+    padding: 40px 40px 80px; /* oldingi 80/110 dan kichikroq */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -887,10 +889,11 @@
     text-transform: capitalize;
     color: #111111;
     margin-bottom: 18px;
+    font-weight: 400;
   }
   
   .glowess-shop-subtitle {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.7;
     color: #555555;
   }
@@ -927,11 +930,14 @@
   @media (max-width: 992px) {
     .glowess-header-inner {
       padding: 14px 20px;
+  
     }
   
-    .glowess-logo {
+    .glowess-header-inner .glowess-logo {
       font-size: 24px;
       letter-spacing: 0.22em;
+      margin-right: 80px;
+
     }
   
     .glowess-main-menu {
@@ -944,6 +950,8 @@
   
     .glowess-shop-hero {
       padding: 50px 20px 70px;
+  
+
     }
   
     .glowess-shop-title {

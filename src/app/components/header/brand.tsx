@@ -126,7 +126,7 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                   <Box className="icon_btn" onClick={handleNavClick}>
                     <NavLink to={"/orders"}>
                       <Badge
-                        badgeContent={23}
+                        badgeContent={17}
                         color="primary"
                         overlap="circular"
                         anchorOrigin={{ vertical: "top", horizontal: "right" }}
@@ -240,8 +240,8 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
           </p>
         </div>
 
-        <div className="glowess-shop-blob glowess-shop-blob--left" />
-        <div className="glowess-shop-blob glowess-shop-blob--right" />
+        {/* <div className="glowess-shop-blob glowess-shop-blob--left" />
+        <div className="glowess-shop-blob glowess-shop-blob--right" /> */}
       </section>
     </>
   );

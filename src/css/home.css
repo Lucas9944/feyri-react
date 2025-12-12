@@ -793,6 +793,10 @@
     color: #ffffff !important;
     border-color: #f48fb1 !important;
   }
+  .nav_badge .MuiBadge-badge{
+    background: #f48fb1 !important;
+    color: #fff !important;
+  }
   
   /* Responsive */
   

@@ -1,0 +1,347 @@
+/* ====== ALPHA-H STYLE FILTER (chap panel) ====== */
+
+.filter-container {
+    /* chapdan bo'sh joy – rasmga juda o‘xshash */
+    padding: 56px 0 96px 72px;
+    width: 320px;
+    box-sizing: border-box;
+    background: transparent;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+      -system-ui, "Helvetica Neue", Arial, sans-serif;
+    color: #111111;
+    /* border: 2px solid yellow; */
+
+  }
+  
+  /* Har bir bo'lim orasidagi masofa */
+  .filter-section {
+    margin-bottom: 56px;
+  }
+  
+  /* Sarlavha: Product Type, Availability ... */
+  .section-header {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 18px 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .section-title {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+  
+  .section-arrow {
+    font-size: 26px;
+    color: #111111;
+    transition: transform 0.2s ease;
+  }
+  
+  .section-arrow-open {
+    transform: rotate(0deg);
+  }
+  
+  .section-arrow:not(.section-arrow-open) {
+    transform: rotate(180deg);
+  }
+  
+  /* Kontent qismi */
+  .section-body {
+    padding-left: 4px;
+  }
+  
+  /* Checkbox lar – matn va line-height rasmga o‘xshash */
+  .filter-checkbox .MuiFormControlLabel-label {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  
+  .filter-checkbox.MuiFormControlLabel-root {
+    margin-left: 0;
+    margin-bottom: 4px;
+  }
+  
+  /* Checkbox ikonkasini kattaroq va qora qilish */
+  .filter-container .MuiCheckbox-root {
+    padding: 0;
+    margin-right: 16px;
+    color: #111111;
+  }
+  
+  .filter-container .MuiCheckbox-root svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* checked bo'lganda kvadrat qora, ichida oq belgi */
+  .filter-container .MuiCheckbox-root.Mui-checked svg {
+    color: #111111;
+  }
+  
+  /* RESET linki */
+  .reset-link {
+    margin-top: 16px;
+    font-size: 18px;
+    color: #d5563a;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  /* PRICE – slider */
+/* ===== PRICE SLIDER (2-rasm kabi: toza qora chiziq + oq doira, shadow yo‘q) ===== */
+
+.price-slider .MuiSlider-root{
+  padding: 18px 0 0 0;
+}
+
+/* chiziq qalinligi */
+.price-slider .MuiSlider-rail,
+.price-slider .MuiSlider-track{
+  height: 4px;
+  border: none !important;
+  opacity: 1 !important;
+}
+
+/* 2-rasmda chiziq to‘liq qora ko‘rinadi (range bo‘lsa ham) */
+.price-slider .MuiSlider-rail{
+  background: #111 !important;
+}
+
+.price-slider .MuiSlider-track{
+  background: #111 !important;
+}
+
+/* doira (thumb) */
+.price-slider .MuiSlider-thumb{
+  width: 34px;
+  height: 34px;
+  background: #fff !important;
+  border: 3px solid #111 !important;
+
+  box-shadow: none !important;         /* shadow yo‘q */
+  filter: none !important;             /* pastdagi kulrang soyani yo‘q qiladi */
+}
+
+/* MUI default “halo” (thumb::before) ni o‘chirib tashlaymiz */
+.price-slider .MuiSlider-thumb::before{
+  box-shadow: none !important;
+  content: "" !important;
+}
+
+/* active/focus paytida ham shadow chiqmasin */
+.price-slider .MuiSlider-thumb.Mui-focusVisible,
+.price-slider .MuiSlider-thumb:active{
+  box-shadow: none !important;
+}
+
+/* hoverda rang o‘zgarmasin */
+.price-slider .MuiSlider-thumb:hover{
+  box-shadow: none !important;
+}
+
+  
+  /* COLOR matnlari – 2 ustunli */
+  .color-body {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 96px;
+    row-gap: 16px;
+    margin-top: 4px;
+  }
+  
+  .color-chip {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  
+  /* SIZE bo'limi checkboxlari rasmga o‘xshash */
+  .section-body .MuiFormControlLabel-root {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* eng pastdagi bo'sh joy */
+  .filter-container:last-child {
+    margin-bottom: 40px;
+  }
+  
+
+  /* ShopProducts wrapper */
+.shop_products_section {
+    width: 1000px;
+   margin-left: 70px;
+ 
+  }
+  
+  /* TOP BAR (Showing all + Sort) */
+  .shop_topbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 28px 0;
+  }
+  
+  .shop_results_text {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 14px !important;
+    color: rgba(47, 37, 40, 0.75);
+  }
+  
+  .shop_sort_btn {
+    border: none;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: rgba(47, 37, 40, 0.9);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 6px;
+  }
+  
+  .shop_sort_chev {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  
+  /* MUI Menu style (dropdown) */
+  .shop_sort_menu {
+    border-radius: 10px !important;
+    box-shadow: 0 18px 35px rgba(0,0,0,0.14) !important;
+    overflow: hidden;
+  }
+  
+  .shop_sort_menu_list {
+    padding: 8px !important;
+  }
+  
+  .shop_sort_item {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 13px !important;
+    border-radius: 8px !important;
+    gap: 8px;
+  }
+  
+  .shop_sort_item.active {
+    background: rgba(60, 120, 255, 0.16) !important;
+  }
+  
+  .shop_sort_check {
+    width: 18px;
+    display: inline-block;
+  }
+  
+  /* PAGINATION (1 2 →) */
+  .shop-pagination {
+    width: 180px;
+    height: 56px;
+    margin: 70px auto 0;
+    border: 1px solid rgba(47, 37, 40, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    background: #fff;
+  }
+  
+  .shop-pagebtn,
+  .shop-nextbtn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: rgba(47, 37, 40, 0.85);
+    position: relative;
+  }
+  
+  .shop-pagebtn.active::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 8px;
+    height: 2px;
+    background: rgba(47, 37, 40, 0.85);
+  }
+  
+  .shop-nextbtn {
+    border-left: 1px solid rgba(47, 37, 40, 0.2);
+    font-size: 18px;
+  }
+  
+  .shop-nextbtn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  
+
+  /* === SHOP PAGE LAYOUT (ENG MUHIMI) === */
+
+.shop-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+  }
+  
+  /* Chap + o‘ng yonma-yon */
+  .shop-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 48px;
+  }
+  
+  .shop-filter {
+    width: 260px;
+    flex-shrink: 0;
+  }
+  
+  .shop-products {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* ===== PRODUCTS GRID (3x3) ===== */
+
+.latest_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 🔴 ANIQ 3 TA */
+    column-gap: 0px;
+    row-gap: 22px;
+    width: 100%;
+  
+  }
+  
+  /* Har bir karta */
+  .latest_card {
+    display: flex;
+    flex-direction: column;
+  
+  }
+  
+  /* Rasm paneli */
+  .latest_media {
+    width: 281.297px;          
+    aspect-ratio: 1 / 1.2;    
+    background: #f7f4ef;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+  }
+  
