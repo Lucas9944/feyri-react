@@ -260,17 +260,21 @@
 
 /* Bitta umumiy logo stili – hamma pageda shu ishlaydi */
 .logo_brand {
-    font-family: 'Quella';
-    font-size: 22px;
-    letter-spacing: 0.28em;
-    background: linear-gradient(90deg, #FCE4EC, #F48FB1, #C39BD3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-family: 'Quella', sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  font-weight: 500;
+  margin-top: 0;
+  cursor: pointer;
 
-    margin-top: 0;
-    font-weight: 400;
-    cursor: pointer;
+  background: linear-gradient(90deg, #FF5FA2 0%, #FF8BC7 45%, #B98CFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 0 1px 10px rgba(255, 95, 162, 0.18);
 }
+
 
 
 /* Hover animatsiya (avvalgi bilan bir xil qolishi mumkin) */
@@ -639,7 +643,7 @@
   
   .glowess-menu-item {
     text-decoration: none;
-    color: #111111;
+    color: #f48fb1;
     position: relative;
     padding-bottom: 2px;
   }
@@ -651,10 +655,10 @@
   .glowess-menu-item::after {
     content: "";
     position: absolute;
-    bottom: -4px;
+    bottom: -8px;
     left: 0;
     width: 0;
-    height: 1px;
+    height: 1.5px;
     background: #111111;
     transition: width 0.2s ease-out;
   }
@@ -768,6 +772,17 @@
     background:  #E0E0E0;
     pointer-events: none;
     /* border: 2px solid violet; */
+  }
+
+  .wrapp_logo {
+    display: flex;
+    margin-right: 300px;
+  }
+
+  .logo_tagline {
+    margin-top: 28px;
+    margin-left: 25px;
+    position: absolute;
   }
   
   /* katalog ichki kontent eni 1-rasmga yaqinroq */
@@ -993,3 +1008,62 @@
     }
   }
   
+
+  /* MENU LINKS (Home/Shop/Order/Community/Help) — Catalog style effect */
+
+.hover-line{
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+/* link */
+.hover-line .underline{
+  color: #111;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 0.92;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+/* underline (Catalog kabi) */
+.hover-line .underline::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 2px;
+  background: #f48fb1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms ease;
+}
+
+/* hover */
+.hover-line:hover .underline{
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.hover-line:hover .underline::after{
+  transform: scaleX(1);
+}
+
+/* klaviatura (tab) */
+.hover-line:focus-within .underline{
+  opacity: 1;
+}
+
+.hover-line:focus-within .underline::after{
+  transform: scaleX(1);
+}

@@ -3,26 +3,24 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 type NavbarBrandProps = {
-  setPath: React.Dispatch<React.SetStateAction<string>>;  // To'g'ri tip
+  setPath: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export function NavbarBrand({ setPath }: NavbarBrandProps) {
   const [isCatalogOpen, setCatalogOpen] = useState(false);
 
-  const handleNavClick = () => {
-    setPath("/brand");  // Bu yerda setPath ni to'g'ri chaqirish
-    setCatalogOpen(false);
-  };
-
   const openCatalog = () => setCatalogOpen(true);
   const closeCatalog = () => setCatalogOpen(false);
+
+  const go = (path: string) => () => {
+    setPath(path);
+    setCatalogOpen(false);
+  };
 
   return (
     <>
       {/* TOP STRIP */}
-      <div className="glowess-topbar">
-        Free worldwide shipping for orders over $50
-      </div>
+      <div className="glowess-topbar">Free worldwide shipping for orders over $50</div>
 
       {/* HEADER + CATALOG PANEL WRAPPER */}
       <div className="glowess-nav-shell" onMouseLeave={closeCatalog}>
@@ -47,7 +45,7 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                 {/* CATALOG */}
                 <NavLink
                   to="/catalog"
-                  onClick={handleNavClick}
+                  onClick={go("/catalog")}
                   className="glowess-menu-item glowess-menu-item--strong"
                   onMouseEnter={openCatalog}
                 >
@@ -56,55 +54,56 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
 
                 <span className="glowess-menu-divider" />
 
-                <NavLink
-                  to="/"
-                  onClick={handleNavClick}
-                  className="glowess-menu-item"
-                >
-                  HOME
-                </NavLink>
+                <Box className="hover-line" onClick={go("/")}>
+                  <NavLink to="/" className="underline">
+                    Home
+                  </NavLink>
+                </Box>
 
-                <NavLink
-                  to="/shop"
-                  onClick={handleNavClick}
-                  className="glowess-menu-item"
-                >
-                  SHOP ▾
-                </NavLink>
+                <Box className="hover-line" onClick={go("/brand")}>
+                  <NavLink to="/brand" className="underline">
+                    SHOP
+                  </NavLink>
+                </Box>
 
-                <NavLink
-                  to="/blog"
-                  onClick={handleNavClick}
-                  className="glowess-menu-item"
-                >
-                  BLOG ▾
-                </NavLink>
+                <Box className="hover-line" onClick={go("/orders")}>
+                  <NavLink to="/orders" className="underline">
+                    ORDER
+                  </NavLink>
+                </Box>
 
-                {/* PAGES olib tashlandi */}
-                <NavLink
-                  to="/contact"
-                  onClick={handleNavClick}
-                  className="glowess-menu-item"
-                >
-                  CONTACT
-                </NavLink>
+                <Box className="hover-line" onClick={go("/community")}>
+                  <NavLink to="/community" className="underline">
+                    Community
+                  </NavLink>
+                </Box>
+
+                <Box className="hover-line" onClick={go("/help")}>
+                  <NavLink to="/help" className="underline">
+                    Help
+                  </NavLink>
+                </Box>
               </nav>
             </div>
 
             {/* CENTER LOGO */}
-            <div className="glowess-logo">FEYRI BEAUTY</div>
+            <Stack className="wrapp_logo">
+
+            <Box className="logo_brand logo_brand--home">FEYRI BEAUTY</Box>
+             <Box className="logo_tagline">GO'ZALLIK – BU SENING SEHRING</Box>
+            </Stack>
 
             {/* RIGHT – ikonlar */}
             <div className="glowess-right">
               <div className="glowess-icons">
                 <Stack
-                  flexDirection={"row"}
+                  flexDirection="row"
                   justifyContent="space-evenly"
-                  alignItems={"center"}
+                  alignItems="center"
                   className="icon_links"
                 >
-                  <Box className="icon_btn" onClick={handleNavClick}>
-                    <NavLink to={"/"}>
+                  <Box className="icon_btn" onClick={go("/")}>
+                    <NavLink to="/">
                       <img
                         src="/icons/rasm4.jpeg"
                         alt="Search"
@@ -113,8 +112,8 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                     </NavLink>
                   </Box>
 
-                  <Box className="icon_btn" onClick={handleNavClick}>
-                    <NavLink to={"/brand"}>
+                  <Box className="icon_btn" onClick={go("/brand")}>
+                    <NavLink to="/brand">
                       <img
                         src="/icons/rasm2.jpeg"
                         alt="User"
@@ -123,8 +122,8 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                     </NavLink>
                   </Box>
 
-                  <Box className="icon_btn" onClick={handleNavClick}>
-                    <NavLink to={"/orders"}>
+                  <Box className="icon_btn" onClick={go("/orders")}>
+                    <NavLink to="/orders">
                       <Badge
                         badgeContent={17}
                         color="primary"
@@ -141,8 +140,8 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
                     </NavLink>
                   </Box>
 
-                  <Box className="icon_btn" onClick={handleNavClick}>
-                    <NavLink to={"/community"}>
+                  <Box className="icon_btn" onClick={go("/community")}>
+                    <NavLink to="/community">
                       <img
                         src="/icons/rasm3.jpeg"
                         alt="Heart"
@@ -239,9 +238,6 @@ export function NavbarBrand({ setPath }: NavbarBrandProps) {
             Skincare and makeup products should work in unison.
           </p>
         </div>
-
-        {/* <div className="glowess-shop-blob glowess-shop-blob--left" />
-        <div className="glowess-shop-blob glowess-shop-blob--right" /> */}
       </section>
     </>
   );
