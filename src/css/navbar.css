@@ -598,7 +598,7 @@
   .glowess-header-inner {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 18px 40px; /* balandlikni biroz kamaytirdim */
+    padding: 18px 40px; 
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -787,13 +787,14 @@
   
   /* katalog ichki kontent eni 1-rasmga yaqinroq */
   
-  .glowess-catalog-inner {
+  /* .glowess-catalog-inner {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
+    border: 2px solid red;
     gap: 48px;
-  }
+  } */
   
   /* Chap taraf – ro‘yxatlar */
   
@@ -892,10 +893,10 @@
     overflow: hidden;
   }
   
-  .glowess-shop-hero-inner {
+  /* .glowess-shop-hero-inner {
     max-width: 900px;
     margin: 0 auto;
-  }
+  } */
   
   .glowess-shop-title {
     font-size: 56px; /* 64 dan kichikroq */
@@ -1068,87 +1069,71 @@
   transform: scaleX(1);
 }
 
-/* ===== HOME HERO (1:1) ===== */
-
-.home-hero{
-  --topbar-h: 38px;
-  --header-h: 74px;
-
+/* ===== 1) HERO WRAPPER (FULL WIDTH) ===== */
+.hero{
   width: 100%;
-  height: 780px;                 /* sizdagi zoomga mos */
+  height: 780px;          /* xohlasangiz 820/900 qilib o'zgartirasiz */
   position: relative;
   overflow: hidden;
-
-  /* bu yerga hero rasmingizni qo‘ying */
-  background-image: url("/public/products/velvet_kiss_tint.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-/* yengil qoramtir overlay — text oq ko‘rinishi uchun */
-.home-hero::before{
-  content: "";
+/* ===== 2) TOPBAR ===== */
+.hero-topbar{
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.10);
-  pointer-events: none;
-}
-
-/* TOPBAR */
-.home-topbar{
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  height: var(--topbar-h);
+  top: 0; left: 0; right: 0;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: #0e1512;
   color: #fff;
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  z-index: 50;
+  z-index: 90;
 }
 
-/* NAV SHELL */
-.home-nav-shell{
+/* ===== 3) NAVBAR (OVERLAY) ===== */
+.hero-nav-shell{
   position: absolute;
-  left: 0;
-  right: 0;
-  top: var(--topbar-h);
-  z-index: 60;
+  top: 38px; left: 0; right: 0;
+  z-index: 95;
 }
 
-/* HEADER */
-.home-header{
-  height: var(--header-h);
+/* header fonini rasm ustida ko‘rinadigan qilib */
+.hero-header{
+  position: relative;
+  width: 100%;
+  background: rgba(0,0,0,0.22);
+  backdrop-filter: blur(6px);
 }
 
-.home-header-inner{
-  max-width: 1400px;
+.hero-header-inner{
+  /* BU YER navbar 100% bo'lishini ta'minlaydi */
+  width: min(1500px, calc(100% - 80px));
   margin: 0 auto;
-  padding: 0 40px;
-  height: var(--header-h);
-
+  height: 74px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  color: #fff;
 }
 
-.home-left{
+/* pastki chiziq */
+.hero-header-line{
+  width: 100%;
+  height: 1px;
+  background: rgba(255,255,255,0.22);
+}
+
+/* LEFT */
+.hero-left{
   display: flex;
   align-items: center;
   gap: 22px;
 }
 
-/* BURGER */
-.home-burger{
+/* burger */
+.hero-burger{
   background: none;
   border: none;
   display: flex;
@@ -1157,24 +1142,24 @@
   cursor: pointer;
   padding: 0;
 }
-.home-burger span{
+.hero-burger span{
   width: 18px;
   height: 2px;
   background: rgba(255,255,255,0.90);
 }
 
-/* MENU */
-.home-menu{
+/* menu */
+.hero-menu{
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 20px;
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
-.home-link{
+.hero-link{
   color: rgba(255,255,255,0.88);
   text-decoration: none;
   position: relative;
@@ -1183,10 +1168,9 @@
   align-items: center;
   transition: opacity 160ms ease, transform 160ms ease;
 }
-.home-link--strong{ font-weight: 600; }
+.hero-link--strong{ font-weight: 600; }
 
-/* underline animatsiya */
-.home-link::after{
+.hero-link::after{
   content:"";
   position: absolute;
   left: 0;
@@ -1198,152 +1182,552 @@
   transform-origin: left;
   transition: transform 220ms ease;
 }
-.home-link:hover{
+.hero-link:hover{
   opacity: 1;
   transform: translateY(-1px);
 }
-.home-link:hover::after{
+.hero-link:hover::after{
   transform: scaleX(1);
 }
 
-.home-divider{
+.hero-divider{
   width: 1px;
   height: 16px;
   background: rgba(255,255,255,0.35);
 }
 
-/* CENTER BRAND */
-.home-brand{
+/* CENTER BRAND — FEYRI BEAUTY did bilan */
+/* .hero-brand{
   font-family: "Playfair Display", "Times New Roman", serif;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 0.22em;
-  color: rgba(255,255,255,0.92);
   text-transform: uppercase;
-}
+  color: #f48fb1 ;
+} */
 
-/* RIGHT SIDE */
-.home-right{
+/* RIGHT ICONS */
+.hero-right{
   display: flex;
   align-items: center;
-  gap: 16px;
 }
 
-.home-country{
-  background: none;
-  border: none;
-  color: rgba(255,255,255,0.78);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  cursor: pointer;
-  padding: 6px 8px;
-}
-.home-caret{
-  margin-left: 6px;
-  opacity: 0.8;
-}
-
-/* ICONS */
-.home-icons{
+.hero-icons{
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.home-icon-btn{
-  width: 28px;
-  height: 28px;
+.hero-icon-btn{
+  width: 30px;
+  height: 30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
+  background: rgba(255,255,255,0.10);
   transition: transform 160ms ease, background 160ms ease;
 }
-.home-icon-btn:hover{
+.hero-icon-btn:hover{
   transform: translateY(-1px);
-  background: rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.16);
 }
 
-.home-icon-img{
+.hero-icon-img{
   width: 18px;
   height: 18px;
   object-fit: contain;
   display: block;
-  filter: brightness(0) invert(1); /* ikonlar oq bo‘lib ko‘rinsin */
+  border-radius: 6px;
 }
 
-/* header line */
-.home-header-line{
-  max-width: 1400px;
-  margin: 0 auto;
-  height: 1px;
-  background: rgba(255,255,255,0.35);
-  opacity: 0.7;
+/* MUI badge joylashuvi */
+.hero-badge .MuiBadge-badge{
+  top: 4px;
+  right: 4px;
 }
 
-/* CATALOG panel — hero ustida chiqishi */
+/* Catalog panel hero ustida chiqsin */
 .home-catalog-panel{
   position: absolute;
   left: 0;
   right: 0;
-  top: calc(var(--header-h));
-  z-index: 80;
+  top: 74px;
+  z-index: 110;
 }
 
-/* HERO CONTENT */
-.home-hero-content{
+/* ===== 4) SWIPER HERO ===== */
+.hero-swiper{
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide{
+  width: 100%;
+  height: 780px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* overlay — text aniq ko‘rinsin */
+.hero-slide-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.18);
+}
+
+/* hero content center */
+.hero-content{
   position: absolute;
   left: 50%;
-  top: 58%;
+  top: 56%;
   transform: translate(-50%, -50%);
   text-align: center;
-  z-index: 40;
+  width: min(920px, calc(100% - 40px));
+  z-index: 2;
   color: #fff;
 }
 
-.home-hero-kicker{
+.hero-kicker{
   font-size: 11px;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  opacity: 0.85;
+  opacity: 0.90;
   margin-bottom: 10px;
 }
 
-.home-hero-title{
+.hero-title{
   margin: 0;
   font-size: 56px;
   font-weight: 500;
-  letter-spacing: 0.02em;
   line-height: 1.1;
+  letter-spacing: 0.02em;
 }
 
-.home-hero-btn{
+.hero-subtitle{
+  margin: 14px auto 0;
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.86);
+}
+
+/* CTA — PUSHTI by default + hover pushti effekt */
+/* SHOP NOW — default oq, hover pushti (#f48fb1) */
+.hero-cta{
   margin-top: 22px;
-  height: 42px;
+  height: 44px;
   padding: 0 22px;
-  background: rgba(255,255,255,0.92);
-  border: 1px solid rgba(255,255,255,0.55);
-  color: #111;
+
+  border-radius: 0;
+  border: 1px solid rgba(255,255,255,0.65);
+
+  background: rgba(255,255,255,0.92); /* default oq */
+  color: #111111;                     /* default qora */
+
   font-size: 11px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
+
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transition: transform 160ms ease, background 160ms ease;
+
+  transition: transform 160ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
-.home-hero-btn:hover{
+
+.hero-cta:hover{
   transform: translateY(-1px);
-  background: #fff;
+  background: #f48fb1;          /* hover pushti */
+  color: #ffffff;               /* hover oq text */
+  border-color: rgba(244,143,177,0.9);
+  box-shadow: 0 12px 30px rgba(244, 143, 177, 0.45);
 }
-.home-hero-arrow{
+
+
+.hero-cta-arrow{
   font-size: 14px;
 }
 
-/* Responsive (minimal) */
-@media (max-width: 992px){
-  .home-menu{ display: none; }
-  .home-brand{ font-size: 22px; }
-  .home-hero-title{ font-size: 38px; }
+/* ===== 5) SWIPER UI (past o‘ngga yaqin) ===== */
+.hero .swiper-pagination{
+  bottom: 22px !important;
 }
+
+.hero .swiper-button-prev,
+.hero .swiper-button-next{
+  color: rgba(255,255,255,0.90);
+  width: 44px;
+  height: 44px;
+}
+
+.hero .swiper-button-prev:after,
+.hero .swiper-button-next:after{
+  font-size: 16px;
+}
+
+/* dots */
+.hero .swiper-pagination-bullet{
+  background: rgba(255,255,255,0.55);
+  opacity: 1;
+}
+.hero .swiper-pagination-bullet-active{
+  background: #ffffff;
+}
+
+/* ===== 6) RESPONSIVE ===== */
+@media (max-width: 992px){
+  .hero-header-inner{ width: calc(100% - 32px); }
+  .hero-menu{ display: none; }
+  .hero-title{ font-size: 38px; }
+}
+/* =========================
+   HERO (Homepage) Header
+   TSX: hero-* classlariga mos
+   ========================= */
+
+   .hero {
+    position: relative;
+  }
+  
+  /* TOP STRIP */
+  .hero-topbar{
+    width: 100%;
+    background: #0e1512;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  /* NAV overlay shell (swiper ustida turadi) */
+  .hero-nav-shell{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 42px;                 /* topbar balandligiga yaqin */
+    z-index: 50;
+  }
+  
+  /* HEADER – prozrachniy */
+  .hero-header{
+    position: relative;
+    background: transparent;
+  }
+  
+  /* ichki container full width */
+  .hero-header-inner{
+    width: 100%;
+    max-width: none;
+    padding: 22px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+  }
+  
+  /* pastdagi ingichka chiziq (2-rasmga o‘xshash) */
+  .hero-header-line{
+    margin: 0 56px;
+    height: 1px;
+    background: rgba(255,255,255,0.28);
+  }
+  
+  /* LEFT */
+  .hero-left{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  
+  /* burger oq */
+  .hero-burger{
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hero-burger span{
+    width: 18px;
+    height: 2px;
+    background: rgba(255,255,255,0.92);
+  }
+  
+  /* menu */
+  .hero-menu{
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  
+  /* divider (CATALOG | HOME) */
+  .hero-divider{
+    width: 1px;
+    height: 16px;
+    background: rgba(255,255,255,0.30);
+  }
+  
+  /* links umumiy */
+  .hero-link{
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    opacity: 0.95;
+  }
+  
+  /* kuchli (CATALOG) */
+  .hero-link--strong{
+    font-weight: 600;
+  }
+  
+  /* === UNDERLINE LOGIC ===
+     - CATALOG (hero-link--strong) underline qora
+     - qolganlari underline pushti
+  */
+  .hero-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:0;
+    height:1.5px;
+    transition: width 220ms ease;
+  }
+  
+  /* default: pushti */
+  .hero-link::after{
+    background: #f48fb1;
+  }
+  
+  /* CATALOG: qora underline */
+  .hero-link--strong::after{
+    background:#111111;
+  }
+  
+  .hero-link:hover::after,
+  .hero-link.active::after{
+    width:100%;
+  }
+  
+  /* CENTER BRAND */
+  .hero-brand{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #f48fb1 ;
+    font-family: "Playfair Display","Times New Roman",serif;
+    font-size: 34px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-shadow: 0 16px 36px rgba(0,0,0,0.22);
+    pointer-events: none; 
+  }
+  
+  /* RIGHT ICONS */
+  .hero-right{
+    display: flex;
+    align-items: center;
+  }
+  
+  .hero-icons{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  /* icon button (oq doira) */
+  .hero-icon-btn{
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.06);
+    transition: background 180ms ease, transform 160ms ease, border-color 180ms ease;
+  }
+  .hero-icon-btn:hover{
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.35);
+    transform: translateY(-1px);
+  }
+  
+  .hero-icon-btn a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-icon-img{
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
+  }
+  
+  /* badge (MUI) – oq */
+  .hero-badge .MuiBadge-badge{
+    background: rgba(255,255,255,0.95) !important;
+    color: #111 !important;
+    border: 1px solid rgba(0,0,0,0.18);
+  }
+  
+  /* =======================
+     CATALOG MEGA MENU (sizda glowess classlari)
+     ======================= */
+  .home-catalog-panel,
+  .glowess-catalog-panel.home-catalog-panel{
+    position: absolute;
+    left: 0;
+    top: calc(100% + 10px);
+    width: 100%;
+    background: rgba(15,20,18,0.92);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    padding: 26px 0 30px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    z-index: 60;
+  }
+  
+  /* .glowess-catalog-inner{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 56px;
+    display: flex;
+    gap: 48px;
+    border: 2px solid purple;
+  } */
+  
+  .glowess-catalog-title{
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f48fb1;
+    margin-bottom: 18px;
+  }
+  
+  /* =======================
+     SWIPER HERO – full width
+     ======================= */
+  /* .hero-swiper{
+    width: 100%;
+    height: 700px; 
+    border: 2px solid red;
+  } */
+  
+  .hero-slide{
+    width: 100%;
+    height: 720px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-top: -49px;
+  }
+  
+  /* text o‘qilishi uchun overlay */
+  .hero-slide-overlay{
+    position:absolute;
+    inset:0;
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,0.28) 0%,
+      rgba(0,0,0,0.12) 45%,
+      rgba(0,0,0,0.28) 100%
+    );
+  }
+  
+  /* content markazda */
+  .hero-content{
+    position: absolute;
+    left: 50%;
+    top: 54%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    width: min(920px, 92%);
+  }
+  
+  .hero-kicker{
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 14px;
+  }
+  
+  .hero-title{
+    font-size: 64px;
+    line-height: 1.08;
+    font-weight: 400;
+    margin: 0 0 16px;
+  }
+  
+  .hero-subtitle{
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.92;
+    margin: 0 0 22px;
+  }
+  
+  /* CTA — siz so‘ragan:
+     by default OQ, hoverda pushti #f48fb1
+  */
+  .hero-cta{
+    border: 1px solid rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.92);
+    color: #111;
+    padding: 14px 26px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 160ms ease;
+  }
+  
+  .hero-cta:hover{
+    background: #f48fb1;
+    border-color: #f48fb1;
+    color: #fff;
+    transform: translateY(-1px);
+  }
+  
+  .hero-cta-arrow{
+    font-size: 14px;
+    line-height: 1;
+  }
+  
+  /* responsive */
+ @media (max-width: 992px){
+    .hero-header-inner{ padding: 16px 18px; }
+    .hero-header-line{ margin: 0 18px; }
+    .hero-menu{ display:none; } 
+    .hero-brand{
+      position: static;
+      transform: none;
+      font-size: 22px;
+      letter-spacing: 0.18em;
+    }
+
+    .hero-swiper, .hero-slide{ height: 560px; }
+    .hero-title{ font-size: 40px; }
+  }
+  
+   

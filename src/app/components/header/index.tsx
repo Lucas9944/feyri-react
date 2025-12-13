@@ -1,9 +1,26 @@
-import React, { useState } from "react";
-import { Box, Stack, Badge } from "@mui/material";
+import React, { useMemo, useState } from "react";
+import { Badge, Box, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation, EffectFade } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
 type NavbarHomeProps = {
   setPath: React.Dispatch<React.SetStateAction<string>>;
+};
+
+type HeroSlide = {
+  img: string;
+  kicker: string;
+  title: string;
+  subtitle: string;
+  cta: string;
+  ctaTo: string;
 };
 
 export function NavbarHome({ setPath }: NavbarHomeProps) {
@@ -17,22 +34,54 @@ export function NavbarHome({ setPath }: NavbarHomeProps) {
     setCatalogOpen(false);
   };
 
-  return (
-    <section className="home-hero">
-      {/* Top strip */}
-      <div className="home-topbar">
-        Free worldwide shipping for orders over $50
-      </div>
+  const slides: HeroSlide[] = useMemo(
+    () => [
+      {
+        img: "/products/close-up-topless-women-posing.jpg",
+        kicker: "99.5% NATURAL. 100% YOU.",
+        title: "Beauty You Collection",
+        subtitle: "Yuz terisi uchun yumshoq parvarish: namlantirish, tiklash va himoya.",
+        cta: "SHOP NOW",
+        ctaTo: "/brand",
+      },
+      {
+        img: "/products/pink-model-career-kit-arrangement.jpg",
+        kicker: "SKINCARE ROUTINE",
+        title: "Glow Starts Here",
+        subtitle: "Kunlik skincare rutini: cleanser → toner → serum → cream.",
+        cta: "SHOP NOW",
+        ctaTo: "/brand",
+      },
+      {
+        img: "/products/close-up-woman-doing-korean-skincare.jpg",
+        kicker: "SENSITIVE CARE",
+        title: "Gentle & Effective",
+        subtitle: "Sezgir teri uchun: minimal ingredient, maksimal natija.",
+        cta: "SHOP NOW",
+        ctaTo: "/brand",
+      },
+      {
+        img: "/products/123.jpg",
+        kicker: "MAKEUP + CARE",
+        title: "Beauty With Care",
+        subtitle: "Makeup ostida ham teri nafas olsin — yengil va sof formulalar.",
+        cta: "SHOP NOW",
+        ctaTo: "/brand",
+      },
+    ],
+    []
+  );
 
-      {/* Header + Catalog wrapper */}
-      <div className="home-nav-shell" onMouseLeave={closeCatalog}>
-        <header className="home-header">
-          <div className="home-header-inner">
-            {/* LEFT */}
-            <div className="home-left">
+  return (
+    <section className="hero">
+      {/* NAVBAR + CATALOG */}
+      <div className="glowess-nav-shell" onMouseLeave={closeCatalog}>
+        <header className="glowess-header">
+          <div className="glowess-header-inner">
+            <div className="glowess-left">
               <button
                 type="button"
-                className="home-burger"
+                className="glowess-burger"
                 onClick={openCatalog}
                 onMouseEnter={openCatalog}
                 aria-label="Open catalog"
@@ -42,90 +91,105 @@ export function NavbarHome({ setPath }: NavbarHomeProps) {
                 <span />
               </button>
 
-              <nav className="home-menu">
+              <nav className="glowess-main-menu">
                 <NavLink
                   to="/catalog"
                   onClick={go("/catalog")}
-                  className="home-link home-link--strong"
+                  className="glowess-menu-item glowess-menu-item--strong"
                   onMouseEnter={openCatalog}
                 >
                   CATALOG
                 </NavLink>
 
-                <div className="home-divider" />
+                <span className="glowess-menu-divider" />
 
-                <NavLink to="/" onClick={go("/")} className="home-link">
-                  HOME
-                </NavLink>
+                <Box className="hover-line" onClick={go("/")}>
+                  <NavLink to="/" className="underline">
+                    Home
+                  </NavLink>
+                </Box>
 
-                <NavLink to="/brand" onClick={go("/brand")} className="home-link">
-                  SHOP
-                </NavLink>
+                <Box className="hover-line" onClick={go("/brand")}>
+                  <NavLink to="/brand" className="underline">
+                    Shop
+                  </NavLink>
+                </Box>
 
-                <NavLink to="/community" onClick={go("/community")} className="home-link">
-                  BLOG
-                </NavLink>
+                <Box className="hover-line" onClick={go("/orders")}>
+                  <NavLink to="/orders" className="underline">
+                    Order
+                  </NavLink>
+                </Box>
 
-                <NavLink to="/help" onClick={go("/help")} className="home-link">
-                  PAGES
-                </NavLink>
+                <Box className="hover-line" onClick={go("/community")}>
+                  <NavLink to="/community" className="underline">
+                    Community
+                  </NavLink>
+                </Box>
 
-                <NavLink to="/contact" onClick={go("/contact")} className="home-link">
-                  CONTACT
-                </NavLink>
+                <Box className="hover-line" onClick={go("/help")}>
+                  <NavLink to="/help" className="underline">
+                    Help
+                  </NavLink>
+                </Box>
               </nav>
             </div>
 
-            {/* CENTER LOGO */}
-            <div className="home-brand">GLOWESS</div>
+            <Stack className="wrapp_logo">
+              <Box className="logo_brand logo_brand--home">FEYRI BEAUTY</Box>
+              <Box className="logo_tagline">GO&apos;ZALLIK – BU SENING SEHRING</Box>
+            </Stack>
 
-            {/* RIGHT */}
-            <div className="home-right">
-              <button className="home-country" type="button">
-                UNITED STATES (USD $) <span className="home-caret">▾</span>
-              </button>
-
-              <div className="home-icons">
-                <Box className="home-icon-btn" onClick={go("/")}>
+            <div className="glowess-right">
+              <Stack
+                flexDirection="row"
+                justifyContent="space-evenly"
+                alignItems="center"
+                className="icon_links"
+              >
+                <Box className="icon_btn" onClick={go("/")}>
                   <NavLink to="/">
-                    <img src="/icons/rasm4.jpeg" alt="Search" className="home-icon-img" />
+                    <img src="/icons/rasm4.jpeg" alt="Search" className="nav_icon_img" />
                   </NavLink>
                 </Box>
 
-                <Box className="home-icon-btn" onClick={go("/brand")}>
+                <Box className="icon_btn" onClick={go("/brand")}>
                   <NavLink to="/brand">
-                    <img src="/icons/rasm2.jpeg" alt="User" className="home-icon-img" />
+                    <img src="/icons/rasm2.jpeg" alt="User" className="nav_icon_img" />
                   </NavLink>
                 </Box>
 
-                <Box className="home-icon-btn" onClick={go("/orders")}>
+                <Box className="icon_btn" onClick={go("/orders")}>
                   <NavLink to="/orders">
                     <Badge
-                      badgeContent={23}
+                      badgeContent={17}
                       color="primary"
                       overlap="circular"
                       anchorOrigin={{ vertical: "top", horizontal: "right" }}
-                      className="home-badge"
+                      className="nav_badge"
                     >
                       <img
                         src="/icons/feyri_icon_cart.png"
                         alt="Cart"
-                        className="home-icon-img"
+                        className="nav_icon_img"
                       />
                     </Badge>
                   </NavLink>
                 </Box>
-              </div>
+
+                <Box className="icon_btn" onClick={go("/community")}>
+                  <NavLink to="/community">
+                    <img src="/icons/rasm3.jpeg" alt="Heart" className="nav_icon_img" />
+                  </NavLink>
+                </Box>
+              </Stack>
             </div>
           </div>
-
-          <div className="home-header-line" />
         </header>
 
-        {/* Catalog mega menu (sizdagi eski glowess-catalog-panel ni ishlatadi) */}
         {isCatalogOpen && (
           <div
-            className="glowess-catalog-panel home-catalog-panel"
+            className="glowess-catalog-panel"
             onMouseEnter={openCatalog}
             onMouseLeave={closeCatalog}
           >
@@ -169,14 +233,22 @@ export function NavbarHome({ setPath }: NavbarHomeProps) {
               <div className="glowess-catalog-featured">
                 <article className="glowess-catalog-card">
                   <div className="glowess-catalog-card-img-wrap">
-                    <img src="/images/image.png" alt="All products" className="glowess-catalog-card-img" />
+                    <img
+                      src="/images/image.png"
+                      alt="All products"
+                      className="glowess-catalog-card-img"
+                    />
                   </div>
                   <div className="glowess-catalog-card-caption">All Products</div>
                 </article>
 
                 <article className="glowess-catalog-card">
                   <div className="glowess-catalog-card-img-wrap">
-                    <img src="/images/image copy 2.png" alt="Sale" className="glowess-catalog-card-img" />
+                    <img
+                      src="/images/image copy 2.png"
+                      alt="Sale"
+                      className="glowess-catalog-card-img"
+                    />
                   </div>
                   <div className="glowess-catalog-card-caption">Sale</div>
                 </article>
@@ -186,15 +258,34 @@ export function NavbarHome({ setPath }: NavbarHomeProps) {
         )}
       </div>
 
-      {/* HERO TEXT */}
-      <div className="home-hero-content">
-        <div className="home-hero-kicker">99.5% NATURAL. 100% YOU.</div>
-        <h1 className="home-hero-title">Beauty You Collection</h1>
+      {/* SWIPER */}
+      <Swiper
+        className="hero-swiper"
+        modules={[Autoplay, Pagination, Navigation, EffectFade]}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        loop
+        autoplay={{ delay: 4500, disableOnInteraction: false }}
+        navigation
+        pagination={{ clickable: true }}
+      >
+        {slides.map((s, idx) => (
+          <SwiperSlide key={idx}>
+            <div className="hero-slide" style={{ backgroundImage: `url(${s.img})` }}>
+              <div className="hero-slide-overlay" />
+              <div className="hero-content">
+                <div className="hero-kicker">{s.kicker}</div>
+                <h1 className="hero-title">{s.title}</h1>
+                <p className="hero-subtitle">{s.subtitle}</p>
 
-        <button className="home-hero-btn" type="button" onClick={go("/brand")}>
-          SHOP NOW <span className="home-hero-arrow">↗</span>
-        </button>
-      </div>
+                <button className="hero-cta" type="button" onClick={go(s.ctaTo)}>
+                  {s.cta} <span className="hero-cta-arrow">↗</span>
+                </button>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </section>
   );
 }
