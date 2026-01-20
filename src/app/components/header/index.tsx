@@ -37,7 +37,7 @@ export function NavbarHome({ setPath }: NavbarHomeProps) {
   const slides: HeroSlide[] = useMemo(
     () => [
       {
-        img: "/products/close-up-topless-women-posing.jpg",
+        img: "/products/qwe.jpg",
         kicker: "99.5% NATURAL. 100% YOU.",
         title: "Beauty You Collection",
         subtitle: "Yuz terisi uchun yumshoq parvarish: namlantirish, tiklash va himoya.",

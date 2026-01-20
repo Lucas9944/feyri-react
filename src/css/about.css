@@ -1,0 +1,606 @@
+/* =========================
+   FEYRI HELP / ABOUT (Premium)
+   - No url(...)
+   - No pink/glow background effects
+   - Accent: #f48fb1
+   ========================= */
+
+   .help_page {
+    --accent: #f48fb1;
+    --accent-08: rgba(244, 143, 177, 0.08);
+    --accent-14: rgba(244, 143, 177, 0.14);
+    --text: #171717;
+    --muted: rgba(23, 23, 23, 0.62);
+    --stroke: rgba(17, 17, 17, 0.10);
+    --stroke2: rgba(17, 17, 17, 0.06);
+    --card: #ffffff;
+    --radius: 22px;
+    --radius2: 14px;
+    --shadow: 0 14px 34px rgba(17, 17, 17, 0.08);
+  
+    min-height: 100vh;
+    padding: 96px 0 72px;
+    background: #ffffff; /* NO pink background effect */
+  }
+  
+  /* Back-to-top (FAB) -> pink */
+  .help_page .MuiFab-root {
+    background: var(--accent) !important;
+    color: #fff !important;
+    box-shadow: 0 10px 22px rgba(17, 17, 17, 0.18) !important;
+  }
+  .help_page .MuiFab-root:hover {
+    background: var(--accent) !important;
+    filter: brightness(0.98);
+  }
+  
+  /* -------------------------
+     Tabs / Navbar (NOT too pill, NO underline)
+  ------------------------- */
+  .help_tabs_shell {
+    position: sticky;
+    top: 72px;
+    z-index: 3;
+  
+    margin: 0 auto 18px;
+    padding: 8px;
+  
+    border-radius: 18px;               /* less rounded */
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid var(--stroke2);
+    box-shadow: 0 10px 24px rgba(17, 17, 17, 0.06);
+    backdrop-filter: blur(10px);
+  }
+  
+  .help_tabs {
+    min-height: 48px;
+  }
+  
+  /* kill MUI indicator underline completely */
+  .help_tabs .MuiTabs-indicator {
+    display: none !important;
+  }
+  
+  .help_tabs .MuiTabs-flexContainer {
+    gap: 8px;
+  }
+  
+  .help_tab {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 850 !important;
+    text-transform: none !important;
+    letter-spacing: 0.2px !important;
+  
+    min-height: 48px !important;
+    padding: 10px 16px !important;
+  
+    border-radius: 12px !important; /* not pill */
+    color: rgba(23, 23, 23, 0.72) !important;
+  
+    transition: background 160ms ease, color 160ms ease;
+  }
+  
+  .help_tab:hover {
+    background: rgba(17, 17, 17, 0.04); /* neutral hover, not tacky pink */
+    color: rgba(23, 23, 23, 0.86) !important;
+  }
+  
+  .help_tab.Mui-selected {
+    background: var(--accent-08) !important;
+    color: var(--text) !important;
+  }
+  
+  /* -------------------------
+     Layout wrappers
+  ------------------------- */
+  .help_container {
+    position: relative;
+  }
+  
+  .help_content {
+    margin-top: 14px;
+  }
+  
+  /* -------------------------
+     Cards
+  ------------------------- */
+  .help_card {
+    background: var(--card);
+    border: 1px solid var(--stroke2);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  .help_card + .help_card {
+    margin-top: 16px;
+  }
+  
+  /* -------------------------
+     HERO (4th image style -> keep, just refine)
+  ------------------------- */
+  .help_hero {
+    display: grid;
+    grid-template-columns: 520px 1fr;
+    gap: 26px;
+    padding: 26px;
+  }
+  
+  .help_hero_media {
+    border-radius: calc(var(--radius) - 8px);
+    overflow: hidden;
+    border: 1px solid var(--stroke2);
+    background: #fff;
+    min-height: 320px;
+  }
+  
+  .help_hero_img {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .help_hero_text {
+    padding: 6px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .help_kicker {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.18em !important;
+    color: rgba(23, 23, 23, 0.50) !important;
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .help_title {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 950 !important;
+    font-size: 32px !important;
+    line-height: 1.18 !important;
+    color: var(--text) !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .accent {
+    color: var(--accent);
+  }
+  
+  .help_desc {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 750 !important;
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+    color: var(--muted) !important;
+    margin-bottom: 16px !important;
+    max-width: 640px;
+  }
+  
+  .help_meta_line {
+    height: 1px;
+    width: 100%;
+    max-width: 520px;
+    background: rgba(17, 17, 17, 0.10);
+    margin: 6px 0 14px;
+  }
+  
+  .help_meta_name {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 950;
+    font-size: 16px;
+    color: var(--text);
+  }
+  
+  .help_meta_role {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 750;
+    font-size: 13px;
+    color: rgba(23, 23, 23, 0.55);
+    margin-top: 4px;
+  }
+  
+  .help_actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  
+  /* Buttons */
+  .btn_primary {
+    background: var(--accent) !important; /* solid pink */
+    color: #fff !important;
+    font-weight: 950 !important;
+    text-transform: none !important;
+    border-radius: 14px !important;
+    padding: 10px 18px !important;
+    box-shadow: 0 10px 18px rgba(244, 143, 177, 0.25) !important;
+  }
+  
+  .btn_primary:hover {
+    background: var(--accent) !important;
+    filter: brightness(0.98);
+  }
+  
+  .btn_ghost {
+    border: 1px solid rgba(244, 143, 177, 0.55) !important;
+    color: var(--accent) !important;
+    font-weight: 950 !important;
+    text-transform: none !important;
+    border-radius: 14px !important;
+    padding: 10px 18px !important;
+    background: #fff !important;
+  }
+  
+  .btn_ghost:hover {
+    background: rgba(244, 143, 177, 0.10) !important;
+  }
+  
+  /* -------------------------
+     PICKS (5th image: redesign -> cleaner cards)
+  ------------------------- */
+  .help_picks {
+    padding: 22px;
+  }
+  
+  .help_section_head {
+    padding: 2px 4px 10px;
+  }
+  
+  .help_section_title {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 950 !important;
+    font-size: 22px !important;
+    margin-bottom: 8px !important;
+    color: var(--text) !important;
+  }
+  
+  .help_section_desc {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 750 !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    color: var(--muted) !important;
+    max-width: 980px;
+  }
+  
+  .help_pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 4px 12px;
+  }
+  
+  .pill {
+    text-decoration: none;
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+  
+    color: rgba(23, 23, 23, 0.78);
+    padding: 9px 14px;
+  
+    border-radius: 12px; /* not pill */
+    background: #fff;
+    border: 1px solid rgba(17, 17, 17, 0.10);
+    transition: background 160ms ease, border 160ms ease;
+  }
+  
+  .pill:hover {
+    border: 1px solid rgba(244, 143, 177, 0.45);
+    background: rgba(244, 143, 177, 0.08);
+  }
+  
+ /* === FEYRI PICKS: STICKER GRID (A: contain, no crop) === */
+.help_icons{
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  
+  .help_icon_card{
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    border-radius: 22px;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    background: rgba(255, 255, 255, 0.70);
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease, border 180ms ease;
+    overflow: hidden;
+  }
+  
+  .help_icon_card:hover{
+    transform: translateY(-2px) scale(1.03);
+    border: 1px solid rgba(244, 143, 177, 0.55);
+    box-shadow: 0 14px 30px rgba(17, 17, 17, 0.08);
+  }
+  
+  .help_icon_card img{
+    width: 100%;
+    max-width: 260px;     /* xohlasangiz 280-320 qilib kattalashtiring */
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 10px 18px rgba(17,17,17,0.10));
+  }
+  
+  /* responsive */
+  @media (max-width: 1100px){
+    .help_icons{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px){
+    .help_icons{ grid-template-columns: 1fr; }
+    .help_icon_card img{ max-width: 320px; }
+  }
+  
+  
+  /* -------------------------
+     VALUES (6th disliked -> reshape to “7th mold” feel)
+     - less empty space
+     - subtle dashed outline (premium)
+  ------------------------- */
+  .help_value {
+    display: grid;
+    grid-template-columns: 1.1fr 520px;
+    gap: 22px;
+    padding: 22px;
+    align-items: center;
+  
+    /* premium “mold” */
+    border: 1px dashed rgba(244, 143, 177, 0.40);
+    box-shadow: var(--shadow);
+  }
+  
+  .help_value--reverse {
+    grid-template-columns: 520px 1.1fr;
+  }
+  
+  .help_value--reverse .help_value_text {
+    order: 2;
+  }
+  .help_value--reverse .help_value_media {
+    order: 1;
+  }
+  
+  .help_value_text {
+    padding: 6px 8px;
+  }
+  
+  .help_value_title {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 950 !important;
+    font-size: 20px !important;
+    color: var(--text) !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .help_value_desc {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 750 !important;
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+    color: var(--muted) !important;
+    max-width: 760px;
+  }
+  
+  .help_value_media {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    background: rgba(17, 17, 17, 0.02);
+    min-height: 260px;
+  }
+  
+  .help_value_media img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .help_value_action {
+    margin-top: 14px;
+  }
+  
+  /* -------------------------
+     CONTACT (already decent, just premium)
+  ------------------------- */
+  .help_contact {
+    padding: 22px;
+  }
+  
+/* === CONTACT FIX: form + map bir-biriga yopishmasin === */
+.contact_grid{
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 28px;              /* <<< asosiy fix */
+    align-items: start;
+  }
+  
+  .contact_map{
+    border-radius: 18px;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    background: #fff;
+    overflow: hidden;
+    padding-left: 10px;     /* <<< map chap tomondan “nafas” oladi */
+  }
+  
+  .map_iframe{
+    width: 100%;
+    height: 420px;
+    border: 0;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  /* responsive (mobil/plan) */
+  @media (max-width: 1100px){
+    .contact_grid{
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .contact_map{ padding-left: 0; }
+  }
+  
+  .contact_title {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 950 !important;
+    font-size: 30px !important;
+    margin-bottom: 8px !important;
+    color: var(--text) !important;
+  }
+  
+  .contact_subtitle {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 750 !important;
+    font-size: 14px !important;
+    color: var(--muted) !important;
+    margin-bottom: 18px !important;
+  }
+  
+  .contact_form {
+    display: grid;
+    gap: 12px;
+  }
+  
+  .field {
+    width: 100%;
+    outline: none;
+    border-radius: 12px;
+    border: 1px solid rgba(17, 17, 17, 0.10);
+    background: #fff;
+    padding: 12px 14px;
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 800;
+    color: rgba(23, 23, 23, 0.85);
+    transition: border 160ms ease, box-shadow 160ms ease;
+  }
+  
+  .field::placeholder {
+    color: rgba(23, 23, 23, 0.40);
+    font-weight: 800;
+  }
+  
+  .field:focus {
+    border: 1px solid rgba(244, 143, 177, 0.65);
+    box-shadow: 0 0 0 5px rgba(244, 143, 177, 0.16);
+  }
+  
+  .field--textarea {
+    min-height: 140px;
+    resize: vertical;
+    padding-top: 12px;
+  }
+  
+  .contact_actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+  }
+  
+
+  
+  .contact_map_title {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 950 !important;
+    font-size: 16px !important;
+    color: rgba(23, 23, 23, 0.85) !important;
+    padding: 14px 14px 0;
+  }
+  
+
+  /* -------------------------
+     FAQ (2nd image: redesign -> NOT pill, cleaner)
+  ------------------------- */
+  .feyri_acc {
+    border-radius: 12px !important;      /* less rounded */
+    border: 1px solid rgba(17, 17, 17, 0.10) !important;
+    background: #fff !important;
+    box-shadow: none !important;         /* cleaner */
+    overflow: hidden;
+  }
+  
+  .feyri_acc:before {
+    display: none !important;
+  }
+  
+  .feyri_acc_summary {
+    padding: 14px 16px !important;
+  }
+  
+  .feyri_acc_summary .MuiAccordionSummary-content {
+    margin: 0 !important;
+  }
+  
+  .feyri_acc_q {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 950 !important;
+    color: rgba(23, 23, 23, 0.88) !important;
+  }
+  
+  /* icon color */
+  .feyri_acc_summary .MuiSvgIcon-root {
+    color: rgba(23, 23, 23, 0.55) !important;
+  }
+  
+  .feyri_acc_details {
+    padding: 0 16px 16px !important;
+    border-top: 1px solid rgba(17, 17, 17, 0.06);
+  }
+  
+  .feyri_acc_a {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 750 !important;
+    line-height: 1.75 !important;
+    color: rgba(23, 23, 23, 0.64) !important;
+  }
+  
+  /* spacing between FAQ items */
+  .help_faq_stack > .MuiPaper-root + .MuiPaper-root {
+    margin-top: 12px !important;
+  }
+  
+  /* -------------------------
+     Responsive
+  ------------------------- */
+  @media (max-width: 1100px) {
+    .help_hero {
+      grid-template-columns: 1fr;
+    }
+    .help_value,
+    .help_value--reverse {
+      grid-template-columns: 1fr;
+    }
+    .help_value--reverse .help_value_text,
+    .help_value--reverse .help_value_media {
+      order: initial;
+    }
+    .help_icons {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .contact_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .help_title {
+      font-size: 26px !important;
+    }
+    .help_tabs_shell {
+      top: 62px;
+    }
+    .help_tab {
+      padding: 9px 12px !important;
+      font-size: 13px !important;
+    }
+  }
+  

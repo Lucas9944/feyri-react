@@ -232,7 +232,7 @@ export function NavbarOthers({ setPath }: NavbarBrandProps) {
       {/* SHOP HERO */}
       <section className="glowess-shop-hero">
         <div className="glowess-shop-hero-inner">
-          <h1 className="glowess-shop-title">Shop</h1>
+          <h1 className="glowess-shop-title">Others</h1>
           <p className="glowess-shop-subtitle">
             Beneficial on their own, but always best when paired together.
             Skincare and makeup products should work in unison.

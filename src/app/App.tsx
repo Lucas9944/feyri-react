@@ -9,7 +9,7 @@ import { HelpPage } from "./screens/HelpPage";
 import { LoginPage } from "./screens/LoginPage";
 import { HomePage } from "./screens/HomePage";
 
-import { NavbarHome } from "./components/header";
+import { NavbarHome } from "./components/header/index";
 import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
 import { Footer } from "./components/footer";

@@ -585,6 +585,7 @@
   .glowess-nav-shell {
     position: relative;
     z-index: 30;
+  
   }
   
   /* ==== MAIN HEADER ===================================================== */
@@ -602,6 +603,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
   }
   
   /* LEFT (burger + menyu) */
@@ -703,31 +705,6 @@
     gap: 14px;
   }
   
-  /* Icon tugmalar – yumaloq badge ichida (Glowess uslubi) */
-  
-  .glowess-icon-btn {
-    width: 32px;
-    height: 32px;
-    border-radius: 999px;
-    border: 1px solid #f8dfe6;
-    background: #fff7fb;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .glowess-icon-btn:hover {
-    background: #ffeef6;
-  }
-  
-  .glowess-icon-img {
-    width: 16px;
-    height: 16px;
-    object-fit: contain;
-  }
-  
   /* Cart bilan badge */
   
   .glowess-icon-link--cart .glowess-cart-badge {
@@ -749,17 +726,28 @@
   
   /* 1-rasmdagi kabi: tepada pushti strip + katalog paneliga jigarrang border */
   
-  .glowess-catalog-panel {
-    position: absolute;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    background: #111615;
-    color: #ffffff;
-    padding: 26px 0 30px; /* balandlikni kichikroq qildim */
-    box-sizing: border-box;
-    border-top: 1px solid #f48fb1; /* jiggarang chiziq */
-  }
+/* PANEL: header ostidan ochiladi, full-width, markazda kontent */
+.glowess-catalog-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;                /* eng muhim: header pastidan */
+  width: 100%;
+  background: #111615;
+  color: #ffffff;
+
+  padding: 28px 0 32px;
+  box-sizing: border-box;
+
+  border-top: 1px solid rgba(244, 143, 177, 0.55);
+
+  /* balandlik: qat'iy 700px emas */
+  max-height: min(72vh, 720px);
+  overflow: auto;
+
+  z-index: 200;
+}
+
   
   /* panelning ustidan ingichka pushti line – header bilan bo'shliqni yo'qotish */
   .glowess-header::after {
@@ -960,9 +948,7 @@
       display: none; /* mobil uchun keyin offcanvas qilsa bo‘ladi */
     }
   
-    .glowess-catalog-panel {
-      display: none; /* mobilga mega menu bermaymiz hozircha */
-    }
+  
   
     .glowess-shop-hero {
       padding: 50px 20px 70px;
@@ -1261,13 +1247,7 @@
   height: 100%;
 }
 
-.hero-slide{
-  width: 100%;
-  height: 780px;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
+
 
 /* overlay — text aniq ko‘rinsin */
 .hero-slide-overlay{
@@ -1389,6 +1369,7 @@
 
    .hero {
     position: relative;
+
   }
   
   /* TOP STRIP */
@@ -1600,6 +1581,16 @@
     padding: 26px 0 30px;
     border-top: 1px solid rgba(255,255,255,0.12);
     z-index: 60;
+  }
+  
+  .glowess-catalog-inner {
+    width: min(1400px, calc(100% - 80px));
+    margin: 0 auto;
+  
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* chap: menu, o‘ng: kartalar */
+    gap: 48px;
+    align-items: start;
   }
   
   /* .glowess-catalog-inner{
