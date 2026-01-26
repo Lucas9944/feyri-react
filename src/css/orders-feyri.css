@@ -1,0 +1,285 @@
+:root{
+    --feyri-pink: #f48fb1;
+    --feyri-bg: #fbf6f8;
+    --feyri-card: #ffffff;
+    --feyri-text: #111;
+    --feyri-muted: #6b6b6b;
+    --feyri-line: rgba(0,0,0,0.08);
+    --feyri-shadow: 0 14px 40px rgba(17, 17, 17, 0.08);
+  }
+  
+  .feyriOrdersPage{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fde8ef 0%, var(--feyri-bg) 35%, #ffffff 100%);
+  }
+  
+  .feyriOrdersLayout{
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 22px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  
+  @media (max-width: 980px){
+    .feyriOrdersLayout{
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .feyriOrdersHeader{
+    margin-bottom: 12px;
+  }
+  
+  .feyriH1{
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--feyri-text);
+    margin: 0;
+  }
+  
+  .feyriSub{
+    color: var(--feyri-muted);
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .feyriTabs{
+    border-bottom: 1px solid var(--feyri-line);
+  }
+  
+  .feyriOrdersMain{
+    width: 100%;
+  }
+  
+  .feyriOrdersSide{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .feyriSideCard{
+    background: var(--feyri-card);
+    border: 1px solid var(--feyri-line);
+    border-radius: 18px;
+    box-shadow: var(--feyri-shadow);
+    padding: 18px;
+  }
+  
+  .feyriAvatar{
+    width: 92px;
+    height: 92px;
+    border-radius: 999px;
+    margin: 0 auto 10px auto;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0%, #ffe0ea 35%, #f7c3d6 100%);
+    border: 1px solid var(--feyri-line);
+  }
+  
+  .feyriSideName{
+    text-align: center;
+    font-weight: 900;
+    color: var(--feyri-text);
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  .feyriSideRole{
+    text-align: center;
+    color: var(--feyri-muted);
+    margin: 4px 0 0 0;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  
+  .feyriSideDivider{
+    height: 1px;
+    background: var(--feyri-line);
+    margin: 14px 0;
+  }
+  
+  .feyriSideRow{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .feyriSideTitle{
+    font-weight: 900;
+    margin: 0;
+    color: var(--feyri-text);
+  }
+  
+  .feyriSideDesc{
+    margin: 6px 0 0 0;
+    color: var(--feyri-muted);
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  .feyriPayIcons{
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+  }
+  
+  .feyriPayIcons img{
+    height: 18px;
+    width: auto;
+    opacity: 0.9;
+  }
+  
+  .feyriOrderCard{
+    background: var(--feyri-card);
+    border: 1px solid var(--feyri-line);
+    border-radius: 18px;
+    box-shadow: var(--feyri-shadow);
+    padding: 16px 16px 14px 16px;
+  }
+  
+  .feyriOrderCard__header{
+    padding-bottom: 10px;
+  }
+  
+  .feyriOrderCard__title{
+    font-weight: 900;
+    color: var(--feyri-text);
+    font-size: 14px;
+  }
+  
+  .feyriOrderCard__date{
+    color: var(--feyri-muted);
+    font-weight: 700;
+    font-size: 12px;
+  }
+  
+  .feyriDivider{
+    border-color: var(--feyri-line) !important;
+  }
+  
+  .feyriStatusChip{
+    border-color: rgba(244,143,177,0.55) !important;
+    color: var(--feyri-pink) !important;
+    font-weight: 800 !important;
+  }
+  
+  .feyriOrderCard__items{
+    padding: 10px 0;
+  }
+  
+  .feyriOrderItem{
+    padding: 6px 0;
+  }
+  
+  .feyriOrderItem__thumb{
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    object-fit: cover;
+    border: 2px solid rgba(244,143,177,0.35);
+  }
+  
+  .feyriOrderItem__name{
+    font-weight: 900;
+    color: var(--feyri-text);
+    font-size: 14px;
+    margin: 0;
+  }
+  
+  .feyriOrderItem__meta{
+    color: var(--feyri-muted);
+    font-weight: 700;
+    font-size: 12px;
+    margin: 2px 0 0 0;
+  }
+  
+  .feyriOrderItem__price{
+    font-weight: 900;
+    color: var(--feyri-text);
+  }
+  
+  .feyriMoreItems{
+    color: var(--feyri-muted);
+    font-weight: 800;
+    font-size: 12px;
+  }
+  
+  .feyriOrderMeta{
+    padding: 10px 0;
+  }
+  
+  .feyriMetaText{
+    color: var(--feyri-muted);
+    font-weight: 700;
+    font-size: 13px;
+  }
+  
+  .feyriIconMuted{
+    color: rgba(0,0,0,0.45) !important;
+  }
+  
+  .feyriTotals{
+    padding: 10px 0 8px 0;
+  }
+  
+  .feyriTotals__label{
+    color: var(--feyri-muted);
+    font-weight: 800;
+    font-size: 13px;
+  }
+  
+  .feyriTotals__value{
+    color: var(--feyri-text);
+    font-weight: 900;
+    font-size: 13px;
+  }
+  
+  .feyriTotals__totalLabel{
+    color: var(--feyri-text);
+    font-weight: 900;
+    font-size: 14px;
+  }
+  
+  .feyriTotals__totalValue{
+    color: var(--feyri-text);
+    font-weight: 900;
+    font-size: 16px;
+  }
+  
+  .feyriActions{
+    padding-top: 10px;
+  }
+  
+  .feyriBtnPrimary{
+    background: var(--feyri-pink) !important;
+    color: #fff !important;
+    border-radius: 12px !important;
+    font-weight: 900 !important;
+    text-transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .feyriBtnPrimary:hover{
+    background: #f07aa4 !important;
+  }
+  
+  .feyriBtnOutline{
+    border: 1.5px solid rgba(244,143,177,0.7) !important;
+    color: var(--feyri-pink) !important;
+    border-radius: 12px !important;
+    font-weight: 900 !important;
+    text-transform: none !important;
+  }
+  
+  .feyriEmpty{
+    background: rgba(255,255,255,0.75);
+    border: 1px dashed rgba(244,143,177,0.55);
+    color: var(--feyri-muted);
+    border-radius: 16px;
+    padding: 16px;
+    font-weight: 800;
+  }
+  

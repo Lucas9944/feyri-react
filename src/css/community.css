@@ -1,0 +1,111 @@
+:root {
+    --feyri-pink: #f48fb1;
+    --text-1: #1c1c1c;
+    --text-2: #6b6b6b;
+    --border: rgba(20, 20, 20, 0.08);
+  }
+  
+  .community_page {
+    width: 100%;
+    background: #fff;
+  }
+  
+  /* Tabs wrap */
+  .community_tabsWrap{
+    border-bottom: 1px solid rgba(20,20,20,0.08);
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  
+  
+  /* Responsive grid */
+  .community_grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  
+  @media (max-width: 1200px) {
+    .community_grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .community_grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Card */
+  .community_card {
+    border: 1px solid var(--border);
+    border-radius: 14px; /* premium, lekin haddan tashqari yumaloq emas */
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06); /* glow emas, soft */
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  
+  .community_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.09);
+  }
+  
+  .community_cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    background: #f2f2f2;
+  }
+  
+  .community_cardBody {
+    padding: 16px 16px 18px 16px;
+  }
+  
+  .community_badge {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--feyri-pink);
+    border: 1px solid rgba(244, 143, 177, 0.35);
+    padding: 6px 10px;
+    border-radius: 10px; /* kichik badge ok */
+    background: rgba(244, 143, 177, 0.06);
+  }
+  
+  .community_title {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 1.25;
+    color: var(--text-1);
+  }
+  
+  .community_meta {
+    margin-top: 10px;
+  }
+  
+  .community_excerpt {
+    margin-top: 10px;
+    color: #724d37; /* sizning existing palette bilan ham mos */
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  .community_readMore {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 13px;
+    color: var(--feyri-pink);
+    border-bottom: 1px solid transparent;
+    transition: opacity 150ms ease, border-color 150ms ease;
+  }
+  
+  .community_readMore:hover {
+    opacity: 0.85;
+    border-color: rgba(244, 143, 177, 0.55);
+  }
+  
