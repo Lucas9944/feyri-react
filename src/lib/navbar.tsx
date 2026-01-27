@@ -1,112 +1,39 @@
 // src/lib/navbar.tsx
 import React from "react";
 
-import {HomePage }from "../app/screens/HomePage";
+import BrandPage from "../app/screens/BrandPage";
+import { CommunityPage } from "../app/screens/CommunityPage";
+import { OrdersPage } from "../app/screens/OrdersPage";
+import { MemberPage } from "../app/screens/MemberPage";
 import { HelpPage } from "../app/screens/HelpPage";
-import {CommunityPage }from "../app/screens/CommunityPage";
-
-// import SignUp from "../screens/SignUpPage";
 import LoginPage from "../app/screens/LoginPage";
-// import VisitMyPage from "../screens/MemberPage/visitMyPage";
-// import VisitOtherPage from "../screens/MemberPage/visitOtherPage";
-import OrdersPage from "../app/screens/OrdersPage";
+import { HomePage } from "../app/screens/HomePage";
 
+export type NavbarRoute = {
+  path: string;
+  element: React.ReactElement;
+  title?: string;
+  hidden?: boolean;
+  private?: boolean;
+};
 
-import { NavbarObj } from "../app/types/others";
-
-export const navbar: NavbarObj[] = [
-  {
-    element: <HomePage />,
-    title: "Home",
-    path: "/",
-    private: false,
-    hidden: false,
+export const navbar: NavbarRoute[] = [
+  { 
+  path: "/",
+  element: <HomePage />,
+  title: "Home", 
+  private: false,
+   hidden: false },
+  { 
+    path: "/brand", 
+    element: <BrandPage />, 
+    title: "Brand", 
+    private: false, 
+    hidden: false 
   },
-//   {
-//     element: <ShopPage />,
-//     title: "Shop",
-//     path: "/shop",
-//     private: false,
-//     hidden: false,
-//   },
-//   {
-//     element: <StorePage />,
-//     title: "Store",
-//     path: "/store",
-//     private: false,
-//     hidden: false,
-//   },
-  {
-    element: <CommunityPage />,
-    title: "community",
-    path: "/community",
-    private: false,
-    hidden: false,
-  },
-  {
-    element: <HelpPage />,
-    title: "CS",
-    path: "/help",
-    private: false,
-    hidden: false,
-  },
-
-  // hidden routes
-//   {
-//     element: <ChoosenProduct />,
-//     title: "OneJewellry",
-//     path: "/shop/:product_id",
-//     private: false,
-//     hidden: true,
-//   },
-//   {
-//     element: <SignUp />,
-//     title: "sign-up",
-//     path: "/sign-up",
-//     private: false,
-//     hidden: true,
-//   },
-  {
-    element: <LoginPage />,
-    title: "log-in",
-    path: "/login",
-    private: false,
-    hidden: true,
-  },
-//   {
-//     element: <VisitMyPage />,
-//     title: "my-account",
-//     path: "/member",
-//     private: false,
-//     hidden: true,
-//   },
-//   {
-//     element: <VisitOtherPage />,
-//     title: "other-account",
-//     path: "/member/:other",
-//     private: false,
-//     hidden: true,
-//   },
-//   {
-//     element: <Basket />,
-//     title: "basket",
-//     path: "/cart",
-//     private: false,
-//     hidden: true,
-//   },
-  {
-    element: <OrdersPage />,
-    title: "checkout",
-    path: "/checkout/:order_id",
-    private: false,
-    hidden: true,
-  },
+  { path: "/community", element: <CommunityPage />, title: "Community", private: false, hidden: false },
+  { path: "/orders", element: <OrdersPage />, title: "Orders", private: false, hidden: false },
+  { path: "/member-page", element: <MemberPage />, title: "Member", private: false, hidden: false },
+  { path: "/help", element: <HelpPage />, title: "Help", private: false, hidden: false },
+  { path: "/login", element: <LoginPage />, title: "Login", private: false, hidden: true },
 ];
-
-/**
- * (ixtiyoriy) NavbarHome ichida NavLink chizish uchun tayyor list:
- * faqat hidden:false bo'lganlari chiqadi.
- */
-export const navLinks = navbar
-  .filter((r) => !r.hidden)
-  .map((r) => ({ title: r.title, path: r.path }));

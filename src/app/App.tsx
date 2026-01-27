@@ -1,41 +1,63 @@
-// App.tsx
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+// src/App.tsx
+import React, { useEffect, useMemo, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from "react-router-dom";
 
-import BrandPage from "../app/screens/BrandPage";
-import { CommunityPage } from "./screens/CommunityPage";
-import { OrdersPage } from "./screens/OrdersPage";
-import { MemberPage } from "./screens/MemberPage";
-import { HelpPage } from "./screens/HelpPage";
-import LoginPage from "./screens/LoginPage";
-import { HomePage } from "./screens/HomePage";
+import { navbar } from "./../lib/navbar";
+import NotFound from "./screens/notFound";
 
 import { NavbarHome } from "./components/header/index";
 import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
 import { Footer } from "./components/footer";
 
+import { Member } from "./types/user";
+import { serverApi } from "./../lib/config";
+import "./apiServices/verify";
+
 import "../css/navbar.css";
 import "../css/footer.css";
 import "../css/shop.css";
 
-/**
- * ✅ Router ichida useLocation ishlashi uchun alohida komponent
- * (Bu sizning logikangizni buzmaydi, faqat pathname’ni to‘g‘ri oladi)
- */
-function AppShell() {
-  const [path, setPath] = useState("");
+function AppLayout() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  // ✅ faqat login sahifada header/footer yashirin bo‘ladi
+  // query params (sizning eski logikangizga mos)
+  const query = useMemo(() => new URLSearchParams(location.search), [location.search]);
+  const chosen_mb_id: string | null = query.get("mb_id") ?? null;
+  const chosen_art_id: string | null = query.get("art_id") ?? null;
+
+  // verified member
+  const [virifiedMemberData, setVirifiedMemberData] = useState<Member | null>(null);
+
+  // siz ishlatayotgan setPath saqlab qoldim (Navbar’lar uchun)
+  const [path, setPath] = useState<string>("");
+
+  useEffect(() => {
+    const memberDataJson = localStorage.getItem("member_data");
+    const member_data = memberDataJson ? JSON.parse(memberDataJson) : null;
+
+    if (member_data) {
+      member_data.mb_image = member_data.mb_image
+        ? `${serverApi}/${member_data.mb_image}`
+        : "/auth/default_user.svg";
+      setVirifiedMemberData(member_data);
+    }
+  }, []);
+
+  // auth page’da header/footer yashirish (sizning hozirgi shart)
   const isAuthPage = pathname === "/login";
 
-  // ✅ sizdagi navbar tanlash logikasi saqlanadi
-  const navbar =
+  // Navbar tanlash (sizning hozirgi mantiq)
+  const selectedNavbar =
     pathname === "/" ? (
-      <NavbarHome setPath={setPath} chosen_art_id={null} chosen_mb_id={null} virifiedMemberData={null} />
-    ) : pathname.includes("/brand") ? (
+      <NavbarHome
+        setPath={setPath}
+        chosen_art_id={chosen_art_id}
+        chosen_mb_id={chosen_mb_id}
+        virifiedMemberData={virifiedMemberData}
+      />
+    ) : pathname.startsWith("/brand") ? (
       <NavbarBrand setPath={setPath} />
     ) : (
       <NavbarOthers setPath={setPath} />
@@ -43,29 +65,27 @@ function AppShell() {
 
   return (
     <>
-      {!isAuthPage && navbar}
+      {!isAuthPage && selectedNavbar}
 
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/brand" element={<BrandPage />} />
-        <Route path="/community" element={<CommunityPage />} />
-        <Route path="/orders" element={<OrdersPage />} />
-        <Route path="/member-page" element={<MemberPage />} />
-        <Route path="/help" element={<HelpPage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
+      <Outlet />
 
       {!isAuthPage && <Footer />}
     </>
   );
 }
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <AppShell />
+      <Routes>
+        {/* Layout route (avvalgidek) */}
+        <Route element={<AppLayout />}>
+          {navbar.map((r, idx) => (
+            <Route key={idx} path={r.path} element={r.element} />
+          ))}
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </Router>
   );
 }
-
-export default App;
