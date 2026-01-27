@@ -10,7 +10,15 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
+import type { Member } from "../../types/user"; 
+// ↑ Eslatma: path sizning loyihangizga qarab farq qilishi mumkin.
+// Agar xato bersa, to‘g‘ri pathga moslang:
+// masalan: "../../../types/user" yoki "@/app/types/user" va hokazo.
+
 type NavbarHomeProps = {
+  chosen_art_id: string | null;
+  chosen_mb_id: string | null;
+  virifiedMemberData: Member | null;
   setPath: React.Dispatch<React.SetStateAction<string>>;
 };
 
@@ -23,7 +31,12 @@ type HeroSlide = {
   ctaTo: string;
 };
 
-export function NavbarHome({ setPath }: NavbarHomeProps) {
+export function NavbarHome({
+  chosen_art_id,
+  chosen_mb_id,
+  virifiedMemberData,
+  setPath,
+}: NavbarHomeProps) {
   const [isCatalogOpen, setCatalogOpen] = useState(false);
 
   const openCatalog = () => setCatalogOpen(true);
@@ -71,6 +84,10 @@ export function NavbarHome({ setPath }: NavbarHomeProps) {
     ],
     []
   );
+
+  // Hozircha ishlatilmayapti, lekin props kelayotganini tekshirish uchun
+  // kerak bo‘lsa keyin ishlatasiz:
+  // console.log({ chosen_art_id, chosen_mb_id, virifiedMemberData });
 
   return (
     <section className="hero">

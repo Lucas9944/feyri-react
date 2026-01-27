@@ -34,7 +34,7 @@ function AppShell() {
   // ✅ sizdagi navbar tanlash logikasi saqlanadi
   const navbar =
     pathname === "/" ? (
-      <NavbarHome setPath={setPath} />
+      <NavbarHome setPath={setPath} chosen_art_id={null} chosen_mb_id={null} virifiedMemberData={null} />
     ) : pathname.includes("/brand") ? (
       <NavbarBrand setPath={setPath} />
     ) : (
