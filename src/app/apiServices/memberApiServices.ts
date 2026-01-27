@@ -2,8 +2,13 @@ import axios from "axios";
 import assert from "assert";
 import { Definer } from "../../lib/Definer";
 import { serverApi } from "../../lib/config";
+<<<<<<< HEAD
 import { Member } from "../types/user";
 import { MemberLiken } from "../types/others";
+=======
+import { Member } from "../../app/screens/types/user";
+import { MemberLiken } from "../screens/types/others";
+>>>>>>> 356e1c0 (feat: login and signup page complete)
 class MemberApiServices {
   private readonly path: string;
   constructor() {
