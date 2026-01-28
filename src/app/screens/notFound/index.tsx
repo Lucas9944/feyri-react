@@ -1,26 +1,49 @@
 import "../../../css/notfound.css";
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const NotFound = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="not_found_frame">
-    <img
-      className="oops"
-      src="/home/not_found.png"
-      alt="404"
-    />
+    <main className="feyri404-page" role="main" aria-label="404 page">
+      <section className="feyri404-card" aria-labelledby="feyri404-title">
+        <img
+          className="feyri404-ill"
+          src="/home/not_found.png"
+          alt="Sahifa topilmadi"
+        />
 
-    <h1 className="title">OOPS!</h1>
-    <h2 className="subtitle">404 Error Not Found</h2>
+        <div className="feyri404-brand">FEYRI BEAUTY</div>
 
-    <p className="desc">
-      It is a long established fact that a reader will be distracted by the
-      readable content of a page when looking at its layout.
-    </p>
+        <h1 id="feyri404-title" className="feyri404-title">
+          Sahifa topilmadi
+        </h1>
 
-    <NavLink to={"/"} className="back-btn">BACK TO HOME</NavLink>
-  </div>
-  )
-}
+        <p className="feyri404-desc">
+          Siz qidirgan sahifa mavjud emas yoki o‘chirilgan bo‘lishi mumkin.
+        </p>
 
-export default NotFound
+        <div className="feyri404-actions">
+          <NavLink to="/" className="feyri404-btn feyri404-btn--primary">
+            Bosh sahifaga
+          </NavLink>
+
+          <button
+            type="button"
+            className="feyri404-btn feyri404-btn--ghost"
+            onClick={() => navigate(-1)}
+          >
+            Orqaga
+          </button>
+        </div>
+
+        <div className="feyri404-code" aria-hidden="true">
+          404
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default NotFound;

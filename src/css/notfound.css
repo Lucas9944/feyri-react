@@ -1,59 +1,143 @@
+/* Feyri 404 - minimal / premium (no glow) */
+:root {
+  --feyri-accent: #f48fb1;
+  --feyri-text: #111;
+  --feyri-muted: #6b6b6b;
+  --feyri-border: rgba(17, 17, 17, 0.08);
+  --feyri-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+}
 
-/* Not Found STYLES START */
-.not_found_frame {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 80px 20px;
-  
-    .oops {
-      width: 405px;
-      height: 304px;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-  
-    .title {
-      font-size: 70px;
-      font-weight: 700;
-      font-family: serif;
-      margin-bottom: 10px;
-    }
-  
-    .subtitle {
-      font-size: 26px;
-      font-family: serif;
-      margin-bottom: 25px;
-      font-weight: 500;
-    }
-  
-    .desc {
-      max-width: 520px;
-      margin: 0 auto 35px;
-      color: #555;
-      font-size: 15px;
-      line-height: 1.6;
-    }
-  
-    .back-btn {
-      padding: 12px 40px;
-      border: 1px solid #000;
-      background: transparent;
-      font-weight: 600;
-      font-size: 15px;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: 0.2s ease;
-      color: #000;
-  
-      &:hover {
-        background: #000;
-        color: #fff;
-      }
-    }
+.feyri404-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 18px;
+  background: #fff;
+}
+
+.feyri404-card {
+  width: min(920px, 100%);
+  background: #fff;
+  border: 1px solid var(--feyri-border);
+  border-top: 4px solid var(--feyri-accent);
+  border-radius: 22px;
+  box-shadow: var(--feyri-shadow);
+  text-align: center;
+  padding: 46px 34px 34px;
+}
+
+.feyri404-ill {
+  width: min(420px, 100%);
+  height: auto;
+  opacity: 0.95;
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.feyri404-brand {
+  font-size: 12px;
+  letter-spacing: 2.6px;
+  font-weight: 700;
+  color: var(--feyri-accent);
+  margin-top: 8px;
+}
+
+.feyri404-title {
+  margin: 10px 0 10px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--feyri-text);
+}
+
+.feyri404-desc {
+  margin: 0 auto 18px;
+  max-width: 560px;
+  color: var(--feyri-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.feyri404-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.feyri404-btn {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 120ms ease, background 180ms ease, border-color 180ms ease,
+    color 180ms ease;
+}
+
+.feyri404-btn:active {
+  transform: translateY(1px);
+}
+
+.feyri404-btn--primary {
+  background: var(--feyri-accent);
+  border: 1px solid var(--feyri-accent);
+  color: #fff;
+}
+
+.feyri404-btn--primary:hover {
+  background: #ef7ea6;
+  border-color: #ef7ea6;
+}
+
+.feyri404-btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(244, 143, 177, 0.7);
+  color: var(--feyri-accent);
+}
+
+.feyri404-btn--ghost:hover {
+  background: rgba(244, 143, 177, 0.12);
+  border-color: rgba(244, 143, 177, 0.9);
+}
+
+.feyri404-btn:focus-visible {
+  outline: 3px solid rgba(244, 143, 177, 0.35);
+  outline-offset: 2px;
+}
+
+.feyri404-code {
+  margin-top: 20px;
+  font-size: clamp(72px, 10vw, 124px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  color: rgba(244, 143, 177, 0.18);
+  user-select: none;
+}
+
+/* Mobile tuning */
+@media (max-width: 520px) {
+  .feyri404-card {
+    padding: 34px 18px 22px;
   }
-  
-  /* Not Found STYLES END */
-  
+
+  .feyri404-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .feyri404-btn {
+    width: min(320px, 100%);
+  }
+
+  .feyri404-code {
+    letter-spacing: 4px;
+  }
+}

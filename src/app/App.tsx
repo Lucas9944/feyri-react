@@ -83,8 +83,8 @@ export default function App() {
           {navbar.map((r, idx) => (
             <Route key={idx} path={r.path} element={r.element} />
           ))}
-          <Route path="*" element={<NotFound />} />
         </Route>
+          <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

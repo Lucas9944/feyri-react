@@ -31,9 +31,39 @@ export const navbar: NavbarRoute[] = [
     private: false, 
     hidden: false 
   },
-  { path: "/community", element: <CommunityPage />, title: "Community", private: false, hidden: false },
-  { path: "/orders", element: <OrdersPage />, title: "Orders", private: false, hidden: false },
-  { path: "/member-page", element: <MemberPage />, title: "Member", private: false, hidden: false },
-  { path: "/help", element: <HelpPage />, title: "Help", private: false, hidden: false },
-  { path: "/login", element: <LoginPage />, title: "Login", private: false, hidden: true },
+  { 
+    path: "/community", 
+    element: <CommunityPage />, 
+    title: "Community", 
+    private: false, 
+    hidden: false 
+  },
+  { 
+    path: "/orders", 
+    element: <OrdersPage />, 
+    title: "Orders", 
+    private: false, 
+    hidden: false 
+  },
+  { 
+    path: "/member-page", 
+    element: <MemberPage />, 
+    title: "Member", 
+    private: false, 
+    hidden: false 
+  },
+  { 
+    path: "/help", 
+    element: <HelpPage />, 
+    title: "Help", 
+    private: false, 
+    hidden: false 
+  },
+  { 
+    path: "/login", 
+    element: <LoginPage />, 
+    title: "Login",
+    private: false, 
+    hidden: true 
+    },
 ];

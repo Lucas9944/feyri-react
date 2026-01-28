@@ -2,8 +2,8 @@ import axios from "axios";
 import assert from "assert";
 import { Definer } from "../../lib/Definer";
 import { serverApi } from "../../lib/config";
-import { Member } from "../../app/screens/types/user";
-import { MemberLiken } from "../screens/types/others";
+import { Member } from "../../app/types/user";
+import { MemberLiken } from "../types/others";
 class MemberApiServices {
   private readonly path: string;
   constructor() {
