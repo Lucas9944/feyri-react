@@ -9,6 +9,15 @@ import { NavbarHome } from "./components/header/index";
 import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
 import { Footer } from "./components/footer";
+import { MemberPage } from "./screens/MemberPage";
+import  MemberFollowers  from "./screens/MemberPage/memberFollowers";
+import  MemberFollowings  from "./screens/MemberPage/memberFollowings";
+import  MemberPosts  from "./screens/MemberPage/memberPost";
+import  MyFavorites  from "./screens/MemberPage/myFavorites";
+import  MySettings  from "./screens/MemberPage/mySettings";
+import  VisitMyPage  from "./screens/MemberPage/visitMyPage";
+import  VisitOtherPage  from "./screens/MemberPage/visitOtherPage";
+
 
 import { Member } from "./types/user";
 import { serverApi } from "./../lib/config";
@@ -17,6 +26,7 @@ import "./apiServices/verify";
 import "../css/navbar.css";
 import "../css/footer.css";
 import "../css/shop.css";
+import MemberOverview from "./screens/MemberPage/memberOverview";
 
 function AppLayout() {
   const location = useLocation();
@@ -80,12 +90,33 @@ export default function App() {
       <Routes>
         {/* Layout route (avvalgidek) */}
         <Route element={<AppLayout />}>
-          {navbar.map((r, idx) => (
-            <Route key={idx} path={r.path} element={r.element} />
-          ))}
-        </Route>
-          <Route path="*" element={<NotFound />} />
+  {/* ✅ B: member-page ni navbar.map dan chiqarib tashlash */}
+  {navbar
+    .filter((r) => !r.path.startsWith("/member-page"))
+    .map((r, idx) => (
+      <Route key={idx} path={r.path} element={r.element} />
+    ))}
+
+  {/* ✅ C: member-page nested route’lar */}
+  <Route path="/member-page" element={<MemberPage />}>
+    <Route index element={<MemberOverview />} />
+    <Route index element={<MemberPosts />} />
+    <Route path="followers" element={<MemberFollowers />} />
+    <Route path="followings" element={<MemberFollowings />} />
+    <Route path="posts" element={<MemberPosts />} />
+    <Route path="favorites" element={<MyFavorites />} />
+    <Route path="settings" element={<MySettings />} />
+    <Route path="visit-my" element={<VisitMyPage />} />
+    <Route path="visit-other" element={<VisitOtherPage />} />
+  </Route>
+
+  {/* ✅ NotFound ham layout ichida bo‘lsin */}
+  <Route path="*" element={<NotFound />} />
+</Route>
+
       </Routes>
     </Router>
+    
   );
+
 }

@@ -62,4 +62,5 @@ export interface MemberPageState {
   memberFollowings: Following[];
   targetComments: Comments[];
   targetProducts: Product[];
+  myFavorite: any[];
 }

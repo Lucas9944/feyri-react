@@ -1,0 +1,253 @@
+/* mysettings.css — Feyri Settings (premium minimal) */
+
+.feyri-settings {
+  --accent: var(--accent, #f48fb1);
+  --text: rgba(0, 0, 0, 0.9);
+  --muted: rgba(0, 0, 0, 0.62);
+  --line: rgba(0, 0, 0, 0.08);
+  --card: #ffffff;
+
+  width: 100%;
+  /* ✅ card o‘ngga chiqib ketmasin */
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+/* ✅ overlap/width muammolarining 80% shu bilan yo‘q bo‘ladi */
+.feyri-settings,
+.feyri-settings * {
+  box-sizing: border-box;
+}
+
+/* main card */
+.feyri-settings__card {
+  width: 100%;
+  max-width: 860px;
+  margin: 8px auto 0;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+  padding: 18px;
+
+  overflow: hidden; /* ✅ ichkaridagi elementlar tashqariga chiqmasin */
+}
+
+/* header */
+.feyri-settings__header {
+  padding: 6px 6px 12px;
+}
+
+.feyri-settings__title {
+  font-size: 18px;
+  font-weight: 850;
+  color: var(--text);
+  letter-spacing: 0.2px;
+}
+
+.feyri-settings__subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* upload section */
+.feyri-settings__upload {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 6px;
+  flex-wrap: wrap; /* ✅ kichik width’da buzilmasin */
+}
+
+.feyri-settings__avatar {
+  width: 64px !important;
+  height: 64px !important;
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.04);
+  flex: 0 0 auto;
+}
+
+.feyri-settings__uploadMeta {
+  min-width: 0;
+  flex: 1;
+}
+
+.feyri-settings__label {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.feyri-settings__hint {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.feyri-settings__uploadRow {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.feyri-settings__uploadBtn {
+  border-radius: 12px !important;
+  padding: 8px 12px !important;
+  border: 1px solid rgba(244, 143, 177, 0.45) !important;
+  color: var(--accent) !important;
+  background: transparent !important;
+  text-transform: none !important;
+  font-weight: 800 !important;
+}
+
+.feyri-settings__uploadBtn:hover {
+  background: rgba(244, 143, 177, 0.10) !important;
+  border-color: rgba(244, 143, 177, 0.65) !important;
+}
+
+.feyri-settings__uploadBtn .MuiSvgIcon-root {
+  color: var(--accent) !important;
+}
+
+.feyri-settings__fileName {
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 420px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* divider */
+.feyri-settings__divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin: 6px 0 14px;
+}
+
+/* form */
+.feyri-settings__form {
+  padding: 0 6px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* field container */
+.feyri-settings__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  /* ✅ grid ichida elementlar “sig‘may chiqib ketishi”ni to‘xtatadi */
+  min-width: 0;
+}
+
+.feyri-settings__fieldLabel {
+  font-size: 13px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.78);
+}
+
+/* ✅ ASOSIY FIX: Phone + Address overlap bo‘lmasin */
+.feyri-settings__row2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+/* inputs */
+.feyri-settings__input,
+.feyri-settings__textarea {
+  width: 100%;
+  max-width: 100%; /* ✅ overflow stop */
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: #fff;
+  padding: 12px 12px;
+  font-size: 14px;
+  font-weight: 650;
+  color: var(--text);
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.feyri-settings__textarea {
+  min-height: 140px;
+  resize: vertical;
+  padding-top: 12px;
+}
+
+.feyri-settings__input:focus,
+.feyri-settings__textarea:focus {
+  border-color: rgba(244, 143, 177, 0.55);
+  box-shadow: 0 0 0 4px rgba(244, 143, 177, 0.16);
+}
+
+/* actions (save button) */
+.feyri-settings__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  padding-top: 6px;
+}
+
+.feyri-settings__saveBtn {
+  border-radius: 12px !important;
+  padding: 10px 16px !important;
+  background: var(--accent) !important;
+  color: #fff !important;
+  text-transform: none !important;
+  font-weight: 900 !important;
+  min-width: 180px;
+}
+
+.feyri-settings__saveBtn:hover {
+  filter: brightness(0.96);
+}
+
+/* responsive */
+@media (max-width: 720px) {
+  .feyri-settings__card {
+    padding: 14px;
+  }
+
+  .feyri-settings__row2 {
+    grid-template-columns: 1fr;
+  }
+
+  .feyri-settings__fileName {
+    max-width: 100%;
+  }
+}
+
+/* --- FORCE show "Update profile" button (override global MUI styles) --- */
+.feyri-settings .feyri-settings__actions {
+  position: relative;
+  z-index: 1;
+}
+
+.feyri-settings .MuiButtonBase-root.feyri-settings__saveBtn,
+.feyri-settings button.feyri-settings__saveBtn {
+  background-color: #f48fb1 !important; /* accent */
+  color: #ffffff !important;
+  border: 1px solid rgba(244, 143, 177, 0.55) !important;
+
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-flex !important;
+
+  min-height: 44px;
+  min-width: 180px;
+}
+
+.feyri-settings .MuiButtonBase-root.feyri-settings__saveBtn:hover {
+  filter: brightness(0.96);
+}
+
+/* End of mysettings.css */

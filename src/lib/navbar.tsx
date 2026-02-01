@@ -66,4 +66,5 @@ export const navbar: NavbarRoute[] = [
     private: false, 
     hidden: true 
     },
+
 ];

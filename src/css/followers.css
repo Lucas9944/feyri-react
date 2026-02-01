@@ -1,0 +1,87 @@
+/* Feyri follow list (premium minimal) */
+/* memberPage.css dagi --accent ishlasa ishlaydi. bo‘lmasa fallback: */
+.feyri-follow {
+  --accent: var(--accent, #f48fb1);
+  --line: rgba(0,0,0,0.08);
+  --text: rgba(0,0,0,0.90);
+  --muted: rgba(0,0,0,0.62);
+  --card: #fff;
+
+  width: 100%;
+}
+
+.feyri-follow__row{
+  padding: 12px 14px;          /* 14-16 -> 12-14 */
+  border-radius: 14px;         /* biroz compact */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.05); /* yengilroq */
+}
+
+.feyri-follow__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.feyri-follow__avatar{
+  width: 46px !important;
+  height: 46px !important;
+}
+
+
+.feyri-follow__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.feyri-follow__badge{
+  font-size: 11px;
+  letter-spacing: 0.16px;
+  opacity: 0.85;
+}
+
+
+.feyri-follow__name{
+  font-size: 15px;
+  font-weight: 750;
+}
+
+
+.feyri-follow__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-left: 16px;
+  flex: 0 0 auto;
+}
+
+
+.feyri-follow__btn{
+  border-radius: 10px !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+}
+
+
+.feyri-follow__btn--primary {
+  background: var(--accent) !important;
+  color: #fff !important;
+}
+
+.feyri-follow__btn--primary:hover {
+  filter: brightness(0.95);
+}
+
+.feyri-follow__btn--ghost {
+  background: transparent !important;
+  color: #f48fb1 !important; /* <-- ko‘kni yo‘q qiladi */
+  border: 1px solid rgba(244, 143, 177, 0.45) !important; /* pink border */
+}
+
+.feyri-follow__btn--ghost:hover {
+  background: rgba(244, 143, 177, 0.10) !important;
+  border-color: rgba(244, 143, 177, 0.60) !important;
+}

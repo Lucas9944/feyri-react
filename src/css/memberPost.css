@@ -1,0 +1,243 @@
+/* memberPost.css */
+.feyri-posts {
+    --accent: #f48fb1;
+    --text: rgba(0,0,0,0.92);
+    --muted: rgba(0,0,0,0.62);
+    --line: rgba(0,0,0,0.08);
+    --card: #ffffff;
+  
+    width: 100%;
+  }
+  
+  .feyri-posts__grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  @media (max-width: 1200px) {
+    .feyri-posts__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .feyri-posts__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .feyri-posts__empty {
+    width: 100%;
+    padding: 28px 10px;
+    text-align: center;
+    color: var(--muted);
+    font-weight: 650;
+  }
+  
+  /* card */
+  .feyri-post-card {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--line) !important;
+    background: var(--card) !important;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.06) !important;
+    transition: transform .18s ease, box-shadow .18s ease;
+    cursor: pointer;
+  }
+  
+  .feyri-post-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.08) !important;
+  }
+  
+  /* header */
+  .feyri-post-card__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 14px 10px !important;
+  }
+  
+  .feyri-post-card__avatar {
+    width: 34px !important;
+    height: 34px !important;
+  }
+  
+  .feyri-post-card__headText {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+  }
+  
+  .feyri-post-card__badge {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.12px;
+  }
+  
+  .feyri-post-card__nick {
+    font-size: 14px;
+    font-weight: 750;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* media */
+  .feyri-post-card__media {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+  
+  /* actions */
+  .feyri-post-card__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px 6px !important;
+  }
+  
+  .feyri-post-card__badgeLikes .MuiBadge-badge {
+    background: var(--accent) !important;
+    color: #fff !important;
+    font-weight: 800;
+  }
+  
+  .feyri-post-card__badgeViews .MuiBadge-badge {
+    background: rgba(0,0,0,0.68) !important;
+    color: #fff !important;
+    font-weight: 800;
+  }
+  
+  .feyri-post-card__like.MuiCheckbox-root {
+    padding: 4px !important;
+  }
+  
+  .feyri-post-card__like .MuiSvgIcon-root {
+    font-size: 20px;
+    color: rgba(0,0,0,0.42);
+  }
+  
+  .feyri-post-card__like.Mui-checked .MuiSvgIcon-root {
+    color: var(--accent) !important;
+  }
+  
+  .feyri-post-card__viewsBtn {
+    padding: 6px !important;
+    color: rgba(0,0,0,0.45) !important;
+  }
+  
+  /* body */
+  .feyri-post-card__body {
+    padding: 10px 14px 12px !important;
+  }
+  
+  .feyri-post-card__content {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  
+    color: var(--text);
+    line-height: 1.35;
+    font-size: 13px;
+  }
+  
+  .feyri-post-card__boid {
+    font-weight: 800;
+    margin-right: 8px;
+  }
+  
+  .feyri-post-card__text {
+    color: rgba(0,0,0,0.78);
+  }
+  
+  .feyri-post-card__time {
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  
+  /* comment */
+  .feyri-post-card__comment {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px 14px !important;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  .feyri-post-card__commentIcon {
+    color: rgba(0,0,0,0.45) !important;
+  }
+  
+  .feyri-post-card__input .MuiInputBase-root {
+    font-size: 13px;
+    color: rgba(0,0,0,0.78);
+  }
+  
+  .feyri-post-card__postBtn {
+    border: 0;
+    background: transparent;
+    color: var(--accent);
+    font-weight: 800;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+  }
+  
+  /* MemberPage content card ichida ideal spacing */
+.feyri-posts {
+    padding: 6px 2px; /* content card padding bilan urishmasin */
+  }
+  
+  /* Auto-fit grid: ekran kengligiga qarab o'zi ustun sonini tanlaydi */
+  .feyri-posts__grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  
+  /* Card balandligi bir xil ko'rinsin: flex column */
+  .feyri-post-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  /* Image height: member content ichida muvozanat */
+  .feyri-post-card__media {
+    height: 220px;
+  }
+  
+  @media (max-width: 520px) {
+    .feyri-post-card__media {
+      height: 200px;
+    }
+  }
+  
+  /* Body commentni pastga tushirish (karta ichida ritm) */
+  .feyri-post-card__body {
+    flex: 1; /* content qismi kengayadi */
+  }
+  
+  /* Comment bar doim pastda tursin */
+  .feyri-post-card__comment {
+    margin-top: auto;
+  }
+  
+  /* Hover juda agressiv bo'lmasin (premium) */
+  .feyri-post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(0,0,0,0.08) !important;
+  }
+  
+  /* Badge'lar premium kichikroq */
+  .feyri-post-card__badgeLikes .MuiBadge-badge,
+  .feyri-post-card__badgeViews .MuiBadge-badge {
+    transform: scale(0.92);
+  }
+  

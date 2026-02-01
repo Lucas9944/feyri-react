@@ -25,6 +25,7 @@ export interface Brand {
 }
 
 export interface Member {
+  myFavorite: any;
   memberFollowings: any;
   targetProducts: any;
   targetComments: any;

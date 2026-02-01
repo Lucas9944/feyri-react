@@ -1,0 +1,89 @@
+/* Feyri follow list (premium minimal) */
+.feyri-follow {
+    --accent: var(--accent, #f48fb1);
+    --line: rgba(0,0,0,0.08);
+    --text: rgba(0,0,0,0.90);
+    --muted: rgba(0,0,0,0.62);
+    --card: #fff;
+  
+    width: 100%;
+  }
+  
+  .feyri-follow__list{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .feyri-follow__row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+  }
+  
+  .feyri-follow__left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    flex: 1;
+  }
+  
+  .feyri-follow__avatar{
+    width: 46px !important;
+    height: 46px !important;
+  }
+  
+  .feyri-follow__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  
+  .feyri-follow__badge{
+    font-size: 11px;
+    letter-spacing: 0.16px;
+    opacity: 0.85;
+    color: var(--muted);
+  }
+  
+  .feyri-follow__name{
+    font-size: 15px;
+    font-weight: 750;
+    color: var(--text);
+  }
+  
+  .feyri-follow__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex: 0 0 auto;
+  }
+  
+  .feyri-follow__btn{
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+  }
+  
+  /* Unfollow – pink border, text pink */
+  .feyri-follow__btn--danger {
+    background: transparent !important;
+    color: var(--accent) !important;
+    border: 1px solid rgba(244, 143, 177, 0.55) !important;
+  }
+  
+  .feyri-follow__btn--danger:hover {
+    background: rgba(244, 143, 177, 0.10) !important;
+    border-color: rgba(244, 143, 177, 0.75) !important;
+  }
+  

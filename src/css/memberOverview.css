@@ -1,0 +1,135 @@
+.feyri-overview {
+    --accent: var(--accent, #f48fb1);
+    --line: rgba(0,0,0,0.08);
+    --text: rgba(0,0,0,0.90);
+    --muted: rgba(0,0,0,0.62);
+  
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .feyri-overview__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 16px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+  }
+  
+  .feyri-overview__profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  
+  .feyri-overview__avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    object-fit: cover;
+    background: #eee;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  
+  .feyri-overview__profileMeta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+  }
+  
+  .feyri-overview__kicker {
+    font-size: 12px;
+    font-weight: 700;
+    color: rgba(0,0,0,0.55);
+    letter-spacing: 0.16px;
+    text-transform: uppercase;
+  }
+  
+  .feyri-overview__name {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .feyri-overview__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    height: 38px;
+    padding: 0 14px;
+    border-radius: 12px;
+  
+    text-decoration: none;
+    font-weight: 750;
+    color: #fff;
+    background: var(--accent);
+    box-shadow: none;
+  }
+  
+  .feyri-overview__cta:hover {
+    filter: brightness(0.96);
+  }
+  
+  .feyri-overview__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  
+  .feyri-overview__card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  
+    padding: 16px;
+    border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.05);
+  
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.10s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  
+  .feyri-overview__card:hover {
+    background: rgba(244,143,177,0.06);
+    border-color: rgba(244,143,177,0.22);
+  }
+  
+  .feyri-overview__cardTitle {
+    font-size: 16px;
+    font-weight: 850;
+    color: var(--text);
+  }
+  
+  .feyri-overview__cardDesc {
+    font-size: 13px;
+    font-weight: 650;
+    color: var(--muted);
+  }
+  
+  .feyri-overview__cardGo {
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: 800;
+    color: rgba(0,0,0,0.78);
+  }
+  
+  @media (max-width: 980px) {
+    .feyri-overview__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

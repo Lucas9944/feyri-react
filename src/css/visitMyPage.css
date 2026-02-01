@@ -1,0 +1,178 @@
+/* visitMyPage.css — Feyri premium minimal (stable) */
+
+.feyri-my{
+    --accent: var(--accent, #f48fb1);
+    --text: rgba(0,0,0,0.90);
+    --muted: rgba(0,0,0,0.62);
+    --line: rgba(0,0,0,0.08);
+    --card: #fff;
+  
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .feyri-my *{ box-sizing: border-box; }
+  
+  .feyri-my__wrap{
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+  
+  /* LEFT */
+  .feyri-my__left{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+  }
+  
+  .feyri-my__profileCard,
+  .feyri-my__navCard{
+    background: var(--card);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+  }
+  
+  .feyri-my__profileCard{
+    padding: 16px;
+  }
+  
+  .feyri-my__profileTop{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .feyri-my__avatar{
+    width: 64px !important;
+    height: 64px !important;
+    border: 1px solid var(--line);
+    background: rgba(0,0,0,0.04);
+  }
+  
+  .feyri-my__meta{
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .feyri-my__name{
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  
+  .feyri-my__phone{
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.2;
+  }
+  
+  .feyri-my__role{
+    font-size: 12px;
+    font-weight: 850;
+    color: rgba(0,0,0,0.70);
+  }
+  
+  /* nav */
+  .feyri-my__navCard{
+    padding: 12px;
+  }
+  
+  .feyri-my__navTitle{
+    font-size: 12px;
+    font-weight: 900;
+    color: rgba(0,0,0,0.58);
+    letter-spacing: 0.2px;
+    padding: 10px 10px 6px;
+  }
+  
+  .feyri-my__navTitle--mt{ margin-top: 6px; }
+  
+  .feyri-my__navItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+  
+    color: rgba(0,0,0,0.78);
+    font-weight: 850;
+    text-align: left;
+  
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  
+  .feyri-my__navItem:hover{
+    background: rgba(244,143,177,0.10);
+  }
+  
+  .feyri-my__navItem.is-active{
+    background: rgba(244,143,177,0.14);
+    border-color: rgba(244,143,177,0.35);
+  }
+  
+  .feyri-my__navIcon{
+    color: rgba(0,0,0,0.55);
+  }
+  
+  .feyri-my__navItem.is-active .feyri-my__navIcon{
+    color: var(--accent);
+  }
+  
+  /* RIGHT */
+  .feyri-my__right{
+    min-width: 0;
+    background: var(--card);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 18px;
+    box-shadow: 0 10px 26px rgba(0,0,0,0.06);
+    padding: 16px;
+  }
+  
+  .feyri-my__rightHeader{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 12px;
+  }
+  
+  .feyri-my__rightTitle{
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--text);
+  }
+  
+  .feyri-my__rightBody{
+    padding-top: 4px;
+  }
+  
+  .feyri-my__placeholder{
+    padding: 16px;
+    border: 1px dashed rgba(0,0,0,0.12);
+    border-radius: 14px;
+    color: rgba(0,0,0,0.65);
+    font-weight: 750;
+  }
+  
+  /* responsive */
+  @media (max-width: 980px){
+    .feyri-my__wrap{
+      grid-template-columns: 1fr;
+    }
+  }
+  
