@@ -17,10 +17,15 @@ export interface AppRootState {
 
 /** HOMEPAGE STATE */
 export interface HomePageState {
+  setBestSellerProduct: any;
+  bestSellerProduct: any;
+  trendProducts: any;
   saleProducts: any;
   topBrands: Brand[]; 
+  latestBrands: Brand[]; 
   bestProducts: Product[];
   bestBoArticles: BoArticle[];
+  newsBoArticles: any[];
 }
 
 /** PRODUCT PAGE STATE */
