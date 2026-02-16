@@ -1,14 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import pathReducer from "./pathSlice"; // pathSlice'ni import qilish
+import pathReducer from "./pathSlice";
 import memberPageReducer from "./app/screens/MemberPage/slice";
-import HomePageReducer from "./app/screens/HomePage/slice";
+import homePageReducer from "./app/screens/HomePage/slice";
 
 export const store = configureStore({
   reducer: {
-    path: pathReducer, // pathReducer'ni qo'shish
-    memberPage: memberPageReducer, // ✅ selector shu nomni kutyapti
-    HomePage: HomePageReducer, 
+    path: pathReducer,
+    memberPage: memberPageReducer,
+    homePage: homePageReducer,
   },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 export type RootState = ReturnType<typeof store.getState>;

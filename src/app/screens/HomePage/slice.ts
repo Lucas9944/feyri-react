@@ -13,7 +13,7 @@ const initialState: HomePageState = {
     setBestSellerProduct: undefined
 };
 
-const HomePageSlice = createSlice({
+const homePageSlice = createSlice({
   name: "homePage",
   initialState,
   reducers: {
@@ -45,7 +45,7 @@ export const {
   topBrands,
   bestBoArticles,
   newsBoArticles,
-} = HomePageSlice.actions;
+} = homePageSlice.actions;
 
-const HomePageReducer = HomePageSlice.reducer;
-export default HomePageReducer;
+const homePageReducer = homePageSlice.reducer;
+export default homePageReducer;

@@ -842,210 +842,148 @@
 }
 /* ===== LATEST COLLECTION – LAYOUT ===== */
 
-.latest_section {
+/* ===== FEYRI LATEST (CLEAN / PREMIUM) ===== */
+
+.feyri_latest {
   width: 100%;
-  background-color: #ffffff;
-  padding: 90px 0 130px;
+  background: #fff;
+  padding: 90px 0 120px;
 }
 
-.latest_header {
-  max-width: 520px;
-  margin: 0 auto 40px;
+.feyri_latest__header {
+  max-width: 560px;
+  margin: 0 auto 44px;
   text-align: center;
   align-items: center;
 }
 
-.latest_title {
-  font-family: "Playfair Display", "Times New Roman", serif !important;
-  font-size: 32px !important;
+.feyri_latest__title {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 30px !important;
   font-weight: 600 !important;
   letter-spacing: 0.04em;
   color: #1f1820;
 }
 
-.latest_subtitle {
+.feyri_latest__subtitle {
   font-family: "Poppins", sans-serif !important;
   font-size: 12px !important;
   color: rgba(47, 37, 40, 0.7);
 }
 
-/* GRID – 4x2 */
-
-.latest_grid {
+/* === Grid: 4 items ALWAYS on desktop === */
+.feyri_grid {
   max-width: 1180px;
   margin: 0 auto;
+
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  column-gap: 48px;
-  row-gap: 72px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;                 /* 26 -> 18 qilib sig‘diramiz */
 }
 
-.latest_card {
+/* Card = clickable link */
+.feyri_card {
+  text-decoration: none;
+  color: inherit;
+
   display: flex;
   flex-direction: column;
 
-}
-
-/* KREM PANEL – 281.297 × 342, ichida: rasm (flex) + button (48px) */
-
-.latest_media {
-  width: 281.297px;
-  height: 342px;   /* muhim! 298px + 44px */
-  background: #f7f4ef;
-  position: relative;
+  border-radius: 18px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #ffffff;
+
+  border: 1px solid rgba(31, 24, 32, 0.08);
+  box-shadow: 0 10px 22px rgba(17, 12, 16, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
+.feyri_card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(17, 12, 16, 0.10);
+}
 
-/* FOTO PANEL */
-
-.latest_image_box {
-  flex: 1 1 auto;
+/* Media area: fixed ratio (doesn't break) */
+.feyri_card__media {
   width: 100%;
-  background: #f7f4ef !important; 
+  aspect-ratio: 4 / 5;       /* premium card proportion */
+  background:#f7f4ef;
+  position: relative;
+  padding: 18px;              
 }
 
-.latest_image_box img {
+.feyri_card__img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;          /* backend rasm bo‘lsa ham buzmaydi */
+  object-position: center;
+  border-radius: 18px;
+}
+
+/* Info area */
+.feyri_card__info {
+  padding: 12px 12px 14px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  
-
-
+  justify-content: space-between;
+  gap: 10px;
 }
 
-/* === BUTTONNING ASOSIY STILI === */
-.latest_media .MuiButton-root.latest_button {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 44px;
-  min-height: 0 !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent !important; 
-  color: transparent !important;
-
-  border-radius: 0 !important;
-  border: none !important;
-  cursor: pointer;
-
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.25s ease-in-out;
-}
-
-/* === KARTAGA HOVER → BUTTON OQ HOLATDA KO‘RINADI === */
-/* === BUTTONNING ASOSIY HOLATI (yashirin) === */
-.latest_media .MuiButton-root.latest_button {
-  position: absolute;
-  /* margin-bottom: 10px;
-  margin-right: 5px;
-  margin-left: 5px; */
-  margin-left: 10px;   /* chapga surish */
-  margin-right: 10px;  /* o‘ngga surish */
-  margin-bottom: 10px;
-  width: 260px;
-  height: 47px !important;     /* ASOSIY: Alpha-H height */
-  padding: 16px 24px !important;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-
-  background-color: transparent !important;
-  color: transparent !important;
-
-  border-radius: 0 !important;
-  border: none !important;
-  
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-
-  transition: all 0.25s ease-in-out;
-}
-
-/* === 1) KARTAGA HOVER → BUTTON KO‘RINADI (OQ PANEL!) === */
-.latest_media:hover .latest_button {
-  opacity: 1;
-  visibility: visible;
-  background-color: #ffffff !important;  /* haqiqiy oq */
-  color: #111 !important;
-}
-
-/* === 2) BUTTONGA HOVER → PUSHTI RANG === */
-.latest_button:hover,
-.latest_button.MuiButton-root:hover {
-  background-color: #f48fb1 !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-/* === 3) MUI TOUCHRIPPLE O‘CHIRILADI === */
-.latest_button .MuiTouchRipple-root {
-  display: none !important;
-}
-
-
-/* === MUI RIPPLE EFFEKTINI O‘CHIR (bo‘lmasa pink hover ko‘rinmaydi) === */
-.latest_button .MuiTouchRipple-root {
-  display: none !important;
-}
-
-
-
-
-/* Text pastida */
-
-.latest_name {
-  margin-top: 18px;
-  margin-bottom: 4px;
+.feyri_card__name {
   font-family: "Poppins", sans-serif;
   font-size: 13px;
-  font-weight: 500;
-  color: #2f2528;
+  font-weight: 600;
+  color: #1f1820;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.latest_price {
+/* Stats (minimal, no chip bubble) */
+.feyri_card__stats {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.feyri_stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  color: #2f2528;
+  font-size: 11px;
+  color: rgba(31, 24, 32, 0.65);
 }
 
-/* RESPONSIVE */
+.feyri_stat__icon {
+  font-size: 12px;
+  opacity: 0.85;
+}
 
+/* Responsive */
 @media (max-width: 1200px) {
-  .latest_grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    column-gap: 32px;
-    row-gap: 56px;
+  .feyri_grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 900px) {
-  .latest_grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 28px;
-    row-gap: 42px;
+  .feyri_grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .latest_grid {
+  .feyri_grid {
     grid-template-columns: 1fr;
-    row-gap: 36px;
   }
 }
+
 
 /* ==== LOAD PRODUCTS + NEWSLETTER – FEYRI STYLE ==== */
 
@@ -1346,4 +1284,40 @@
   .events_title {
     font-size: 26px;
   }
+}
+
+
+/* stats container: chiplar orasini ochadi */
+.feyri_card__stats{
+  display: flex;
+  align-items: center;
+  gap: 10px;               /* MUHIM */
+  margin-left: auto;       /* o‘ngga yopishtiradi */
+}
+
+/* chip umumiy */
+.feyri_chip.MuiChip-root{
+  height: 28px;
+  border-radius: 999px;
+  padding-left: 2px;       /* ichki nafas */
+  padding-right: 2px;
+  min-width: 58px;         /* bir-biriga yopishmasin */
+  justify-content: center;
+}
+
+/* icon va label spacing */
+.feyri_chip .MuiChip-icon{
+  margin-left: 8px !important;
+  margin-right: 4px !important;
+}
+
+.feyri_chip .MuiChip-label{
+  padding-left: 0 !important;
+  padding-right: 10px !important;
+}
+
+/* agar baribir "tegib" tursa — bu bilan aniq ajraladi */
+.feyri_chip.MuiChip-root{
+  outline: 6px solid transparent;   /* vizual gap kabi ishlaydi */
+  outline-offset: -3px;
 }
