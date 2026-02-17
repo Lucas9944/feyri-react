@@ -1,7 +1,7 @@
 import { BedSheetsSail } from "./bedsheetsSail";
 import { SwiperEvents } from "./SwiperEvents";
 import { Statistics } from "./statistics";
-import { TopInterior } from "./topInterior";
+import { BestBrands } from "./bestBrands";
 import { TopRating } from "./topRating";
 import { Advertisements } from "./advertiSements";
 import "../../../css/home.css";
@@ -12,14 +12,21 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
-import { setTopTradings } from "../../screens/HomePage/slice";
-import { retrieveTradingProducts } from "../../screens/HomePage/selector";
+import {
+  setBestSellerProduct,
+  setTopTradings,
+} from "../../screens/HomePage/slice";
+import {
+  retrievesetBestSellerProduct,
+  retrieveTradingProducts,
+} from "../../screens/HomePage/selector";
 import { Brand } from "../../types/user";
 import BrandApiServices from "../../apiServices/brandApiServices";
 
 // ** REDUX SLICE */
 const actionDispatch = (dispach: Dispatch) => ({
   setTopTradings: (data: Brand[]) => dispach(setTopTradings(data)),
+  setBestSellerProduct: (data: Brand[]) => dispach(setBestSellerProduct(data)),
 });
 
 
@@ -27,7 +34,6 @@ const actionDispatch = (dispach: Dispatch) => ({
 export function HomePage() {
   /** INITIALIZATION */
   const { setTopTradings } = actionDispatch(useDispatch());
-
 
   useEffect(() => {
     // backend data request => data
@@ -38,11 +44,17 @@ export function HomePage() {
         setTopTradings(data);
       })
       .catch((err) => console.log(err));
+    brandService
+      .getBrands({ page: 1, limit: 4, order: "mb_point" })
+      .then((data) => {
+        setBestSellerProduct(data);
+      })
+      .catch((err) => console.log(err));
   }, []);
   return (
     <div className="homepage">
       <Statistics />
-      <TopInterior />
+      <BestBrands />
       <Advertisements />
       <BedSheetsSail />
       <TopRating />

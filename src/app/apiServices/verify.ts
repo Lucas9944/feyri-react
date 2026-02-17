@@ -1,10 +1,24 @@
-// ✅ DEV MODE: frontend UI test uchun auth redirect/guard’ni o‘chirib turamiz
-const DISABLE_VERIFY = process.env.NODE_ENV === "development";
+import Cookies from "universal-cookie";
+import { serverApi } from "../../lib/config";
 
-if (DISABLE_VERIFY) {
-  // hech narsa qilmaydi (redirect ham bo‘lmaydi)
-  // eslint-disable-next-line no-console
-  console.log("[verify] disabled in development");
+const cookies = new Cookies();
+let member_data: any = null;
+
+if(cookies.get("access_token")) {
+  const memberDataJson: any = localStorage.getItem("member_data") ? localStorage.getItem("member_data") : null;
+  member_data = memberDataJson ? JSON.parse(memberDataJson) : null;
+
+  if (member_data) {
+    member_data.mb_image = member_data.mb_image
+      ? `${serverApi}/${member_data.mb_image}`
+      : "/icons/default_user.svg";
+  }
+
 } else {
-  // ⬇️ shu pastdagi verify logikangizni (hammasini) shu else ichiga olib kiring
+  localStorage.removeItem("member_data");
 }
+
+console.log("=== verify ===");
+console.log(member_data);
+
+export const verifiedMemberData = member_data ? member_data : null;

@@ -40,18 +40,34 @@ const TOP_PRODUCTS = [
   },
 ];
 
-export function TopInterior() {
+//REDUX
+import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "@reduxjs/toolkit";
+import { createSelector } from "reselect";
+import { setBestSellerProduct } from "../../screens/HomePage/slice";
+import { retrievesetBestSellerProduct } from "../../screens/HomePage/selector";
+import { Brand } from "../../types/user";
+import BrandApiServices from "../../apiServices/brandApiServices";
+
+// ** REDUX SELECTOR */
+const bestSellerProductRetriever = createSelector(
+  retrievesetBestSellerProduct,
+  (bestSellerProduct) => ({
+    bestSellerProduct,
+  })
+);
+
+export function BestBrands() {
+  // ** INITIALIZATION */
+  const { bestSellerProduct } = useSelector(bestSellerProductRetriever);
+  console.log("topTradings:", bestSellerProduct);
   return (
     <div className="toprated_frame">
       <Container>
         {/* Section header */}
         <Stack className="toprated_header">
-          <Typography className="toprated_kicker">
-            TOP RATED
-          </Typography>
-          <Typography className="toprated_title">
-            Feyri beauty picks
-          </Typography>
+          <Typography className="toprated_kicker">TOP RATED</Typography>
+          <Typography className="toprated_title">Feyri beauty picks</Typography>
           <Typography className="toprated_subtitle">
             Community-sevimli mahsulotlar. Eng ko‘p baholangan yumshoq
             teksturalar va kundalik glow uchun tavsiyalar.
@@ -66,17 +82,11 @@ export function TopInterior() {
                 <img src={item.img} alt={item.name} />
               </Box>
 
-              <Typography className="toprated_tag">
-                {item.tag}
-              </Typography>
+              <Typography className="toprated_tag">{item.tag}</Typography>
 
-              <Typography className="toprated_name">
-                {item.name}
-              </Typography>
+              <Typography className="toprated_name">{item.name}</Typography>
 
-              <Typography className="toprated_desc">
-                {item.desc}
-              </Typography>
+              <Typography className="toprated_desc">{item.desc}</Typography>
 
               <Stack
                 direction="row"
@@ -95,9 +105,7 @@ export function TopInterior() {
                     {item.rating.toFixed(1)}
                   </Typography>
                 </Stack>
-                <Typography className="toprated_price">
-                  {item.price}
-                </Typography>
+                <Typography className="toprated_price">{item.price}</Typography>
               </Stack>
 
               <Button className="toprated_btn" variant="outlined">
