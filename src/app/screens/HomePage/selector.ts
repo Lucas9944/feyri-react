@@ -8,9 +8,9 @@ export const retrieveTradingProducts = createSelector(
   (HomePage) => HomePage.trendProducts
 );
 
-export const retrievesetBestSellerProduct = createSelector(
+export const retrieveBestProducts = createSelector(
   selectHomePage,
-  (HomePage) => HomePage.setBestSellerProduct
+  (HomePage) => HomePage.bestProducts
 );
 
 export const retriesaleProducts = createSelector(

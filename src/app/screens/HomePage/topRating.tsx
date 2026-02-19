@@ -42,9 +42,7 @@ export function TopRating() {
             const likes = (ele as any)?.mb_likes ?? 0;
 
             const rawImg = ele?.mb_image ?? "";
-            const imagePath = rawImg
-              ? `${serverApi}/${rawImg}`
-              : "/images/placeholder.png";
+            const image_path = `${serverApi}/${ele.mb_image}`;
 
             return (
               <Link
@@ -54,7 +52,7 @@ export function TopRating() {
               >
                 <div className="feyri_card__media">
                   <img
-                    src={imagePath}
+                    src={image_path}
                     alt={title}
                     className="feyri_card__img"
                     loading="lazy"

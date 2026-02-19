@@ -1321,3 +1321,269 @@
   outline: 6px solid transparent;   /* vizual gap kabi ishlaydi */
   outline-offset: -3px;
 }
+
+
+/* =========================
+   FEYRI: Best Products (Premium, Front-only)
+   ========================= */
+
+   .homepage .p_products_frame {
+    width: 100%;
+    min-height: 710px;
+    /* background: url("/icons/bg_shapes1.png"), #fdf7f8; */
+    background-position: bottom, top;
+    background-size: 100% 720px, 100% 710px;
+    background-repeat: no-repeat;
+    padding: 28px 0 56px;
+  }
+  
+  .homepage .p_products_main {
+    width: 100%;
+    min-height: 650px;
+    margin-left: 0;
+  }
+  
+  .homepage .p_products_main .p_products_text {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .homepage .p_products_main .p_products_text .title {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 1.1;
+    text-align: center;
+    color: #1f1a17;
+    letter-spacing: -0.02em;
+  }
+  
+  /* --- Swiper area: spacing fix (cards yopishmasin) --- */
+  .homepage .p_products_main .swiper {
+    width: 100%;
+    height: auto;
+    display: block; /* ✅ flex wrap ni olib tashlaymiz (Swiper o‘zi layout qiladi) */
+  }
+  
+  .homepage .p_products_main .swiper .swiper_wrapper {
+    padding: 6px 12px 26px;
+  }
+  
+  /* Swiper slide */
+  .homepage .p_products_main .swiper .product_info_frame {
+    /* ✅ premium width (xohlasangiz 235pxga qaytaramiz) */
+    width: 270px;
+    height: auto;
+    margin-top: 28px;
+    flex-shrink: 0;
+  
+    border-radius: 18px;
+    padding: 12px 12px 16px;
+  
+    background: #ffffff;
+    border: 1px solid rgba(20, 15, 12, 0.08);
+    box-shadow: 0 10px 24px rgba(20, 15, 12, 0.06);
+  
+    display: flex;
+    flex-direction: column; /* ✅ row wrap emas, tartibli stack */
+    gap: 10px;
+  
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+  
+  .homepage .p_products_main .swiper .product_info_frame:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 34px rgba(20, 15, 12, 0.10);
+  }
+  
+  /* Product clickable box */
+  .homepage .p_products_main .swiper .product_info_frame .product-box {
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Image */
+  .homepage .p_products_main .swiper .product_info_frame .product-box .img {
+    width: 100%;
+    height: 320px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: none;
+  }
+  
+  /* Discount badge container */
+  .homepage .p_products_main .swiper .product_info_frame .product-box .dish_sale {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+  
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  
+    padding: 7px 10px;
+    border-radius: 999px;
+  
+    border: 1px dashed rgba(244, 143, 177, 0.85);
+    background: rgba(244, 143, 177, 0.12);
+    backdrop-filter: blur(6px);
+  }
+  
+  /* Discount text */
+  .homepage .p_products_main .swiper .product_info_frame .product-box .dish_sale .dish_sale-txt {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #d84f86;
+    font-family: "Nunito", sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    margin: 0;
+  }
+  
+  /* Countdown */
+  .homepage .p_products_main .swiper .product_info_frame .product-box .dish_sale .endDate {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #d84f86;
+    font-family: "Nunito", sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0;
+  }
+  
+  /* Like / Comment buttons (hover) */
+  .homepage .p_products_main .swiper .product_info_frame .product-box .like_view_btn {
+    position: absolute;
+    top: 12px;
+  
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    cursor: pointer;
+    z-index: 3;
+    opacity: 0;
+    transform: translateY(-2px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  
+    background: rgba(20, 15, 12, 0.28);
+    border-radius: 999px;
+    backdrop-filter: blur(6px);
+  }
+  
+  .homepage .p_products_main .swiper .product_info_frame:hover .like_view_btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Product name */
+  .homepage .p_products_main .swiper .product_info_frame .product_name {
+    width: 100%;
+    min-height: 44px;
+  
+    margin: 2px 0 0 0;
+    padding: 0 6px;
+  
+    color: #1f1a17;
+    text-align: center;
+    font-family: "Nunito", sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.2;
+  
+    display: -webkit-box;
+    -webkit-line-clamp: 2;     /* ✅ uzun nomlar buzmasin */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Rating */
+  .homepage .p_products_main .swiper .product_info_frame .rating_box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -2px;
+  }
+  
+  /* MUI Rating colors */
+  .homepage .MuiRating-iconFilled {
+    color: #f48fb1;
+  }
+  .homepage .MuiRating-iconEmpty {
+    color: rgba(31, 26, 23, 0.18);
+  }
+  
+  /* Price (center + clean) */
+  .homepage .p_products_main .swiper .product_info_frame .price {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+  }
+  
+  /* ✅ Add to cart alignment */
+  .homepage .p_products_main .swiper .product_info_frame .add_to_cart_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+  }
+  
+  /* Add to cart button */
+  .homepage .MuiButton-root.add_to_cart_btn {
+    border-radius: 999px !important;
+    background: #f48fb1 !important;
+    color: #ffffff !important;
+    font-family: "Nunito", sans-serif !important;
+    font-weight: 900 !important;
+    height: 44px !important;
+    width: 170px !important;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  
+  .homepage .MuiButton-root.add_to_cart_btn:hover {
+    background: #ea79a6 !important;
+  }
+  
+  /* --- Mobile --- */
+  @media (max-width: 600px) {
+    .homepage .p_products_frame {
+      min-height: auto;
+      padding: 16px 0 36px;
+      background-size: 100% 520px, 100% 520px;
+    }
+  
+    .homepage .p_products_main .p_products_text .title {
+      font-size: 34px;
+    }
+  
+    .homepage .p_products_main .swiper .product_info_frame {
+      width: 250px; /* ✅ mobile’da ham premium */
+      padding: 10px 10px 14px;
+      border-radius: 16px;
+    }
+  
+    .homepage .p_products_main .swiper .product_info_frame .product-box .img {
+      height: 300px;
+      border-radius: 14px;
+    }
+  }
+  

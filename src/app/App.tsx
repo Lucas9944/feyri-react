@@ -1,6 +1,12 @@
-// src/App.tsx
+// src/app/App.tsx
 import React, { useEffect, useMemo, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Outlet, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Outlet,
+  useLocation,
+} from "react-router-dom";
 
 import { navbar } from "./../lib/navbar";
 import NotFound from "./screens/notFound";
@@ -9,15 +15,16 @@ import { NavbarHome } from "./components/header/index";
 import { NavbarBrand } from "./components/header/brand";
 import { NavbarOthers } from "./components/header/others";
 import { Footer } from "./components/footer";
-import { MemberPage } from "./screens/MemberPage";
-import  MemberFollowers  from "./screens/MemberPage/memberFollowers";
-import  MemberFollowings  from "./screens/MemberPage/memberFollowings";
-import  MemberPosts  from "./screens/MemberPage/memberPost";
-import  MyFavorites  from "./screens/MemberPage/myFavorites";
-import  MySettings  from "./screens/MemberPage/mySettings";
-import  VisitMyPage  from "./screens/MemberPage/visitMyPage";
-import  VisitOtherPage  from "./screens/MemberPage/visitOtherPage";
 
+import { MemberPage } from "./screens/MemberPage";
+import MemberFollowers from "./screens/MemberPage/memberFollowers";
+import MemberFollowings from "./screens/MemberPage/memberFollowings";
+import MemberPosts from "./screens/MemberPage/memberPost";
+import MyFavorites from "./screens/MemberPage/myFavorites";
+import MySettings from "./screens/MemberPage/mySettings";
+import VisitMyPage from "./screens/MemberPage/visitMyPage";
+import VisitOtherPage from "./screens/MemberPage/visitOtherPage";
+import MemberOverview from "./screens/MemberPage/memberOverview";
 
 import { Member } from "./types/user";
 import { serverApi } from "./../lib/config";
@@ -26,21 +33,24 @@ import "./apiServices/verify";
 import "../css/navbar.css";
 import "../css/footer.css";
 import "../css/shop.css";
-import MemberOverview from "./screens/MemberPage/memberOverview";
+
+import ProductDetail from "../pages/ProductDetail";
+import ProductReviews from "../pages/productReviews";
 
 function AppLayout() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  // query params (sizning eski logikangizga mos)
-  const query = useMemo(() => new URLSearchParams(location.search), [location.search]);
+  const query = useMemo(
+    () => new URLSearchParams(location.search),
+    [location.search]
+  );
   const chosen_mb_id: string | null = query.get("mb_id") ?? null;
   const chosen_art_id: string | null = query.get("art_id") ?? null;
 
-  // verified member
-  const [virifiedMemberData, setVirifiedMemberData] = useState<Member | null>(null);
-
-  // siz ishlatayotgan setPath saqlab qoldim (Navbar’lar uchun)
+  const [virifiedMemberData, setVirifiedMemberData] = useState<Member | null>(
+    null
+  );
   const [path, setPath] = useState<string>("");
 
   useEffect(() => {
@@ -55,10 +65,8 @@ function AppLayout() {
     }
   }, []);
 
-  // auth page’da header/footer yashirish (sizning hozirgi shart)
   const isAuthPage = pathname === "/login";
 
-  // Navbar tanlash (sizning hozirgi mantiq)
   const selectedNavbar =
     pathname === "/" ? (
       <NavbarHome
@@ -76,9 +84,7 @@ function AppLayout() {
   return (
     <>
       {!isAuthPage && selectedNavbar}
-
       <Outlet />
-
       {!isAuthPage && <Footer />}
     </>
   );
@@ -88,35 +94,38 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        {/* Layout route (avvalgidek) */}
+        <Route
+          path="/brand/products/:id/reviews"
+          element={<ProductReviews />}
+        />
+
+        {/* Layout route */}
         <Route element={<AppLayout />}>
-  {/* ✅ B: member-page ni navbar.map dan chiqarib tashlash */}
-  {navbar
-    .filter((r) => !r.path.startsWith("/member-page"))
-    .map((r, idx) => (
-      <Route key={idx} path={r.path} element={r.element} />
-    ))}
+          {/* Product pages (navbar/footer chiqsin) */}
+          <Route path="/brand/products/:id" element={<ProductDetail />} />
 
-  {/* ✅ C: member-page nested route’lar */}
-  <Route path="/member-page" element={<MemberPage />}>
-    <Route index element={<MemberOverview />} />
-    <Route index element={<MemberPosts />} />
-    <Route path="followers" element={<MemberFollowers />} />
-    <Route path="followings" element={<MemberFollowings />} />
-    <Route path="posts" element={<MemberPosts />} />
-    <Route path="favorites" element={<MyFavorites />} />
-    <Route path="settings" element={<MySettings />} />
-    <Route path="visit-my" element={<VisitMyPage />} />
-    <Route path="visit-other" element={<VisitOtherPage />} />
-  </Route>
+          {/* navbar list */}
+          {navbar
+            .filter((r) => !r.path.startsWith("/member-page"))
+            .map((r, idx) => (
+              <Route key={idx} path={r.path} element={r.element} />
+            ))}
 
-  {/* ✅ NotFound ham layout ichida bo‘lsin */}
-  <Route path="*" element={<NotFound />} />
-</Route>
+          {/* member-page nested */}
+          <Route path="/member-page" element={<MemberPage />}>
+            <Route index element={<MemberOverview />} />
+            <Route path="followers" element={<MemberFollowers />} />
+            <Route path="followings" element={<MemberFollowings />} />
+            <Route path="posts" element={<MemberPosts />} />
+            <Route path="favorites" element={<MyFavorites />} />
+            <Route path="settings" element={<MySettings />} />
+            <Route path="visit-my" element={<VisitMyPage />} />
+            <Route path="visit-other" element={<VisitOtherPage />} />
+          </Route>
 
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </Router>
-    
   );
-
 }

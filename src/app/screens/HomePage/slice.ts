@@ -20,8 +20,8 @@ const homePageSlice = createSlice({
     setTopTradings: (state, action) => {
       state.trendProducts = action.payload;
     },
-    setBestSellerProduct: (state, action) => {
-      state.bestSellerProduct = action.payload;
+    setBestProducts: (state, action) => {
+      state.bestProducts = action.payload;
     },
     saleProducts: (state, action) => {
       state.saleProducts = action.payload;
@@ -40,7 +40,7 @@ const homePageSlice = createSlice({
 
 export const {
   setTopTradings,
-  setBestSellerProduct,
+  setBestProducts,
   saleProducts,
   topBrands,
   bestBoArticles,

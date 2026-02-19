@@ -458,7 +458,7 @@ const VisitMyPage = (props: any) => {
     console.log("memberArticleSearchObj", memberArticleSearchObj);
 
     communityService
-      .getMemberCommunityArticle(memberArticleSearchObj)
+      .getMemberCommunityArticles(memberArticleSearchObj)
       .then((data) => setChosenMemberArticles(data))
       .catch((err) => console.log(err));
 

@@ -7,6 +7,9 @@ import { Brand } from "../types/user";
 import { SearchObj } from "../types/others";
 
 class BrandApiServices {
+  getChosenProduct(id: string) {
+    throw new Error("Method not implemented.");
+  }
   private readonly path: string;
 
   constructor() {
