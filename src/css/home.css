@@ -1586,4 +1586,135 @@
       border-radius: 14px;
     }
   }
-  
+  /* ===== FEYRI HOME SECTION HEADER (Latest Collection style) ===== */
+.homepage .home_section {
+  padding: 44px 0;
+}
+
+.homepage .home_section_head {
+  margin: 0 0 18px 0;
+}
+
+.homepage .home_section_title {
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.05;
+  color: #1f1a17;
+  letter-spacing: -0.02em;
+}
+
+.homepage .home_section_sub {
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(31, 26, 23, 0.6);
+}
+
+@media (max-width: 600px) {
+  .homepage .home_section {
+    padding: 28px 0;
+  }
+  .homepage .home_section_title {
+    font-size: 30px;
+  }
+}
+
+/* ===== Our Partners layout (NO fixed 700px) ===== */
+.homepage .ads_frame {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  padding: 6px 0 10px;
+  height: auto;              /* ✅ fixed height yo‘q */
+  display: block;            /* ✅ flex emas */
+}
+
+.homepage .ads_frame .ad_video_frame {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 18px;          /* ✅ 60px emas */
+}
+
+/* Mobile row */
+.homepage .ads_frame .ad_video_frame--mobile {
+  justify-content: flex-start;
+}
+
+.homepage .ads_frame .ads_mobile_row {
+  width: 100%;
+}
+
+/* ===== Video card wrapper ===== */
+.homepage .ads_frame .ads_card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #000;
+  box-shadow: 0px 0px 15px 0px rgba(50, 50, 50, 0.18);
+}
+
+.homepage .ads_frame .ads_card > video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;         /* ✅ to‘liq egallaydi */
+}
+
+/* Desktop sizes */
+.homepage .ads_frame .ads_card--v1 {
+  width: 272px;
+  height: 537px;
+  margin-right: 18px;        /* margin-left o‘rniga */
+}
+
+.homepage .ads_frame .ads_card--v2 {
+  width: 462.1px;
+  height: 260px;
+}
+
+.homepage .ads_frame .ads_card--v3 {
+  width: 260px;
+  height: 260px;
+}
+
+/* Mobile cards */
+.homepage .ads_frame .ads_card--m {
+  width: 160px;
+  height: 160px;
+}
+
+/* Right side column */
+.homepage .ads_frame .ads_video_frame2 {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+
+.homepage .ads_frame .ads_video_frame2-1 {
+  width: 800px;
+  height: 260px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;                 /* ✅ margin-left hacksiz */
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .homepage .ads_frame .ads_video_frame2,
+  .homepage .ads_frame .ads_video_frame2-1 {
+    width: 100%;
+  }
+
+  .homepage .ads_frame .ad_video_frame {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .homepage .ads_frame .ads_card--v1 {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}

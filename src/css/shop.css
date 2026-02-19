@@ -322,14 +322,13 @@
     column-gap: 0px;
     row-gap: 22px;
     width: 100%;
-  
+    ;
   }
   
   /* Har bir karta */
   .latest_card {
     display: flex;
     flex-direction: column;
-  
   }
   
   /* Rasm paneli */

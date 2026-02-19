@@ -27,7 +27,7 @@ class BrandApiServices {
       return topBrands;
     } catch (err: any) {
       console.log(`ERROR::: getTopBrands ${err.message}`);
-      throw err;
+       throw err;
     }
   }
 
