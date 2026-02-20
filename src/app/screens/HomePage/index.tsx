@@ -5,7 +5,9 @@ import { BestProducts } from "./BestProducts";
 import { TopRating } from "./topRating";
 import { Advertisements } from "./advertiSements";
 import "../../../css/home.css";
+import "../../../css/homeArticles.css";
 import { LoadProducts } from "./loadProducts";
+import { Articles } from "../HomePage/articles";
 import { useEffect } from "react";
 
 //REDUX
@@ -20,6 +22,7 @@ import {
 import { Brand } from "../../types/user";
 import BrandApiServices from "../../apiServices/brandApiServices";
 import { Product } from "../../types/product";
+import { Article } from "@mui/icons-material";
 
 // ** REDUX SLICE */
 const actionDispatch = (dispach: Dispatch) => ({
@@ -61,6 +64,7 @@ export function HomePage() {
       <BedSheetsSail />
       <TopRating />
       <LoadProducts />
+      <Articles/>
       <SwiperEvents />
     </div>
   );

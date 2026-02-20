@@ -29,7 +29,7 @@ const homePageSlice = createSlice({
     topBrands: (state, action) => {
       state.topBrands = action.payload;
     },
-    bestBoArticles: (state, action) => {
+    setBestBoArticles: (state, action) => {
       state.bestBoArticles = action.payload;
     },
     newsBoArticles: (state, action) => {
@@ -43,7 +43,7 @@ export const {
   setBestProducts,
   saleProducts,
   topBrands,
-  bestBoArticles,
+  setBestBoArticles,
   newsBoArticles,
 } = homePageSlice.actions;
 
