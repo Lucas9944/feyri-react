@@ -13,15 +13,26 @@ export const retrieveBestProducts = createSelector(
   (HomePage) => HomePage.bestProducts
 );
 
-export const retriesaleProducts = createSelector(
-    selectHomePage,
-    (HomePage) => HomePage.saleProducts
-  );
-  export const retrievetopBrands= createSelector(
-    selectHomePage,
-    (HomePage) => HomePage.topBrands
-  );
-  export const retrievebestBoArticles = createSelector(
-    selectHomePage,
-    (HomePage) => HomePage.bestBoArticles
-  );
+// ✅ NEW selector name (saleProducts.tsx shuni kutyapti)
+export const retrieveSaleProducts = createSelector(
+  selectHomePage,
+  (HomePage) => HomePage.saleProducts
+);
+
+// ✅ Backward-compatible alias (eski nom)
+export const retriesaleProducts = retrieveSaleProducts;
+
+export const retrieveTopBrands = createSelector(
+  selectHomePage,
+  (HomePage) => HomePage.topBrands
+);
+
+export const retrieveBestBoArticles = createSelector(
+  selectHomePage,
+  (HomePage) => HomePage.bestBoArticles
+);
+
+export const retrieveNewsBoArticles = createSelector(
+  selectHomePage,
+  (HomePage) => HomePage.newsBoArticles
+);

@@ -1718,3 +1718,141 @@
     margin-bottom: 16px;
   }
 }
+
+
+/* =========================
+   HOME FEYRI PICKS FIX
+   ========================= */
+
+   .home_feyri_picks_section {
+    --accent: #f48fb1;
+    --accent-08: rgba(244, 143, 177, 0.08);
+    --accent-14: rgba(244, 143, 177, 0.14);
+    --text: #171717;
+    --muted: rgba(23, 23, 23, 0.62);
+    --stroke: rgba(17, 17, 17, 0.10);
+    --stroke2: rgba(17, 17, 17, 0.06);
+    --card: #ffffff;
+    --radius: 22px;
+    --radius2: 14px;
+    --shadow: 0 14px 34px rgba(17, 17, 17, 0.08);
+  
+    width: 100%;
+    padding: 72px 0;
+    background: #ffffff;
+  }
+  
+  .home_feyri_picks_card {
+    background: var(--card);
+    border: 1px solid var(--stroke2);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    padding: 22px;
+  }
+  
+  .home_feyri_picks_card .help_section_head {
+    padding: 2px 4px 10px;
+  }
+  
+  .home_feyri_picks_card .help_section_title {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 950 !important;
+    font-size: 22px !important;
+    margin-bottom: 8px !important;
+    color: var(--text) !important;
+  }
+  
+  .home_feyri_picks_card .accent {
+    color: var(--accent);
+  }
+  
+  .home_feyri_picks_card .help_section_desc {
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif !important;
+    font-weight: 750 !important;
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+    color: var(--muted) !important;
+    max-width: 980px;
+  }
+  
+  .home_feyri_picks_card .help_pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 4px 12px;
+  }
+  
+  .home_feyri_picks_card .pill {
+    text-decoration: none;
+    font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight: 900;
+    font-size: 13px;
+    color: rgba(23, 23, 23, 0.78);
+    padding: 9px 14px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid rgba(17, 17, 17, 0.10);
+    transition: background 160ms ease, border 160ms ease, color 160ms ease;
+  }
+  
+  .home_feyri_picks_card .pill:hover {
+    border: 1px solid rgba(244, 143, 177, 0.45);
+    background: rgba(244, 143, 177, 0.08);
+    color: var(--accent);
+  }
+  
+  .home_feyri_picks_card .help_icons {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+  
+  .home_feyri_picks_card .help_icon_card {
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    min-height: 325px;
+    border-radius: 22px;
+    border: 1px solid rgba(17, 17, 17, 0.08);
+    background: rgba(255, 255, 255, 0.70);
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease, border 180ms ease;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .home_feyri_picks_card .help_icon_card:hover {
+    transform: translateY(-2px) scale(1.03);
+    border: 1px solid rgba(244, 143, 177, 0.55);
+    box-shadow: 0 14px 30px rgba(17, 17, 17, 0.08);
+  }
+  
+  .home_feyri_picks_card .help_icon_card img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 10px 18px rgba(17, 17, 17, 0.10));
+  }
+  
+  /* responsive */
+  @media (max-width: 1100px) {
+    .home_feyri_picks_card .help_icons {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .home_feyri_picks_card .help_icons {
+      grid-template-columns: 1fr;
+    }
+  
+    .home_feyri_picks_card .help_icon_card img {
+      max-width: 320px;
+    }
+  }
+
+  

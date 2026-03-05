@@ -1,11 +1,11 @@
 import { BedSheetsSail } from "./bedsheetsSail";
 import { SwiperEvents } from "./SwiperEvents";
-import { Statistics } from "./statistics";
+import { FeyriPicks } from "./FeyriPicks";
 import { BestProducts } from "./BestProducts";
-import { TopRating } from "./topRating";
 import { Advertisements } from "./advertiSements";
 import "../../../css/home.css";
 import "../../../css/homeArticles.css";
+import "../../../css/sale_product.css";
 import { LoadProducts } from "./loadProducts";
 import { Articles } from "../HomePage/articles";
 import { useEffect } from "react";
@@ -23,6 +23,8 @@ import { Brand } from "../../types/user";
 import BrandApiServices from "../../apiServices/brandApiServices";
 import { Product } from "../../types/product";
 import { Article } from "@mui/icons-material";
+import { SaleProducts } from "./saleProducts";
+import { TopBrands } from "./topBrands";
 
 // ** REDUX SLICE */
 const actionDispatch = (dispach: Dispatch) => ({
@@ -58,11 +60,12 @@ export function HomePage() {
 
   return (
     <div className="homepage">
-      <Statistics />
+      <FeyriPicks />
+      <TopBrands />
       <BestProducts onAdd={onAdd} />
+      <SaleProducts onAdd={onAdd}/>
       <Advertisements />
       <BedSheetsSail />
-      <TopRating />
       <LoadProducts />
       <Articles/>
       <SwiperEvents />

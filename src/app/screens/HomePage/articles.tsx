@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import { Dispatch } from "@reduxjs/toolkit";
 import { setBestBoArticles } from "../HomePage/slice";
-import { retrievebestBoArticles } from "../HomePage/selector";
+import { retrieveBestBoArticles } from "../HomePage/selector";
 import { BoArticle } from "../../../app/types/boArticle";
 import CommunityApiService from "../../apiServices/communityApiServices";
 import { serverApi } from "../../../lib/config";
@@ -31,7 +31,7 @@ const actionDispatch = (dispach: Dispatch) => ({
 
 /** REDUX SELECTOR */
 const bestBoArticlesRetriever = createSelector(
-  retrievebestBoArticles,
+  retrieveBestBoArticles,
   (bestBoArticles) => ({ bestBoArticles })
 );
 

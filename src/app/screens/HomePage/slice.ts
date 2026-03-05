@@ -2,15 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { HomePageState } from "../../types/screen";
 
 const initialState: HomePageState = {
-    trendProducts: [],
-    bestSellerProduct: [],
-    saleProducts: undefined,
-    topBrands: [],
-    latestBrands: [],
-    bestProducts: [],
-    bestBoArticles: [],
-    newsBoArticles: [],
-    setBestSellerProduct: undefined
+  trendProducts: [],
+  bestSellerProduct: [],
+  saleProducts: undefined,
+  topBrands: [],
+  latestBrands: [],
+  bestProducts: [],
+  bestBoArticles: [],
+  newsBoArticles: [],
+  setBestSellerProduct: undefined,
 };
 
 const homePageSlice = createSlice({
@@ -20,19 +20,27 @@ const homePageSlice = createSlice({
     setTopTradings: (state, action) => {
       state.trendProducts = action.payload;
     },
+
     setBestProducts: (state, action) => {
       state.bestProducts = action.payload;
     },
-    saleProducts: (state, action) => {
+
+    // ✅ OLD: saleProducts -> NEW: setSaleProducts
+    setSaleProducts: (state, action) => {
       state.saleProducts = action.payload;
     },
-    topBrands: (state, action) => {
+
+    // (ixtiyoriy) topBrands ham setTopBrands bo‘lsin
+    setTopBrands: (state, action) => {
       state.topBrands = action.payload;
     },
+
     setBestBoArticles: (state, action) => {
       state.bestBoArticles = action.payload;
     },
-    newsBoArticles: (state, action) => {
+
+    // (ixtiyoriy) news ham setNewsBoArticles bo‘lsin
+    setNewsBoArticles: (state, action) => {
       state.newsBoArticles = action.payload;
     },
   },
@@ -41,11 +49,15 @@ const homePageSlice = createSlice({
 export const {
   setTopTradings,
   setBestProducts,
-  saleProducts,
-  topBrands,
+  setSaleProducts,
+  setTopBrands,
   setBestBoArticles,
-  newsBoArticles,
+  setNewsBoArticles,
 } = homePageSlice.actions;
 
-const homePageReducer = homePageSlice.reducer;
-export default homePageReducer;
+// ✅ Backward-compatible alias (agar eski joylarda ishlatilgan bo‘lsa)
+export const saleProducts = setSaleProducts;
+export const topBrands = setTopBrands;
+export const newsBoArticles = setNewsBoArticles;
+
+export default homePageSlice.reducer;
